@@ -1,0 +1,807 @@
+[
+  {
+    "BaseForm": "abide",
+    "PastPrinciple": "abode",
+    "Preterit": "abode"
+  },
+  {
+    "BaseForm": "arise",
+    "PastPrinciple": "arose",
+    "Preterit": "arisen"
+  },
+  {
+    "BaseForm": "awake",
+    "PastPrinciple": "awoke",
+    "Preterit": "awoken"
+  },
+  {
+    "BaseForm": "bear",
+    "PastPrinciple": "bore",
+    "Preterit": "borne"
+  },
+  {
+    "BaseForm": "beat",
+    "PastPrinciple": "beat",
+    "Preterit": "beaten"
+  },
+  {
+    "BaseForm": "become",
+    "PastPrinciple": "became",
+    "Preterit": "become"
+  },
+  {
+    "BaseForm": "begin",
+    "PastPrinciple": "began",
+    "Preterit": "begun"
+  },
+  {
+    "BaseForm": "bend",
+    "PastPrinciple": "bent",
+    "Preterit": "bent"
+  },
+  {
+    "BaseForm": "bet",
+    "PastPrinciple": "bet",
+    "Preterit": "bet"
+  },
+  {
+    "BaseForm": "bid",
+    "PastPrinciple": "bid",
+    "Preterit": "bid"
+  },
+  {
+    "BaseForm": "bind",
+    "PastPrinciple": "bound",
+    "Preterit": "bound"
+  },
+  {
+    "BaseForm": "bite",
+    "PastPrinciple": "bit",
+    "Preterit": "bitten"
+  },
+  {
+    "BaseForm": "bleed",
+    "PastPrinciple": "bled",
+    "Preterit": "bled"
+  },
+  {
+    "BaseForm": "blow",
+    "PastPrinciple": "blew",
+    "Preterit": "blown"
+  },
+  {
+    "BaseForm": "break",
+    "PastPrinciple": "broke",
+    "Preterit": "broken"
+  },
+  {
+    "BaseForm": "breed",
+    "PastPrinciple": "bred",
+    "Preterit": "bred"
+  },
+  {
+    "BaseForm": "bring",
+    "PastPrinciple": "brought",
+    "Preterit": "brought"
+  },
+  {
+    "BaseForm": "build",
+    "PastPrinciple": "built",
+    "Preterit": "built"
+  },
+  {
+    "BaseForm": "burn",
+    "PastPrinciple": "burnt",
+    "Preterit": "burnt"
+  },
+  {
+    "BaseForm": "burst",
+    "PastPrinciple": "burst",
+    "Preterit": "burst"
+  },
+  {
+    "BaseForm": "buy",
+    "PastPrinciple": "bought",
+    "Preterit": "bought"
+  },
+  {
+    "BaseForm": "cast",
+    "PastPrinciple": "cast",
+    "Preterit": "cast"
+  },
+  {
+    "BaseForm": "catch",
+    "PastPrinciple": "caught",
+    "Preterit": "caught"
+  },
+  {
+    "BaseForm": "choose",
+    "PastPrinciple": "chose",
+    "Preterit": "chosen"
+  },
+  {
+    "BaseForm": "cling",
+    "PastPrinciple": "clung",
+    "Preterit": "clung"
+  },
+  {
+    "BaseForm": "come",
+    "PastPrinciple": "came",
+    "Preterit": "come"
+  },
+  {
+    "BaseForm": "cost",
+    "PastPrinciple": "cost",
+    "Preterit": "cost"
+  },
+  {
+    "BaseForm": "creep",
+    "PastPrinciple": "crept",
+    "Preterit": "crept"
+  },
+  {
+    "BaseForm": "cut",
+    "PastPrinciple": "cut",
+    "Preterit": "cut"
+  },
+  {
+    "BaseForm": "deal",
+    "PastPrinciple": "dealt",
+    "Preterit": "dealt"
+  },
+  {
+    "BaseForm": "dig",
+    "PastPrinciple": "dug",
+    "Preterit": "dug"
+  },
+  {
+    "BaseForm": "do",
+    "PastPrinciple": "did",
+    "Preterit": "done"
+  },
+  {
+    "BaseForm": "draw",
+    "PastPrinciple": "drew",
+    "Preterit": "drawn"
+  },
+  {
+    "BaseForm": "dream",
+    "PastPrinciple": "dreamt",
+    "Preterit": "dreamt"
+  },
+  {
+    "BaseForm": "drink",
+    "PastPrinciple": "drank",
+    "Preterit": "drunk"
+  },
+  {
+    "BaseForm": "drive",
+    "PastPrinciple": "drove",
+    "Preterit": "driven"
+  },
+  {
+    "BaseForm": "dwell",
+    "PastPrinciple": "dwelt",
+    "Preterit": "dwelt"
+  },
+  {
+    "BaseForm": "eat",
+    "PastPrinciple": "ate",
+    "Preterit": "eaten"
+  },
+  {
+    "BaseForm": "fall",
+    "PastPrinciple": "fell",
+    "Preterit": "fallen"
+  },
+  {
+    "BaseForm": "feed",
+    "PastPrinciple": "fed",
+    "Preterit": "fed"
+  },
+  {
+    "BaseForm": "feel",
+    "PastPrinciple": "felt",
+    "Preterit": "felt"
+  },
+  {
+    "BaseForm": "fight",
+    "PastPrinciple": "fought",
+    "Preterit": "fought"
+  },
+  {
+    "BaseForm": "find",
+    "PastPrinciple": "found",
+    "Preterit": "found"
+  },
+  {
+    "BaseForm": "flee",
+    "PastPrinciple": "fled",
+    "Preterit": "fled"
+  },
+  {
+    "BaseForm": "fling",
+    "PastPrinciple": "flung",
+    "Preterit": "flung"
+  },
+  {
+    "BaseForm": "fly",
+    "PastPrinciple": "flew",
+    "Preterit": "flown"
+  },
+  {
+    "BaseForm": "forbid",
+    "PastPrinciple": "forbade",
+    "Preterit": "forbidden"
+  },
+  {
+    "BaseForm": "forget",
+    "PastPrinciple": "forgot",
+    "Preterit": "forgotten"
+  },
+  {
+    "BaseForm": "forgive",
+    "PastPrinciple": "forgave",
+    "Preterit": "forgiven"
+  },
+  {
+    "BaseForm": "freeze",
+    "PastPrinciple": "froze",
+    "Preterit": "frozen"
+  },
+  {
+    "BaseForm": "get",
+    "PastPrinciple": "got",
+    "Preterit": "got"
+  },
+  {
+    "BaseForm": "give",
+    "PastPrinciple": "gave",
+    "Preterit": "given"
+  },
+  {
+    "BaseForm": "go",
+    "PastPrinciple": "went",
+    "Preterit": "gone"
+  },
+  {
+    "BaseForm": "grind",
+    "PastPrinciple": "ground",
+    "Preterit": "ground"
+  },
+  {
+    "BaseForm": "grow",
+    "PastPrinciple": "grew",
+    "Preterit": "grown"
+  },
+  {
+    "BaseForm": "hang",
+    "PastPrinciple": "hung",
+    "Preterit": "hung"
+  },
+  {
+    "BaseForm": "have",
+    "PastPrinciple": "had",
+    "Preterit": "had"
+  },
+  {
+    "BaseForm": "hear",
+    "PastPrinciple": "heard",
+    "Preterit": "heard"
+  },
+  {
+    "BaseForm": "hide",
+    "PastPrinciple": "hid",
+    "Preterit": "hidden"
+  },
+  {
+    "BaseForm": "hit",
+    "PastPrinciple": "hit",
+    "Preterit": "hit"
+  },
+  {
+    "BaseForm": "hold",
+    "PastPrinciple": "held",
+    "Preterit": "held"
+  },
+  {
+    "BaseForm": "hurt",
+    "PastPrinciple": "hurt",
+    "Preterit": "hurt"
+  },
+  {
+    "BaseForm": "keep",
+    "PastPrinciple": "kept",
+    "Preterit": "kept"
+  },
+  {
+    "BaseForm": "kneel",
+    "PastPrinciple": "knelt",
+    "Preterit": "knelt"
+  },
+  {
+    "BaseForm": "know",
+    "PastPrinciple": "knew",
+    "Preterit": "known"
+  },
+  {
+    "BaseForm": "lay",
+    "PastPrinciple": "laid",
+    "Preterit": "laid"
+  },
+  {
+    "BaseForm": "lead",
+    "PastPrinciple": "led",
+    "Preterit": "led"
+  },
+  {
+    "BaseForm": "lean",
+    "PastPrinciple": "leant",
+    "Preterit": "leant"
+  },
+  {
+    "BaseForm": "leap",
+    "PastPrinciple": "leapt",
+    "Preterit": "leapt"
+  },
+  {
+    "BaseForm": "learn",
+    "PastPrinciple": "learnt",
+    "Preterit": "learnt"
+  },
+  {
+    "BaseForm": "leave",
+    "PastPrinciple": "left",
+    "Preterit": "left"
+  },
+  {
+    "BaseForm": "lend",
+    "PastPrinciple": "lent",
+    "Preterit": "lent"
+  },
+  {
+    "BaseForm": "let",
+    "PastPrinciple": "let",
+    "Preterit": "let"
+  },
+  {
+    "BaseForm": "lie",
+    "PastPrinciple": "lay",
+    "Preterit": "lain"
+  },
+  {
+    "BaseForm": "light",
+    "PastPrinciple": "lit",
+    "Preterit": "lit"
+  },
+  {
+    "BaseForm": "lose",
+    "PastPrinciple": "lost",
+    "Preterit": "lost"
+  },
+  {
+    "BaseForm": "make",
+    "PastPrinciple": "made",
+    "Preterit": "made"
+  },
+  {
+    "BaseForm": "mean",
+    "PastPrinciple": "meant",
+    "Preterit": "meant"
+  },
+  {
+    "BaseForm": "meet",
+    "PastPrinciple": "met",
+    "Preterit": "met"
+  },
+  {
+    "BaseForm": "mow",
+    "PastPrinciple": "mowed",
+    "Preterit": "mown"
+  },
+  {
+    "BaseForm": "overcome",
+    "PastPrinciple": "overcame",
+    "Preterit": "overcome"
+  },
+  {
+    "BaseForm": "pay",
+    "PastPrinciple": "paid",
+    "Preterit": "paid"
+  },
+  {
+    "BaseForm": "put",
+    "PastPrinciple": "put",
+    "Preterit": "put"
+  },
+  {
+    "BaseForm": "quit",
+    "PastPrinciple": "quit",
+    "Preterit": "quit"
+  },
+  {
+    "BaseForm": "read",
+    "PastPrinciple": "read",
+    "Preterit": "read"
+  },
+  {
+    "BaseForm": "rid",
+    "PastPrinciple": "rid",
+    "Preterit": "rid"
+  },
+  {
+    "BaseForm": "ride",
+    "PastPrinciple": "rode",
+    "Preterit": "ridden"
+  },
+  {
+    "BaseForm": "ring",
+    "PastPrinciple": "rang",
+    "Preterit": "rung"
+  },
+  {
+    "BaseForm": "rise",
+    "PastPrinciple": "rose",
+    "Preterit": "risen"
+  },
+  {
+    "BaseForm": "run",
+    "PastPrinciple": "ran",
+    "Preterit": "run"
+  },
+  {
+    "BaseForm": "saw",
+    "PastPrinciple": "sawed",
+    "Preterit": "sawn"
+  },
+  {
+    "BaseForm": "say",
+    "PastPrinciple": "said",
+    "Preterit": "said"
+  },
+  {
+    "BaseForm": "see",
+    "PastPrinciple": "saw",
+    "Preterit": "seen"
+  },
+  {
+    "BaseForm": "seek",
+    "PastPrinciple": "sought",
+    "Preterit": "sought"
+  },
+  {
+    "BaseForm": "sell",
+    "PastPrinciple": "sold",
+    "Preterit": "sold"
+  },
+  {
+    "BaseForm": "send",
+    "PastPrinciple": "sent",
+    "Preterit": "sent"
+  },
+  {
+    "BaseForm": "set",
+    "PastPrinciple": "set",
+    "Preterit": "set"
+  },
+  {
+    "BaseForm": "sew",
+    "PastPrinciple": "sewed",
+    "Preterit": "sewn"
+  },
+  {
+    "BaseForm": "shake",
+    "PastPrinciple": "shook",
+    "Preterit": "shaken"
+  },
+  {
+    "BaseForm": "shear",
+    "PastPrinciple": "sheared",
+    "Preterit": "shorn"
+  },
+  {
+    "BaseForm": "shed",
+    "PastPrinciple": "shed",
+    "Preterit": "shed"
+  },
+  {
+    "BaseForm": "shine",
+    "PastPrinciple": "shone",
+    "Preterit": "shone"
+  },
+  {
+    "BaseForm": "shoe",
+    "PastPrinciple": "shod",
+    "Preterit": "shod"
+  },
+  {
+    "BaseForm": "shoot",
+    "PastPrinciple": "shot",
+    "Preterit": "shot"
+  },
+  {
+    "BaseForm": "show",
+    "PastPrinciple": "showed",
+    "Preterit": "shown"
+  },
+  {
+    "BaseForm": "shrink",
+    "PastPrinciple": "shrank",
+    "Preterit": "shrunk"
+  },
+  {
+    "BaseForm": "shut",
+    "PastPrinciple": "shut",
+    "Preterit": "shut"
+  },
+  {
+    "BaseForm": "sing",
+    "PastPrinciple": "sang",
+    "Preterit": "sung"
+  },
+  {
+    "BaseForm": "sink",
+    "PastPrinciple": "sank",
+    "Preterit": "sunk"
+  },
+  {
+    "BaseForm": "sit",
+    "PastPrinciple": "sat",
+    "Preterit": "sat"
+  },
+  {
+    "BaseForm": "sleep",
+    "PastPrinciple": "slept",
+    "Preterit": "slept"
+  },
+  {
+    "BaseForm": "slide",
+    "PastPrinciple": "slid",
+    "Preterit": "slid"
+  },
+  {
+    "BaseForm": "sling",
+    "PastPrinciple": "slung",
+    "Preterit": "slung"
+  },
+  {
+    "BaseForm": "slink",
+    "PastPrinciple": "slunk",
+    "Preterit": "slunk"
+  },
+  {
+    "BaseForm": "slit",
+    "PastPrinciple": "slit",
+    "Preterit": "slit"
+  },
+  {
+    "BaseForm": "smell",
+    "PastPrinciple": "smelt",
+    "Preterit": "smelt"
+  },
+  {
+    "BaseForm": "sow",
+    "PastPrinciple": "sowed",
+    "Preterit": "sown"
+  },
+  {
+    "BaseForm": "speak",
+    "PastPrinciple": "spoke",
+    "Preterit": "spoken"
+  },
+  {
+    "BaseForm": "speed",
+    "PastPrinciple": "sped",
+    "Preterit": "sped"
+  },
+  {
+    "BaseForm": "spell",
+    "PastPrinciple": "spelt",
+    "Preterit": "spelt"
+  },
+  {
+    "BaseForm": "spend",
+    "PastPrinciple": "spent",
+    "Preterit": "spent"
+  },
+  {
+    "BaseForm": "spill",
+    "PastPrinciple": "spilt",
+    "Preterit": "spilt"
+  },
+  {
+    "BaseForm": "spit",
+    "PastPrinciple": "spat",
+    "Preterit": "spat"
+  },
+  {
+    "BaseForm": "split",
+    "PastPrinciple": "split",
+    "Preterit": "split"
+  },
+  {
+    "BaseForm": "spoil",
+    "PastPrinciple": "spoilt",
+    "Preterit": "spoilt"
+  },
+  {
+    "BaseForm": "spread",
+    "PastPrinciple": "spread",
+    "Preterit": "spread"
+  },
+  {
+    "BaseForm": "spring",
+    "PastPrinciple": "sprang",
+    "Preterit": "sprung"
+  },
+  {
+    "BaseForm": "stand",
+    "PastPrinciple": "stood",
+    "Preterit": "stood"
+  },
+  {
+    "BaseForm": "steal",
+    "PastPrinciple": "stole",
+    "Preterit": "stolen"
+  },
+  {
+    "BaseForm": "stick",
+    "PastPrinciple": "stuck",
+    "Preterit": "stuck"
+  },
+  {
+    "BaseForm": "sting",
+    "PastPrinciple": "stung",
+    "Preterit": "stung"
+  },
+  {
+    "BaseForm": "stink",
+    "PastPrinciple": "stank",
+    "Preterit": "stunk"
+  },
+  {
+    "BaseForm": "stride",
+    "PastPrinciple": "strode",
+    "Preterit": "stridden"
+  },
+  {
+    "BaseForm": "strike",
+    "PastPrinciple": "struck",
+    "Preterit": "struck"
+  },
+  {
+    "BaseForm": "string",
+    "PastPrinciple": "strung",
+    "Preterit": "strung"
+  },
+  {
+    "BaseForm": "strive",
+    "PastPrinciple": "strove",
+    "Preterit": "striven"
+  },
+  {
+    "BaseForm": "swear",
+    "PastPrinciple": "swore",
+    "Preterit": "sworn"
+  },
+  {
+    "BaseForm": "sweep",
+    "PastPrinciple": "swept",
+    "Preterit": "swept"
+  },
+  {
+    "BaseForm": "swell",
+    "PastPrinciple": "swelled",
+    "Preterit": "swollen"
+  },
+  {
+    "BaseForm": "swim",
+    "PastPrinciple": "swam",
+    "Preterit": "swum"
+  },
+  {
+    "BaseForm": "swing",
+    "PastPrinciple": "swung",
+    "Preterit": "swung"
+  },
+  {
+    "BaseForm": "take",
+    "PastPrinciple": "took",
+    "Preterit": "taken"
+  },
+  {
+    "BaseForm": "teach",
+    "PastPrinciple": "taught",
+    "Preterit": "taught"
+  },
+  {
+    "BaseForm": "tear",
+    "PastPrinciple": "tore",
+    "Preterit": "torn"
+  },
+  {
+    "BaseForm": "tell",
+    "PastPrinciple": "told",
+    "Preterit": "told"
+  },
+  {
+    "BaseForm": "think",
+    "PastPrinciple": "thought",
+    "Preterit": "thought"
+  },
+  {
+    "BaseForm": "throw",
+    "PastPrinciple": "threw",
+    "Preterit": "thrown"
+  },
+  {
+    "BaseForm": "thrust",
+    "PastPrinciple": "thrust",
+    "Preterit": "thrust"
+  },
+  {
+    "BaseForm": "tread",
+    "PastPrinciple": "trod",
+    "Preterit": "trodden"
+  },
+  {
+    "BaseForm": "undergo",
+    "PastPrinciple": "underwent",
+    "Preterit": "undergone"
+  },
+  {
+    "BaseForm": "understand",
+    "PastPrinciple": "understood",
+    "Preterit": "understood"
+  },
+  {
+    "BaseForm": "upset",
+    "PastPrinciple": "upset",
+    "Preterit": "upset"
+  },
+  {
+    "BaseForm": "wake",
+    "PastPrinciple": "woke",
+    "Preterit": "woken"
+  },
+  {
+    "BaseForm": "wear",
+    "PastPrinciple": "wore",
+    "Preterit": "worn"
+  },
+  {
+    "BaseForm": "weave",
+    "PastPrinciple": "wove",
+    "Preterit": "woven"
+  },
+  {
+    "BaseForm": "weep",
+    "PastPrinciple": "wept",
+    "Preterit": "wept"
+  },
+  {
+    "BaseForm": "win",
+    "PastPrinciple": "won",
+    "Preterit": "won"
+  },
+  {
+    "BaseForm": "wind",
+    "PastPrinciple": "wound",
+    "Preterit": "wound"
+  },
+  {
+    "BaseForm": "withdraw",
+    "PastPrinciple": "withdrew",
+    "Preterit": "withdrawn"
+  },
+  {
+    "BaseForm": "wring",
+    "PastPrinciple": "wrung",
+    "Preterit": "wrung"
+  },
+  {
+    "BaseForm": "write",
+    "PastPrinciple": "wrote",
+    "Preterit": "written"
+  }
+]

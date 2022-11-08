@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <h1 class="display-4">Welcome</h1>
+    <p>Irregular verbs:</p>
+
+    <table class="text-left">
+        <thead>
+            <tr>
+                <th>Base</th>
+                <th>Past Principle</th>
+                <th>Preterit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var verb in Model.Verbs)
+            {
+                <tr>
+                    <td>@verb.BaseForm</td>
+                    <td>@verb.PastPrinciple</td>
+                    <td>@verb.Preterit</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
