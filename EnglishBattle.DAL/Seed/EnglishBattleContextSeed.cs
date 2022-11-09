@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Text.Json;
 
-namespace EnglishBattle.DAL
+namespace EnglishBattle.DAL.Seed
 {
     public class EnglishBattleContextSeed
     {
@@ -12,7 +12,7 @@ namespace EnglishBattle.DAL
             {
                 if (!context.IrregularVerbs.Any())
                 {
-                    string ressource = "EnglishBattle.DAL.Ressources.Irregular_verbs.json";
+                    string ressource = "EnglishBattle.DAL.Seed.Irregular_verbs.json";
 
                     IrregularVerb[] verbs = await DeserializeRessourceAsync(ressource, cancellationToken);
 
@@ -21,7 +21,7 @@ namespace EnglishBattle.DAL
                     context.Players.Add(anonymousPlayer);
                     context.IrregularVerbs.AddRange(verbs);
 
-                    await context.SaveChangesAsync(cancellationToken); 
+                    await context.SaveChangesAsync(cancellationToken);
                 }
             }
         }
