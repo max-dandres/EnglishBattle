@@ -8,18 +8,21 @@ namespace EnglishBattle.DAL
     {
         public static async Task SeedAsync(EnglishBattleContext context, CancellationToken cancellationToken = default)
         {
-            string ressource = "EnglishBattle.DAL.Ressources.Irregular_verbs.json";
-
-            IrregularVerb[] verbs = await DeserializeRessourceAsync(ressource, cancellationToken);
-
             using (context)
             {
-                var anonymousPlayer = new Player("Anonymous", "");
+                if (!context.IrregularVerbs.Any())
+                {
+                    string ressource = "EnglishBattle.DAL.Ressources.Irregular_verbs.json";
 
-                context.Players.Add(anonymousPlayer);
-                context.IrregularVerbs.AddRange(verbs);
+                    IrregularVerb[] verbs = await DeserializeRessourceAsync(ressource, cancellationToken);
 
-                await context.SaveChangesAsync(cancellationToken);
+                    var anonymousPlayer = new Player("Anonymous", "");
+
+                    context.Players.Add(anonymousPlayer);
+                    context.IrregularVerbs.AddRange(verbs);
+
+                    await context.SaveChangesAsync(cancellationToken); 
+                }
             }
         }
 

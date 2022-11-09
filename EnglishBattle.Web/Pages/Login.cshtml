@@ -1,4 +1,48 @@
 ﻿@page
 @model EnglishBattle.Web.Pages.Shared.LoginModel
-@{
-}
+@using EnglishBattle.Web.Resources
+@using Microsoft.AspNetCore.Mvc.ModelBinding
+
+<div class="card">
+    @*Title*@
+    <div class="card-header">
+        <h3>@Login.Title</h3>
+    </div>
+
+    <div class="card-body">
+        <form method="post">
+            <div class="row g-3">
+
+                @*UserName*@
+                <div class="col-md-12">
+                    <input asp-for="@Model.UserName" class="form-control" type="text" placeholder="@SharedResources.Username" />
+                    <span asp-validation-for="@Model.UserName" class="validation-error"></span>
+                </div>
+
+                @*Password*@
+                <div class="col-md-12">
+                    <input asp-for="@Model.Password" class="form-control" type="password" placeholder="@SharedResources.Password" />
+                    <span asp-validation-for="@Model.Password" class="validation-error"></span>
+                </div>
+
+                @*Submit Button*@
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">@Login.SubmitButton</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="card-footer">
+        @*Register Button*@
+        <span>@Login.RegisterQuestion <a asp-area="" asp-page="/Register">@Login.RegisterButton</a></span>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
