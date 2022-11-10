@@ -4,48 +4,68 @@
 @{
 }
 
-<div class="card">
-    @*Title*@
-    <div class="card-header">
-        <h3>@Register.Title</h3>
+<div class="form-wrapper">
+    <div class="card">
+        @*Title*@
+        <div class="card-header text-center">
+            <h3>@Register.Title</h3>
+        </div>
+
+        <div class="card-body">
+            <form method="post">
+                <div class="row justify-content-around mb-3">
+
+                    @*UserName*@
+                    <div class="col-md-6">
+                        <input asp-for="@Model.UserName"
+                               type="text"
+                               class="form-control form-default"
+                               placeholder="@SharedResources.Username" />
+                        <span asp-validation-for="@Model.UserName" class="validation-error"></span>
+                    </div>
+
+                </div>
+                <div class="row justify-content-around mb-3">
+
+                    @*Password*@
+                    <div class="col-md-6">
+                        <input asp-for="@Model.Password"
+                               type="password"
+                               class="form-control form-default"
+                               placeholder="@SharedResources.Password" />
+                        <span asp-validation-for="@Model.Password" class="validation-error"></span>
+                    </div>
+
+                </div>
+                <div class="row justify-content-around mb-3">
+
+                    @*Confirm Password*@
+                    <div class="col-md-6">
+                        <input asp-for="@Model.ConfirmPassword"
+                               type="password"
+                               class="form-control form-default"
+                               placeholder="@Register.ConfirmPassword" />
+                        <span asp-validation-for="@Model.ConfirmPassword" class="validation-error"></span>
+                    </div>
+
+                </div>
+                <div class="row text-center mb-3">
+
+                    @*Submit Button*@
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">@Register.Button</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="card-footer text-center">
+            @*Login Button*@
+            <span>@Register.LoginQuestion <a asp-area="" asp-page="/Login">@Register.LoginButton</a></span>
+        </div>
+
     </div>
-
-    <div class="card-body">
-        <form method="post">
-            <div class="row g-3">
-
-                @*UserName*@
-                <div class="col-md-12">
-                    <input asp-for="@Model.UserName" class="form-control" type="text" placeholder="@SharedResources.Username" />
-                    <span asp-validation-for="@Model.UserName" class="validation-error"></span>
-                </div>
-
-                @*Password*@
-                <div class="col-md-12">
-                    <input asp-for="@Model.Password" class="form-control" type="password" placeholder="@SharedResources.Password" />
-                    <span asp-validation-for="@Model.Password" class="validation-error"></span>
-                </div>
-
-                @*Confirm Password*@
-                <div class="col-md-12">
-                    <input asp-for="@Model.ConfirmPassword" class="form-control" type="password" placeholder="@Register.ConfirmPassword" />
-                    <span asp-validation-for="@Model.ConfirmPassword" class="validation-error"></span>
-                </div>
-
-                @*Submit Button*@
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">@Register.Button</button>
-                </div>
-
-            </div>
-        </form>
-    </div>
-
-    <div class="card-footer">
-        @*Login Button*@
-        <span>@Register.LoginQuestion <a asp-area="" asp-page="/Login">@Register.LoginButton</a></span>
-    </div>
-
 </div>
 
 @section Scripts {

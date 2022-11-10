@@ -21,3 +21,13 @@ body {
     color: red;
     font-size: smaller;
 }
+
+.form-wrapper {
+    float: none;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.form-default {
+    width: 300px;
+}

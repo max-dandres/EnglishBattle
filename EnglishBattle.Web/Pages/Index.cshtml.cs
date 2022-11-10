@@ -10,10 +10,10 @@ namespace EnglishBattle.Web.Pages
 {
     public class IndexModel : PageModel
     {
+        public List<IEnumerable<IrregularVerbDto>> Verbs { get; private set; } = new();
+
         private readonly GameService _gameService;
         private readonly ILogger<IndexModel> _logger;
-
-        public IEnumerable<IrregularVerbDto> Verbs { get; set; } = null!;
 
         public IndexModel(GameService gameService, ILogger<IndexModel> logger)
         {
@@ -23,7 +23,31 @@ namespace EnglishBattle.Web.Pages
 
         public async void OnGet()
         {
-            Verbs = await _gameService.GetAllVerbs();
+            var verbs = await _gameService.GetAllVerbs();
+
+            List<IrregularVerbDto> easyVerbs = new();
+            List<IrregularVerbDto> mediumVerbs = new();
+            List<IrregularVerbDto> hardVerbs = new();
+
+            foreach (var verb in verbs)
+            {
+                if (verb.BaseForm == verb.PastPrinciple && verb.PastPrinciple == verb.Preterit)
+                {
+                    easyVerbs.Add(verb);
+                }
+                else if (verb.BaseForm == verb.PastPrinciple || verb.PastPrinciple == verb.Preterit)
+                {
+                    mediumVerbs.Add(verb);
+                }
+                else
+                {
+                    hardVerbs.Add(verb);
+                }
+            }
+
+            Verbs.Add(easyVerbs);
+            Verbs.Add(mediumVerbs);
+            Verbs.Add(hardVerbs);
         }
 
         public IActionResult OnPostSetCulture(string culture, string returnUrl)

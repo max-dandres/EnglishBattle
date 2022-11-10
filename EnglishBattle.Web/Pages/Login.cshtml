@@ -10,48 +10,74 @@
     </div>
 }
 
-<div class="card">
-    @*Title*@
-    <div class="card-header">
-        <h3>@Login.Title</h3>
+<div class="form-wrapper">
+    <div class="card">
+        @*Title*@
+        <div class="card-header text-center">
+            <h3>@Login.Title</h3>
+        </div>
+
+        <div class="card-body">
+            <form method="post">
+                <div class="row justify-content-around mb-3">
+
+                    @*UserName*@
+                    <div class="col-md-6">
+                        <input id="username"
+                               asp-for="@Model.UserName"
+                               type="text"
+                               class="form-control form-default"
+                               placeholder="@SharedResources.Username" />
+                        <span asp-validation-for="@Model.UserName" class="validation-error"></span>
+                    </div>
+                </div>
+                <div class="row justify-content-around mb-3">
+
+                    @*Password*@
+                    <div class="col-md-6">
+                        <input id="password"
+                               asp-for="@Model.Password"
+                               type="password"
+                               class="form-control form-default"
+                               placeholder="@SharedResources.Password" />
+                        <span asp-validation-for="@Model.Password" class="validation-error"></span>
+                    </div>
+
+                </div>
+                <div class="row justify-content-around mb-3">
+
+                    @*Anonymous*@
+                    <div class="col-md-6">
+                        <input id="isAnonymous"
+                               asp-for="@Model.IsAnonymous"
+                               type="checkbox"
+                               class="form-check-input"
+                               placeholder="@SharedResources.Password" />
+                        <label asp-for="@Model.IsAnonymous" class="form-check-label"></label>
+                    </div>
+
+                </div>
+                <div class="row text-center">
+
+                    @*Submit Button*@
+                    <div class="col-md-12">
+                        <button id="loginButton" type="submit" class="btn btn-primary">
+                            @Login.SubmitButton
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="card-footer text-center">
+            @*Register Button*@
+            <span>
+                @Login.RegisterQuestion <a asp-area="" asp-page="/Register">@Login.RegisterButton</a>
+            </span>
+        </div>
+
     </div>
-
-    <div class="card-body">
-        <form method="post">
-            <div class="row g-3">
-
-                @*UserName*@
-                <div class="col-md-12">
-                    <input asp-for="@Model.UserName" id="username" class="form-control" type="text" placeholder="@SharedResources.Username" />
-                    <span asp-validation-for="@Model.UserName" class="validation-error"></span>
-                </div>
-
-                @*Password*@
-                <div class="col-md-12">
-                    <input asp-for="@Model.Password" id="password" class="form-control" type="password" placeholder="@SharedResources.Password" />
-                    <span asp-validation-for="@Model.Password" class="validation-error"></span>
-                </div>
-
-                @*Anonymous*@
-                <div class="col-md-12">
-                    <input asp-for="@Model.IsAnonymous" id="isAnonymous" class="form-check-input" type="checkbox" placeholder="@SharedResources.Password" />
-                    <label asp-for="@Model.IsAnonymous" class="form-check-label"></label>
-                </div>
-
-                @*Submit Button*@
-                <div class="col-md-12">
-                    <button id="loginButton" type="submit" class="btn btn-primary">@Login.SubmitButton</button>
-                </div>
-
-            </div>
-        </form>
-    </div>
-
-    <div class="card-footer">
-        @*Register Button*@
-        <span>@Login.RegisterQuestion <a asp-area="" asp-page="/Register">@Login.RegisterButton</a></span>
-    </div>
-
 </div>
 
 @section Scripts {
@@ -62,14 +88,12 @@
 
     <script type="text/javascript">
 
-        console.log("zbeub")
-
         $(document).ready(function () {
-            console.log("registered");
+
             $("#isAnonymous").change(function () {
-                console.log(this.checked);
                 $("#username").prop("disabled", this.checked);
                 $("#password").prop("disabled", this.checked);
+
                 $("form").attr("formnovalidate", this.checked ? "formnovalidate" : null);
             });
         });
