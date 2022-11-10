@@ -1,3 +1,5 @@
+using EnglishBattle.BLL.DTOs;
+using EnglishBattle.BLL.Services;
 using EnglishBattle.Web.Resources;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -22,9 +24,11 @@ namespace EnglishBattle.Web.Pages
         [Compare(nameof(Password), ErrorMessageResourceName = nameof(Register.ConfirmPasswordMismatch), ErrorMessageResourceType = typeof(Register))]
         public string ConfirmPassword { get; set; } = "";
 
-        public RegisterModel()
-        {
+        private readonly PlayerService _playerService;
 
+        public RegisterModel(PlayerService playerService)
+        {
+            _playerService = playerService;
         }
 
         public void OnGet()
@@ -32,12 +36,24 @@ namespace EnglishBattle.Web.Pages
 
         }
 
-        public void OnPost()
+        public async Task OnPost()
         {
             if (!ModelState.IsValid)
             {
                 return;
             }
+
+            if (await _playerService.ExistAsync(UserName))
+            {
+                // TODO: return custom message
+                return;
+            }
+
+            var playerDto = new PlayerDto(UserName, Password);
+
+            await _playerService.CreateAsync(playerDto);
+
+            Redirect("/Login");
         }
     }
 }

@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Ressources\irregular_verbs.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Ressources\Irregular_verbs.json" />
+    <EmbeddedResource Include="Seed\Irregular_verbs.json" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,31 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using EnglishBattle.Web.Resources;
+
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    string? username = User.FindFirstValue(ClaimTypes.Name) ?? "stranger";
+
+    // Defining returnUrl for culture
+    string? page = Context.Request.RouteValues["page"]?.ToString();
+    string returnUrl = page ?? "/Index";
+
+    bool isAuthenticated = false;
+
+    if (User.Identity is not null && User.Identity.IsAuthenticated)
+    {
+        isAuthenticated = true;
+    }
+
+    IRequestCultureFeature? requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    List<SelectListItem>? cultureItems = LocOptions.Value.SupportedUICultures?
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .ToList();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +34,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EnglishBattle.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css" />
 </head>
 <body>
     <header>
@@ -22,16 +50,47 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
+                        @if (User.IsInRole("User"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Ladder">Ladder</a>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Ladder">Ladder</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Register">@Register.Title</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Register">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">@Login.Title</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav flex-grow-3">
+                        @if (isAuthenticated)
+                        {
+                            <li class="nav-item me-3">
+                                <span>@SharedResources.Welcome, @username.</span>
+                            </li>
+                            <li class="nav-item me-3">
+                                <a asp-area="" asp-page="/Index" asp-page-handler="Logout">@SharedResources.Logout</a>
+                            </li>
+                        }
+                        @if (requestCulture is not null)
+                        {
+                            <li class="nav-item me-3">
+                                <form asp-page="Index"
+                                  asp-page-handler="SetCulture"
+                                  asp-route-returnUrl="@returnUrl"
+                                  method="post"
+                                  class="form-horizontal">
+                                    <select name="culture" onchange="this.form.submit();"
+                                        asp-for="@requestCulture.RequestCulture.UICulture.Name"
+                                        asp-items="cultureItems">
+                                    </select>
+                                    <span class="@SharedResources.LanguageIcon"></span>
+                                </form>
+                            </li>
+                        }
+                    </ul>
+
                 </div>
             </div>
         </nav>

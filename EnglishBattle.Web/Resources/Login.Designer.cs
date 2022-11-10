@@ -61,6 +61,33 @@ namespace EnglishBattle.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Username or password is incorrect.
+        /// </summary>
+        public static string InvalidUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("InvalidUsernameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login as anonymous.
+        /// </summary>
+        public static string IsAnonymous {
+            get {
+                return ResourceManager.GetString("IsAnonymous", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have been logged out successfully!.
+        /// </summary>
+        public static string LogoutMessage {
+            get {
+                return ResourceManager.GetString("LogoutMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string RegisterButton {

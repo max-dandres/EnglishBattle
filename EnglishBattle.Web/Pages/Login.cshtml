@@ -3,6 +3,13 @@
 @using EnglishBattle.Web.Resources
 @using Microsoft.AspNetCore.Mvc.ModelBinding
 
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    <div class="alert alert-danger" role="alert">
+        @Model.Error
+    </div>
+}
+
 <div class="card">
     @*Title*@
     <div class="card-header">
@@ -15,19 +22,25 @@
 
                 @*UserName*@
                 <div class="col-md-12">
-                    <input asp-for="@Model.UserName" class="form-control" type="text" placeholder="@SharedResources.Username" />
+                    <input asp-for="@Model.UserName" id="username" class="form-control" type="text" placeholder="@SharedResources.Username" />
                     <span asp-validation-for="@Model.UserName" class="validation-error"></span>
                 </div>
 
                 @*Password*@
                 <div class="col-md-12">
-                    <input asp-for="@Model.Password" class="form-control" type="password" placeholder="@SharedResources.Password" />
+                    <input asp-for="@Model.Password" id="password" class="form-control" type="password" placeholder="@SharedResources.Password" />
                     <span asp-validation-for="@Model.Password" class="validation-error"></span>
+                </div>
+
+                @*Anonymous*@
+                <div class="col-md-12">
+                    <input asp-for="@Model.IsAnonymous" id="isAnonymous" class="form-check-input" type="checkbox" placeholder="@SharedResources.Password" />
+                    <label asp-for="@Model.IsAnonymous" class="form-check-label"></label>
                 </div>
 
                 @*Submit Button*@
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">@Login.SubmitButton</button>
+                    <button id="loginButton" type="submit" class="btn btn-primary">@Login.SubmitButton</button>
                 </div>
 
             </div>
@@ -42,7 +55,25 @@
 </div>
 
 @section Scripts {
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script type="text/javascript">
+
+        console.log("zbeub")
+
+        $(document).ready(function () {
+            console.log("registered");
+            $("#isAnonymous").change(function () {
+                console.log(this.checked);
+                $("#username").prop("disabled", this.checked);
+                $("#password").prop("disabled", this.checked);
+                $("form").attr("formnovalidate", this.checked ? "formnovalidate" : null);
+            });
+        });
+
+    </script>
+
     }

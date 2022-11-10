@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EnglishBattle.Web.Pages
 {
-    [Authorize(Roles = "User")]
-    public class LadderModel : PageModel
+    [Authorize(Roles = "User,Anonymous")]
+    public class EnglishBattleModel : PageModel
     {
         public void OnGet()
         {
