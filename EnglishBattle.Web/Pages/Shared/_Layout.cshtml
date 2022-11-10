@@ -59,6 +59,37 @@
                                 </li>
                             }
                         }
+
+                    </ul>
+                    <ul class="navbar-nav flex-grow">
+                        @if (isAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <strong>
+                                        <span>@SharedResources.Welcome, @username.</span>
+                                    </strong>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li>
+                                        <a asp-area="" asp-page="/Index" asp-page-handler="Logout" class="dropdown-item">@SharedResources.Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            @*
+                        <li class="nav-item me-3">
+                        <div class="pt-2">
+                        <span>@SharedResources.Welcome, @username.</span>
+                        </div>
+                        </li>
+                        <li class="nav-item me-3">
+                        <div class="pt-2">
+                        <a asp-area="" asp-page="/Index" asp-page-handler="Logout">@SharedResources.Logout</a>
+                        </div>
+                        </li>
+                        *@
+                        }
                         else
                         {
                             <li class="nav-item">
@@ -68,32 +99,22 @@
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Login">@Login.Title</a>
                             </li>
                         }
-
-                    </ul>
-                    <ul class="navbar-nav flex-grow-3">
-                        @if (isAuthenticated)
-                        {
-                            <li class="nav-item me-3">
-                                <span>@SharedResources.Welcome, @username.</span>
-                            </li>
-                            <li class="nav-item me-3">
-                                <a asp-area="" asp-page="/Index" asp-page-handler="Logout">@SharedResources.Logout</a>
-                            </li>
-                        }
                         @if (requestCulture is not null)
                         {
-                            <li class="nav-item me-3">
-                                <form asp-page="Index"
-                                  asp-page-handler="SetCulture"
-                                  asp-route-returnUrl="@returnUrl"
-                                  method="post"
-                                  class="form-horizontal">
-                                    <select name="culture" onchange="this.form.submit();"
-                                        asp-for="@requestCulture.RequestCulture.UICulture.Name"
-                                        asp-items="cultureItems">
-                                    </select>
-                                    <span class="@SharedResources.LanguageIcon"></span>
-                                </form>
+                            <li class="nav-item">
+                                <div class="pt-2">
+                                    <form asp-page="Index"
+                                      asp-page-handler="SetCulture"
+                                      asp-route-returnUrl="@returnUrl"
+                                      method="post"
+                                      class="form-horizontal">
+                                        <select name="culture" onchange="this.form.submit();"
+                                            asp-for="@requestCulture.RequestCulture.UICulture.Name"
+                                            asp-items="cultureItems">
+                                        </select>
+                                        <span class="@SharedResources.LanguageIcon"></span>
+                                    </form>
+                                </div>
                             </li>
                         }
                     </ul>
