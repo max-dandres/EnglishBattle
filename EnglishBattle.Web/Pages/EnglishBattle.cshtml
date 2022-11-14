@@ -1,4 +1,104 @@
 ﻿@page
 @model EnglishBattle.Web.Pages.EnglishBattleModel
+
 @{
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="card border-secondary">
+
+            <div id="timer" class="card-header">
+
+                @{
+                    await Html.RenderPartialAsync("_TimerPartial");
+                }
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col">
+                        <h3>SCORE: <span id="game-score">0</span></h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col py-0 pb-2">
+
+                        <div id="next-words" class="overflow-hidden pb-md-2 pb-sm-1">
+                            <div class="" style="opacity: 0.2;">next</div>
+                            <div class="" style="opacity: 0.3;">next</div>
+                            <div class="" style="opacity: 0.4;">next</div>
+                        </div>
+
+                        <div class="input-icons">
+                            <i id="success_icon" class="fas fa-check icon success"></i>
+                            <i id="failure_icon" class="fas fa-times icon error"></i>
+                            <input ID="txt_word" runat="server" placeholder="Base verbale" class="game-input" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col pb-2">
+                        <input ID="txt_preterit" runat="server" placeholder="Prétérit" class="game-input" autocomplete="off" />
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col pb-2">
+                        <input ID="txt_pp" runat="server" placeholder="Participe passé" class="game-input" autocomplete="off" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card-footer">
+
+                <div class="row">
+                    <div class="col">
+
+                            <button id="btn_play" class="btn btn-success" type="button">Chargement</button>
+
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-4">
+
+                            <div class="form-check form-switch" style="width: 100px;">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Infinite</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/timer.js"></script>
+    <script src="~/js/englishbattle.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var _timer = new Timer(60);
+
+            _timer.start(function () {
+                console.log("Timeout");
+            });
+
+        });
+
+    </script>
+
 }
