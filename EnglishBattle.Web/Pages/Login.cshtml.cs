@@ -21,9 +21,9 @@ namespace EnglishBattle.Web.Pages.Shared
         [Display(Name = nameof(SharedResources.Password), ResourceType = typeof(SharedResources))]
         [Required(ErrorMessageResourceName = nameof(SharedResources.PasswordRequired), ErrorMessageResourceType = typeof(SharedResources))]
         public string Password { get; set; } = "";
-        [BindProperty]
-        [Display(Name = nameof(Login.IsAnonymous), ResourceType = typeof(Login))]
-        public bool IsAnonymous { get; set; }
+        //[BindProperty]
+        //[Display(Name = nameof(Login.IsAnonymous), ResourceType = typeof(Login))]
+        //public bool IsAnonymous { get; set; }
         public string Error { get; set; } = "";
 
         private readonly PlayerService _playerService;
@@ -40,24 +40,25 @@ namespace EnglishBattle.Web.Pages.Shared
 
         public async Task<IActionResult> OnPost(string? returnUrl = null)
         {
-            if (!IsAnonymous && !ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            if (!IsAnonymous && !await _playerService.IsValidPassword(UserName, Password))
+            var player = await _playerService.GetPlayerAsync(UserName, Password);
+
+            if (player is null)
             {
                 Error = Login.InvalidUsernameOrPassword;
 
                 return Page();
             }
 
-            string role = IsAnonymous ? "Anonymous" : "User";
-
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, IsAnonymous ? "Anonymous" : UserName),
-                new Claim(ClaimTypes.Role, role),
+                new Claim(ClaimTypes.Name, player.Username),
+                new Claim("UserID", player.Id.ToString()),
+                new Claim(ClaimTypes.Role, "User"),
             };
 
             var claimsIdentity = new ClaimsIdentity(

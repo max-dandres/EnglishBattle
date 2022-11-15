@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace EnglishBattle.BLL.DTOs
 {
-    public record PlayerDto(string Username, string Password);
+    public record PlayerDto(int Id, string Username, string Password);
 }

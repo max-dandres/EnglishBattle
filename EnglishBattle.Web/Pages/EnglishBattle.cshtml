@@ -1,13 +1,21 @@
 ﻿@page
 @model EnglishBattle.Web.Pages.EnglishBattleModel
 
+@using System.Text.Json
+@using EnglishBattle.Web.Resources
+
+
 @{
 }
+
+<input type="hidden" id="userId" asp-for="@Model.UserID" />
+<input type="hidden" id="gameId" asp-for="@Model.GameID" />
 
 <div class="row justify-content-center">
     <div class="col-md-4 col-sm-12 text-center">
         <div class="card border-secondary">
 
+            @*Timer*@
             <div id="timer" class="card-header">
 
                 @{
@@ -17,17 +25,17 @@
             </div>
 
             <div class="card-body">
-
+                @*Score*@
                 <div class="row">
                     <div class="col">
                         <h3>SCORE: <span id="game-score">0</span></h3>
                     </div>
                 </div>
-
+                @*BaseForm*@
                 <div class="row">
                     <div class="col py-0 pb-2">
 
-                        <div id="next-words" class="overflow-hidden pb-md-2 pb-sm-1">
+                        <div id="hints" class="overflow-hidden pb-md-2 pb-sm-1">
                             <div class="" style="opacity: 0.2;">next</div>
                             <div class="" style="opacity: 0.3;">next</div>
                             <div class="" style="opacity: 0.4;">next</div>
@@ -36,22 +44,24 @@
                         <div class="input-icons">
                             <i id="success_icon" class="fas fa-check icon success"></i>
                             <i id="failure_icon" class="fas fa-times icon error"></i>
-                            <input ID="txt_word" runat="server" placeholder="Base verbale" class="game-input" />
+                            <input ID="baseForm" runat="server" placeholder="@Game.BaseForm" class="game-input" />
                         </div>
 
                     </div>
                 </div>
+                @*Preterit*@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="txt_preterit" runat="server" placeholder="Prétérit" class="game-input" autocomplete="off" />
+                        <input ID="preterit" runat="server" placeholder="@Game.Preterit" class="game-input" autocomplete="off" />
                     </div>
 
                 </div>
+                @*PastPrinciple*@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="txt_pp" runat="server" placeholder="Participe passé" class="game-input" autocomplete="off" />
+                        <input ID="pastPrinciple" runat="server" placeholder="@Game.PastPrinciple" class="game-input" autocomplete="off" />
                     </div>
 
                 </div>
@@ -62,23 +72,22 @@
                 <div class="row">
                     <div class="col">
 
-                            <button id="btn_play" class="btn btn-success" type="button">Chargement</button>
+                        <button id="playButton" class="btn btn-success" type="button">Chargement</button>
 
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-4">
 
-                            <div class="form-check form-switch" style="width: 100px;">
-                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Infinite</label>
-                            </div>
-
+                        <div class="form-check form-switch" style="width: 100px;">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Infinite</label>
                         </div>
+
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 </div>
@@ -89,12 +98,63 @@
 
     <script type="text/javascript">
 
+        var _irregularVerbs = @Json.Serialize(Model.IrregularVerbs);
+
         $(document).ready(function () {
 
             var _timer = new Timer(60);
 
-            _timer.start(function () {
-                console.log("Timeout");
+            var _gameId = parseInt($("#gameId").val());
+            var _userId = parseInt($("#userId").val());
+
+            var baseFormInput = $("#baseForm");
+            var preteritInput = $("#preterit");
+            var pastPrincipleInput = $("#pastPrinciple");
+            var hintList = $("#hints");
+
+            var _game = new EnglishBattle(_gameId, _irregularVerbs);
+
+            function addHint(hint) {
+                var hintToPrepend = `<div class="" style="opacity: 0.3;">${hint}</div>`;
+                $(hintToPrepend).hide().prependTo(hintList).fadeIn();
+            }
+
+            $("#playButton").click(function () {
+                console.log("Play Button clicked")
+
+                $(this).attr("disabled", true);
+
+                _game.Start(_timer.getTimeStamp());
+                _timer.start(function () {
+                    console.log("stopped");
+                });
+
+                var firstVerb = _game.GetNextVerb();
+                var hints = _game.GetHints();
+
+                baseFormInput.val(firstVerb);
+
+                for (const hint of hints) {
+                    addHint(hint);
+                }
+            });
+
+            $(document).keypress(function () {
+                var isValid = preteritInput.val() != "" && pastPrincipleInput != "";
+
+                _timer.addSeconds(-3);
+
+                if (event.key == "Enter" && isValid) {
+                    _game.PostAnswer(preteritInput.val(), pastPrincipleInput.val(), _timer.getTimeStamp());
+                }
+            });
+
+            $("#preterit, #pastPrinciple").focus(function () {
+                // Disable errors
+            });
+
+            $("#preterit, #pastPrinciple").keypress(function () {
+                // Disable errors
             });
 
         });

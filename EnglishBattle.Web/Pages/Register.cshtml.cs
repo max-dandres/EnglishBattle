@@ -49,7 +49,7 @@ namespace EnglishBattle.Web.Pages
                 return;
             }
 
-            var playerDto = new PlayerDto(UserName, Password);
+            var playerDto = new PlayerDto(0, UserName, Password);
 
             await _playerService.CreateAsync(playerDto);
 

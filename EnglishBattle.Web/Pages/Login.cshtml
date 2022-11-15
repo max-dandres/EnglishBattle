@@ -19,9 +19,9 @@
 
         <div class="card-body">
             <form method="post">
+                @*UserName*@
                 <div class="row justify-content-around mb-3">
 
-                    @*UserName*@
                     <div class="col-md-6">
                         <input id="username"
                                asp-for="@Model.UserName"
@@ -31,9 +31,9 @@
                         <span asp-validation-for="@Model.UserName" class="validation-error"></span>
                     </div>
                 </div>
+                @*Password*@
                 <div class="row justify-content-around mb-3">
 
-                    @*Password*@
                     <div class="col-md-6">
                         <input id="password"
                                asp-for="@Model.Password"
@@ -44,19 +44,19 @@
                     </div>
 
                 </div>
-                <div class="row justify-content-around mb-3">
+                @*Anonymous*@
+                @*<div class="row justify-content-around mb-3">
 
-                    @*Anonymous*@
-                    <div class="col-md-6">
-                        <input id="isAnonymous"
-                               asp-for="@Model.IsAnonymous"
-                               type="checkbox"
-                               class="form-check-input"
-                               placeholder="@SharedResources.Password" />
-                        <label asp-for="@Model.IsAnonymous" class="form-check-label"></label>
-                    </div>
-
+                <div class="col-md-6">
+                <input id="isAnonymous"
+                asp-for="@Model.IsAnonymous"
+                type="checkbox"
+                class="form-check-input"
+                placeholder="@SharedResources.Password" />
+                <label asp-for="@Model.IsAnonymous" class="form-check-label"></label>
                 </div>
+
+                </div>*@
                 <div class="row text-center">
 
                     @*Submit Button*@

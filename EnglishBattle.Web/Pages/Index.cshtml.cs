@@ -23,7 +23,7 @@ namespace EnglishBattle.Web.Pages
 
         public async void OnGet()
         {
-            var verbs = await _gameService.GetAllVerbs();
+            var verbs = await _gameService.GetAllVerbsAsync();
 
             List<IrregularVerbDto> easyVerbs = new();
             List<IrregularVerbDto> mediumVerbs = new();

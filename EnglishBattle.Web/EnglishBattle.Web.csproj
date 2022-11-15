@@ -17,10 +17,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EnglishBattle.BLL\EnglishBattle.BLL.csproj" />
-    <ProjectReference Include="..\EnglishBattle.DAL\EnglishBattle.DAL.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Game.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Game.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Login.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -39,6 +43,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Game.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Game.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Game.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Login.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>

@@ -25,16 +25,21 @@ namespace EnglishBattle.BLL.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<bool> IsValidPassword(string userName, string password)
+        public async Task<PlayerDto?> GetPlayerAsync(string userName, string password)
         {
             Player? player = await _context.Players.Where(x => x.UserName == userName).FirstOrDefaultAsync();
 
             if (player is null)
             {
-                return false;
+                return null;
             }
 
-            return player.Password == password;
+            if (player.Password != password)
+            {
+                return null;
+            }
+
+            return new PlayerDto(player.Id, player.UserName, string.Empty);
         }
 
         public async Task<bool> ExistAsync(string username)

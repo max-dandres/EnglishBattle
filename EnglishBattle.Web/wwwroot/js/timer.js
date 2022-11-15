@@ -2,11 +2,11 @@
 // https://jsfiddle.net/prafuitu/xRmGV/
 
 function Timer(seconds = 60) {
-
     _this = this;
     _this.timer;
     _this.duration = seconds;
     _this.tick = 16;
+    _this.timePenalty = 0;
 
     _this.endCallBack = null;
 
@@ -19,7 +19,6 @@ function Timer(seconds = 60) {
 
     _this.miliseconds = null;
 
-    // Creation de la base graphique du Timer
     for (var x = 0; x < 24; x++) {
         var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
@@ -33,10 +32,10 @@ function Timer(seconds = 60) {
     }
 }
 
-// Retourne une string au format DateTime 'YYYY-MM-DD HH:mm:ss'
+// Timestamp format: 'YYYY-MM-DD HH:mm:ss'
 Timer.prototype.getTimeStamp = function () {
     var today = new Date();
-    // Correctif pour le mois, car il va de 0 à 11
+
     var month = (today.getMonth() + 1) < 10 ? `0${today.getMonth() + 1}` : (today.getMonth() + 1);
     var date = `${today.getFullYear()}-${month}-${today.getDate()}`;
     var time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
@@ -44,7 +43,6 @@ Timer.prototype.getTimeStamp = function () {
     return (`${date} ${time}`);
 }
 
-// Fonction en rapport avec la couleur du cadran ?
 Timer.prototype.hue2rgb = function (t1, t2, t3) {
     if (t3 < 0) t3 += 1;
     if (t3 > 1) t3 -= 1;
@@ -56,7 +54,6 @@ Timer.prototype.hue2rgb = function (t1, t2, t3) {
     return t2;
 }
 
-// Fonction en rapport avec la couleur du cadran ?
 Timer.prototype.hsl2rgb = function (H, S, L) {
     var R, G, B;
     var t1, t2;
@@ -113,16 +110,13 @@ Timer.prototype.update = function (deg, sec) {
     $('#seconds_3').html(sec);
 }
 
-// UPDATE (interval)
 Timer.prototype.updateTimer = function () {
-
     var date = new Date();
 
     if (_this.miliseconds == null) _this.miliseconds = date.getTime();
 
     var diff = (date.getTime() - _this.miliseconds) % (1000 * _this.duration);
 
-    // Condition de fin du timer
     if (diff + (_this.tick * 2) >= _this.duration * 1000) {
         _this.stop();
         $('#progress_3').attr('d', "0");
@@ -139,14 +133,13 @@ Timer.prototype.updateTimer = function () {
     _this.update(degrees, seconds);
 }
 
-// La fonction start prend en parametre un callback qui sera appellé à la fin du timer
 Timer.prototype.start = function (endCallBack) {
     _this.endCallBack = endCallBack;
     _this.timer = setInterval(_this.updateTimer, _this.tick);
 }
 
 Timer.prototype.stop = function () {
-    clearInterval(this.timer);
+    clearInterval(_this.timer);
     _this.miliseconds = null;
 }
 
@@ -159,4 +152,16 @@ Timer.prototype.reset = function () {
     _this.stop();
     _this.miliseconds = null;
     _this.start();
+}
+
+Timer.prototype.addSeconds = function (seconds) {
+    if (_this.duration + seconds <= 0) {
+        _this.stop();
+        $('#progress_3').attr('d', "0");
+        $('#seconds_3').html("0");
+
+        _this.endCallBack(_this.getTimeStamp());
+    }
+
+    _this.duration += seconds;
 }

@@ -16,7 +16,7 @@ namespace EnglishBattle.DAL.Seed
 
                     IrregularVerb[] verbs = await DeserializeRessourceAsync(ressource, cancellationToken);
 
-                    var anonymousPlayer = new Player("Anonymous", "");
+                    var anonymousPlayer = new Player("Anonymous", "password");
 
                     context.Players.Add(anonymousPlayer);
                     context.IrregularVerbs.AddRange(verbs);
