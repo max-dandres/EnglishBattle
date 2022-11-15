@@ -1,30 +1,38 @@
-﻿function EnglishBattle(gameId, verbList) {
+﻿"use strict";
 
-    __this = this;
-    _this.gameId = gameId;
+function EnglishBattle(gameId, verbList) {
 
-    _this.score = 0;
+    this.gameId = gameId;
 
-    _this.inProgress = false;
-    _this.infiniteLife = false;
+    this.score = 0;
 
-    _this.verbList = verbList;
+    this.inProgress = false;
+    this.infiniteLife = false;
 
-    _this.firstTimestamp = "";
+    this.verbList = verbList;
 
-    _this.verbIndex = 0;
-    _this.hintIndex = 1;
+    this.firstTimestamp = "";
+    this.lastTimestamp = "";
+
+    this.verbIndex = 0;
+    this.hintIndex = 1;
 }
 
-EnglishBattle.prototype.Start = function (timestamp) {
+EnglishBattle.prototype.Timeout = function () {
+    this.inProgress = false;
+    this.lastTimestamp = this.timer.getTimeStamp();
+}
 
-    _this.inProgress = true;
+EnglishBattle.prototype.NewGame = function (timestamp) {
+
+    this.inProgress = true;
+    this.firstTimestamp = timestamp;
 
     $.ajax({
         type: "PUT",
         url: "/EnglishBattle?handler=Start",
         data: {
-            gameId: _this.gameId,
+            gameId: this.gameId,
             startedAt: timestamp
         },
         dataType: "json",
@@ -33,16 +41,17 @@ EnglishBattle.prototype.Start = function (timestamp) {
                 $('input:hidden[name="__RequestVerificationToken"]').val()
         },
         success: function (data) {
-            console.log(data);
+            console.log("start success");
         },
         error: function (err) {
             console.log(err);
+            console.log("start error");
         }
     });
 }
 
 EnglishBattle.prototype.PostAnswer = function (preterit, pastPrinciple, timestamp) {
-    var currentVerb = _this.GetCurrentVerb();
+    var currentVerb = this.GetCurrentVerb();
 
     $.ajax({
         type: "POST",
@@ -50,7 +59,7 @@ EnglishBattle.prototype.PostAnswer = function (preterit, pastPrinciple, timestam
         data: {
             answer: {
                 verbId: currentVerb.id,
-                gameId: _this.gameId,
+                gameId: this.gameId,
                 preterit: preterit,
                 pastPrinciple: pastPrinciple,
                 answeredAt: timestamp
@@ -62,44 +71,57 @@ EnglishBattle.prototype.PostAnswer = function (preterit, pastPrinciple, timestam
                 $('input:hidden[name="__RequestVerificationToken"]').val()
         },
         success: function (data) {
-            console.log(data);
+            console.log("posted answer successfully")
         },
         error: function (err) {
-            console.log(err);
+            console.log("error while posting answer");
         }
     });
 }
 
+EnglishBattle.prototype.IsValidAnswer = function (pastSimple, pastParticiple) {
+    let verb = this.GetCurrentVerb();
+
+    if (verb.pastSimple.localeCompare(pastSimple, undefined, { sensitivity: "accent" }) !== 0) {
+        return false;
+    }
+    else if (verb.pastParticiple.localeCompare(pastParticiple, undefined, { sensitivity: "accent" }) !== 0) {
+        return false;
+    }
+
+    return true;
+}
+
 EnglishBattle.prototype.GetCurrentVerb = function () {
-    if (_this.verbIndex - 1 < 0) {
+    if (this.verbIndex - 1 < 0) {
         return null;
     }
 
-    return _this.verbList[_this.verbIndex - 1];
+    return this.verbList[this.verbIndex - 1];
 }
 
 EnglishBattle.prototype.GetNextVerb = function () {
-    if (_this.verbIndex > _this.verbList.length) {
+    if (this.verbIndex > this.verbList.length) {
         return null;
     }
 
-    return _this.verbList[_this.verbIndex++].baseForm;
+    return this.verbList[this.verbIndex++];
 }
 
 EnglishBattle.prototype.GetHints = function () {
     var hints = [];
 
-    for (; _this.hintIndex < 4; _this.hintIndex++) {
-        hints.push(_this.verbList[_this.hintIndex].baseForm);
+    for (; this.hintIndex < 4; this.hintIndex++) {
+        hints.push(this.verbList[this.hintIndex].baseForm);
     }
 
     return hints;
 }
 
 EnglishBattle.prototype.GetNextHint = function () {
-    if (_this.hintIndex >= _this.verbList.length) {
+    if (this.hintIndex >= this.verbList.length) {
         return null;
     }
 
-    return _this.verbList[_this.hintIndex++].baseForm
+    return this.verbList[this.hintIndex++].baseForm
 }

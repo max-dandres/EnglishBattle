@@ -26,7 +26,7 @@ namespace EnglishBattle.BLL.Services
 
             foreach (var verb in verbs)
             {
-                dtos.Add(new IrregularVerbDto(verb.Id, verb.BaseForm, verb.PastPrinciple, verb.Preterit));
+                dtos.Add(new IrregularVerbDto(verb.Id, verb.BaseForm, verb.PastParticiple, verb.PastSimple));
             }
 
             if (shuffle)
@@ -45,6 +45,27 @@ namespace EnglishBattle.BLL.Services
 
             _context.GameAnswers.Add(answer);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> CheckAnswerAsync(int verbId, string preterit, string pastPrinciple)
+        {
+            var verb = await _context.IrregularVerbs.FirstOrDefaultAsync(x => x.Id == verbId);
+
+            if (verb == null)
+            {
+                throw new Exception($"Verb with id {verbId} not found");
+            }
+
+            if (string.Compare(verb.PastSimple, preterit, true) == 0)
+            {
+                return false;
+            }
+            else if (string.Compare(verb.PastParticiple, pastPrinciple, true) == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public async Task<int> CreateGameAsync(int userId)

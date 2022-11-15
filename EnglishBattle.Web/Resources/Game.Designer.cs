@@ -70,20 +70,20 @@ namespace EnglishBattle.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Past principle.
+        ///   Looks up a localized string similar to Past participle.
         /// </summary>
-        public static string PastPrinciple {
+        public static string PastParticiple {
             get {
-                return ResourceManager.GetString("PastPrinciple", resourceCulture);
+                return ResourceManager.GetString("PastParticiple", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Preterit.
+        ///   Looks up a localized string similar to Past simple.
         /// </summary>
-        public static string Preterit {
+        public static string PastSimple {
             get {
-                return ResourceManager.GetString("Preterit", resourceCulture);
+                return ResourceManager.GetString("PastSimple", resourceCulture);
             }
         }
     }

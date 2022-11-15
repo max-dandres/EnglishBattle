@@ -15,10 +15,10 @@ namespace EnglishBattle.DAL
 
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //{
-
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.EnableSensitiveDataLogging();
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -120,10 +120,10 @@
   <data name="BaseForm" xml:space="preserve">
     <value>Base form</value>
   </data>
-  <data name="PastPrinciple" xml:space="preserve">
-    <value>Past principle</value>
+  <data name="PastParticiple" xml:space="preserve">
+    <value>Past participle</value>
   </data>
-  <data name="Preterit" xml:space="preserve">
-    <value>Preterit</value>
+  <data name="PastSimple" xml:space="preserve">
+    <value>Past simple</value>
   </data>
 </root>

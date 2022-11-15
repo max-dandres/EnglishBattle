@@ -1,9 +1,11 @@
 ﻿// Code stoled from internet:
 // https://jsfiddle.net/prafuitu/xRmGV/
 
+//"use strict";
+
 function Timer(seconds = 60) {
     _this = this;
-    _this.timer;
+    _this.timerInterval;
     _this.duration = seconds;
     _this.tick = 16;
     _this.timePenalty = 0;
@@ -122,7 +124,7 @@ Timer.prototype.updateTimer = function () {
         $('#progress_3').attr('d', "0");
         $('#seconds_3').html("0");
 
-        _this.endCallBack(_this.getTimeStamp());
+        _this.endCallBack();
 
         return;
     }
@@ -135,11 +137,11 @@ Timer.prototype.updateTimer = function () {
 
 Timer.prototype.start = function (endCallBack) {
     _this.endCallBack = endCallBack;
-    _this.timer = setInterval(_this.updateTimer, _this.tick);
+    _this.timerInterval = setInterval(_this.updateTimer, _this.tick);
 }
 
 Timer.prototype.stop = function () {
-    clearInterval(_this.timer);
+    clearInterval(_this.timerInterval);
     _this.miliseconds = null;
 }
 

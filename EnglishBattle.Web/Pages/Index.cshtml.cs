@@ -31,11 +31,11 @@ namespace EnglishBattle.Web.Pages
 
             foreach (var verb in verbs)
             {
-                if (verb.BaseForm == verb.PastPrinciple && verb.PastPrinciple == verb.Preterit)
+                if (verb.BaseForm == verb.PastParticiple && verb.PastParticiple == verb.PastSimple)
                 {
                     easyVerbs.Add(verb);
                 }
-                else if (verb.BaseForm == verb.PastPrinciple || verb.PastPrinciple == verb.Preterit)
+                else if (verb.BaseForm == verb.PastParticiple || verb.PastParticiple == verb.PastSimple)
                 {
                     mediumVerbs.Add(verb);
                 }

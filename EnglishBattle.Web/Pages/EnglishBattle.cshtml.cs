@@ -43,17 +43,18 @@ namespace EnglishBattle.Web.Pages
                 return BadRequest("Answer cannot be empty");
             }
 
+            bool isCorrect = await _gameService.CheckAnswerAsync(answer.VerbId, answer.Preterit, answer.PastPrinciple);
+
             await _gameService.AddAnswerAsync(answer);
 
-            return StatusCode(StatusCodes.Status201Created);
+            return new JsonResult(new { isCorrect });
         }
 
         public async Task<IActionResult> OnPutStart(int gameId, DateTime startedAt)
-
         {
             await _gameService.StartGameAsync(gameId, startedAt);
 
-            return StatusCode(StatusCodes.Status202Accepted);
+            return StatusCode(StatusCodes.Status202Accepted, new { statusCode = 202 });
         }
     }
 }

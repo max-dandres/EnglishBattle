@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace EnglishBattle.BLL.DTOs
 {
-    public record IrregularVerbDto(int Id, string BaseForm, string PastPrinciple, string Preterit);
+    public record IrregularVerbDto(int Id, string BaseForm, string PastParticiple, string PastSimple);
 }

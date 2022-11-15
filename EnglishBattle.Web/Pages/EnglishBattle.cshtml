@@ -4,7 +4,6 @@
 @using System.Text.Json
 @using EnglishBattle.Web.Resources
 
-
 @{
 }
 
@@ -35,16 +34,12 @@
                 <div class="row">
                     <div class="col py-0 pb-2">
 
-                        <div id="hints" class="overflow-hidden pb-md-2 pb-sm-1">
-                            <div class="" style="opacity: 0.2;">next</div>
-                            <div class="" style="opacity: 0.3;">next</div>
-                            <div class="" style="opacity: 0.4;">next</div>
-                        </div>
+                        <div id="hints" class="overflow-hidden pb-md-2 pb-sm-1"></div>
 
                         <div class="input-icons">
-                            <i id="success_icon" class="fas fa-check icon success"></i>
-                            <i id="failure_icon" class="fas fa-times icon error"></i>
-                            <input ID="baseForm" runat="server" placeholder="@Game.BaseForm" class="game-input" />
+                            @*<i id="success_icon" class="fas fa-check icon success"></i>
+                            <i id="failure_icon" class="fas fa-times icon error"></i>*@
+                            <input ID="baseForm" runat="server" placeholder="@Game.BaseForm" class="form-control" disabled/>
                         </div>
 
                     </div>
@@ -53,7 +48,7 @@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="preterit" runat="server" placeholder="@Game.Preterit" class="game-input" autocomplete="off" />
+                        <input ID="pastSimple" runat="server" placeholder="@Game.PastSimple" class="form-control" autocomplete="off" />
                     </div>
 
                 </div>
@@ -61,14 +56,14 @@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="pastPrinciple" runat="server" placeholder="@Game.PastPrinciple" class="game-input" autocomplete="off" />
+                        <input ID="pastParticiple" runat="server" placeholder="@Game.PastParticiple" class="form-control" autocomplete="off" />
                     </div>
 
                 </div>
             </div>
 
             <div class="card-footer">
-
+                @*Button*@
                 <div class="row">
                     <div class="col">
 
@@ -93,68 +88,101 @@
 </div>
 
 @section Scripts {
+    <script src="https://kit.fontawesome.com/b144ade453.js" crossorigin="anonymous"></script>
     <script src="~/js/timer.js"></script>
     <script src="~/js/englishbattle.js"></script>
 
     <script type="text/javascript">
 
-        var _irregularVerbs = @Json.Serialize(Model.IrregularVerbs);
+        const _irregularVerbs = @Json.Serialize(Model.IrregularVerbs);
+
+        const _timer = new Timer(60);
+        const _game = new EnglishBattle(@Model.GameID, _irregularVerbs);
 
         $(document).ready(function () {
-
-            var _timer = new Timer(60);
+            $("#success_icon").hide();
+            $("#failure_icon").hide();
 
             var _gameId = parseInt($("#gameId").val());
             var _userId = parseInt($("#userId").val());
 
             var baseFormInput = $("#baseForm");
-            var preteritInput = $("#preterit");
-            var pastPrincipleInput = $("#pastPrinciple");
-            var hintList = $("#hints");
+            var pastSimpleInput = $("#pastSimple");
+            var pastParticipleInput = $("#pastParticiple");
+            var hintListDiv = $("#hints");
 
-            var _game = new EnglishBattle(_gameId, _irregularVerbs);
+            var _verb = null;
 
-            function addHint(hint) {
+            function nextHint(hint) {
                 var hintToPrepend = `<div class="" style="opacity: 0.3;">${hint}</div>`;
-                $(hintToPrepend).hide().prependTo(hintList).fadeIn();
+
+                $(hintToPrepend).hide().prependTo(hintListDiv).fadeIn();
             }
 
+            function nextVerb(verb) {
+                baseFormInput.val(verb);
+                pastSimpleInput.val("").focus();
+                pastParticipleInput.val("");
+            }
+
+            function gameOver() {
+                console.log("timeout");
+            }
+
+            /*
+                Play button click event
+            */
             $("#playButton").click(function () {
-                console.log("Play Button clicked")
 
                 $(this).attr("disabled", true);
 
-                _game.Start(_timer.getTimeStamp());
-                _timer.start(function () {
-                    console.log("stopped");
-                });
+                _game.NewGame(_timer.getTimeStamp());
+                _timer.start(gameOver);
 
-                var firstVerb = _game.GetNextVerb();
+                _verb = _game.GetNextVerb();
                 var hints = _game.GetHints();
 
-                baseFormInput.val(firstVerb);
+                nextVerb(_verb.baseForm);
 
-                for (const hint of hints) {
-                    addHint(hint);
+                for (let hint of hints) {
+                    nextHint(hint);
                 }
             });
 
+            /*
+                Keypress "Enter" event
+            */
             $(document).keypress(function () {
-                var isValid = preteritInput.val() != "" && pastPrincipleInput != "";
+                let pastSimpleVal = pastSimpleInput.val();
+                let pastParticipleVal = pastParticipleInput.val();
 
-                _timer.addSeconds(-3);
+                if (event.key == "Enter") {
+                    var isEmpty = pastSimpleVal != "" && pastParticipleVal != "";
 
-                if (event.key == "Enter" && isValid) {
-                    _game.PostAnswer(preteritInput.val(), pastPrincipleInput.val(), _timer.getTimeStamp());
+                    if (_game.IsValidAnswer(pastSimpleVal, pastParticipleVal)) {
+                        baseFormInput.addClass("is-valid").removeClass("is-invalid");
+                    }
+                    else {
+                        baseFormInput.addClass("is-invalid").removeClass("is-valid");
+                    }
+
+                    _game.PostAnswer(pastSimpleVal, pastParticipleVal, _timer.getTimeStamp());
+
+                    _verb = _game.GetNextVerb();
+
+                    nextVerb(_verb.baseForm);
+                    nextHint(_game.GetNextHint());
                 }
             });
 
-            $("#preterit, #pastPrinciple").focus(function () {
+            $("#pastSimple, #pastParticiple").focus(function () {
                 // Disable errors
+                //baseFormInput.delay(300).removeClass("is-invalid").removeClass("is-valid");
             });
 
-            $("#preterit, #pastPrinciple").keypress(function () {
+            $("#pastSimple, #pastParticiple").keypress(function () {
                 // Disable errors
+                //baseFormInput.delay(300).removeClass("is-invalid").removeClass("is-valid");
             });
 
         });

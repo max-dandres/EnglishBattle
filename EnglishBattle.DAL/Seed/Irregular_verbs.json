@@ -1,807 +1,807 @@
 [
   {
     "BaseForm": "abide",
-    "PastPrinciple": "abode",
-    "Preterit": "abode"
+    "PastParticiple": "abode",
+    "PastSimple": "abode"
   },
   {
     "BaseForm": "arise",
-    "PastPrinciple": "arose",
-    "Preterit": "arisen"
+    "PastParticiple": "arose",
+    "PastSimple": "arisen"
   },
   {
     "BaseForm": "awake",
-    "PastPrinciple": "awoke",
-    "Preterit": "awoken"
+    "PastParticiple": "awoke",
+    "PastSimple": "awoken"
   },
   {
     "BaseForm": "bear",
-    "PastPrinciple": "bore",
-    "Preterit": "borne"
+    "PastParticiple": "bore",
+    "PastSimple": "borne"
   },
   {
     "BaseForm": "beat",
-    "PastPrinciple": "beat",
-    "Preterit": "beaten"
+    "PastParticiple": "beat",
+    "PastSimple": "beaten"
   },
   {
     "BaseForm": "become",
-    "PastPrinciple": "became",
-    "Preterit": "become"
+    "PastParticiple": "became",
+    "PastSimple": "become"
   },
   {
     "BaseForm": "begin",
-    "PastPrinciple": "began",
-    "Preterit": "begun"
+    "PastParticiple": "began",
+    "PastSimple": "begun"
   },
   {
     "BaseForm": "bend",
-    "PastPrinciple": "bent",
-    "Preterit": "bent"
+    "PastParticiple": "bent",
+    "PastSimple": "bent"
   },
   {
     "BaseForm": "bet",
-    "PastPrinciple": "bet",
-    "Preterit": "bet"
+    "PastParticiple": "bet",
+    "PastSimple": "bet"
   },
   {
     "BaseForm": "bid",
-    "PastPrinciple": "bid",
-    "Preterit": "bid"
+    "PastParticiple": "bid",
+    "PastSimple": "bid"
   },
   {
     "BaseForm": "bind",
-    "PastPrinciple": "bound",
-    "Preterit": "bound"
+    "PastParticiple": "bound",
+    "PastSimple": "bound"
   },
   {
     "BaseForm": "bite",
-    "PastPrinciple": "bit",
-    "Preterit": "bitten"
+    "PastParticiple": "bit",
+    "PastSimple": "bitten"
   },
   {
     "BaseForm": "bleed",
-    "PastPrinciple": "bled",
-    "Preterit": "bled"
+    "PastParticiple": "bled",
+    "PastSimple": "bled"
   },
   {
     "BaseForm": "blow",
-    "PastPrinciple": "blew",
-    "Preterit": "blown"
+    "PastParticiple": "blew",
+    "PastSimple": "blown"
   },
   {
     "BaseForm": "break",
-    "PastPrinciple": "broke",
-    "Preterit": "broken"
+    "PastParticiple": "broke",
+    "PastSimple": "broken"
   },
   {
     "BaseForm": "breed",
-    "PastPrinciple": "bred",
-    "Preterit": "bred"
+    "PastParticiple": "bred",
+    "PastSimple": "bred"
   },
   {
     "BaseForm": "bring",
-    "PastPrinciple": "brought",
-    "Preterit": "brought"
+    "PastParticiple": "brought",
+    "PastSimple": "brought"
   },
   {
     "BaseForm": "build",
-    "PastPrinciple": "built",
-    "Preterit": "built"
+    "PastParticiple": "built",
+    "PastSimple": "built"
   },
   {
     "BaseForm": "burn",
-    "PastPrinciple": "burnt",
-    "Preterit": "burnt"
+    "PastParticiple": "burnt",
+    "PastSimple": "burnt"
   },
   {
     "BaseForm": "burst",
-    "PastPrinciple": "burst",
-    "Preterit": "burst"
+    "PastParticiple": "burst",
+    "PastSimple": "burst"
   },
   {
     "BaseForm": "buy",
-    "PastPrinciple": "bought",
-    "Preterit": "bought"
+    "PastParticiple": "bought",
+    "PastSimple": "bought"
   },
   {
     "BaseForm": "cast",
-    "PastPrinciple": "cast",
-    "Preterit": "cast"
+    "PastParticiple": "cast",
+    "PastSimple": "cast"
   },
   {
     "BaseForm": "catch",
-    "PastPrinciple": "caught",
-    "Preterit": "caught"
+    "PastParticiple": "caught",
+    "PastSimple": "caught"
   },
   {
     "BaseForm": "choose",
-    "PastPrinciple": "chose",
-    "Preterit": "chosen"
+    "PastParticiple": "chose",
+    "PastSimple": "chosen"
   },
   {
     "BaseForm": "cling",
-    "PastPrinciple": "clung",
-    "Preterit": "clung"
+    "PastParticiple": "clung",
+    "PastSimple": "clung"
   },
   {
     "BaseForm": "come",
-    "PastPrinciple": "came",
-    "Preterit": "come"
+    "PastParticiple": "came",
+    "PastSimple": "come"
   },
   {
     "BaseForm": "cost",
-    "PastPrinciple": "cost",
-    "Preterit": "cost"
+    "PastParticiple": "cost",
+    "PastSimple": "cost"
   },
   {
     "BaseForm": "creep",
-    "PastPrinciple": "crept",
-    "Preterit": "crept"
+    "PastParticiple": "crept",
+    "PastSimple": "crept"
   },
   {
     "BaseForm": "cut",
-    "PastPrinciple": "cut",
-    "Preterit": "cut"
+    "PastParticiple": "cut",
+    "PastSimple": "cut"
   },
   {
     "BaseForm": "deal",
-    "PastPrinciple": "dealt",
-    "Preterit": "dealt"
+    "PastParticiple": "dealt",
+    "PastSimple": "dealt"
   },
   {
     "BaseForm": "dig",
-    "PastPrinciple": "dug",
-    "Preterit": "dug"
+    "PastParticiple": "dug",
+    "PastSimple": "dug"
   },
   {
     "BaseForm": "do",
-    "PastPrinciple": "did",
-    "Preterit": "done"
+    "PastParticiple": "did",
+    "PastSimple": "done"
   },
   {
     "BaseForm": "draw",
-    "PastPrinciple": "drew",
-    "Preterit": "drawn"
+    "PastParticiple": "drew",
+    "PastSimple": "drawn"
   },
   {
     "BaseForm": "dream",
-    "PastPrinciple": "dreamt",
-    "Preterit": "dreamt"
+    "PastParticiple": "dreamt",
+    "PastSimple": "dreamt"
   },
   {
     "BaseForm": "drink",
-    "PastPrinciple": "drank",
-    "Preterit": "drunk"
+    "PastParticiple": "drank",
+    "PastSimple": "drunk"
   },
   {
     "BaseForm": "drive",
-    "PastPrinciple": "drove",
-    "Preterit": "driven"
+    "PastParticiple": "drove",
+    "PastSimple": "driven"
   },
   {
     "BaseForm": "dwell",
-    "PastPrinciple": "dwelt",
-    "Preterit": "dwelt"
+    "PastParticiple": "dwelt",
+    "PastSimple": "dwelt"
   },
   {
     "BaseForm": "eat",
-    "PastPrinciple": "ate",
-    "Preterit": "eaten"
+    "PastParticiple": "ate",
+    "PastSimple": "eaten"
   },
   {
     "BaseForm": "fall",
-    "PastPrinciple": "fell",
-    "Preterit": "fallen"
+    "PastParticiple": "fell",
+    "PastSimple": "fallen"
   },
   {
     "BaseForm": "feed",
-    "PastPrinciple": "fed",
-    "Preterit": "fed"
+    "PastParticiple": "fed",
+    "PastSimple": "fed"
   },
   {
     "BaseForm": "feel",
-    "PastPrinciple": "felt",
-    "Preterit": "felt"
+    "PastParticiple": "felt",
+    "PastSimple": "felt"
   },
   {
     "BaseForm": "fight",
-    "PastPrinciple": "fought",
-    "Preterit": "fought"
+    "PastParticiple": "fought",
+    "PastSimple": "fought"
   },
   {
     "BaseForm": "find",
-    "PastPrinciple": "found",
-    "Preterit": "found"
+    "PastParticiple": "found",
+    "PastSimple": "found"
   },
   {
     "BaseForm": "flee",
-    "PastPrinciple": "fled",
-    "Preterit": "fled"
+    "PastParticiple": "fled",
+    "PastSimple": "fled"
   },
   {
     "BaseForm": "fling",
-    "PastPrinciple": "flung",
-    "Preterit": "flung"
+    "PastParticiple": "flung",
+    "PastSimple": "flung"
   },
   {
     "BaseForm": "fly",
-    "PastPrinciple": "flew",
-    "Preterit": "flown"
+    "PastParticiple": "flew",
+    "PastSimple": "flown"
   },
   {
     "BaseForm": "forbid",
-    "PastPrinciple": "forbade",
-    "Preterit": "forbidden"
+    "PastParticiple": "forbade",
+    "PastSimple": "forbidden"
   },
   {
     "BaseForm": "forget",
-    "PastPrinciple": "forgot",
-    "Preterit": "forgotten"
+    "PastParticiple": "forgot",
+    "PastSimple": "forgotten"
   },
   {
     "BaseForm": "forgive",
-    "PastPrinciple": "forgave",
-    "Preterit": "forgiven"
+    "PastParticiple": "forgave",
+    "PastSimple": "forgiven"
   },
   {
     "BaseForm": "freeze",
-    "PastPrinciple": "froze",
-    "Preterit": "frozen"
+    "PastParticiple": "froze",
+    "PastSimple": "frozen"
   },
   {
     "BaseForm": "get",
-    "PastPrinciple": "got",
-    "Preterit": "got"
+    "PastParticiple": "got",
+    "PastSimple": "got"
   },
   {
     "BaseForm": "give",
-    "PastPrinciple": "gave",
-    "Preterit": "given"
+    "PastParticiple": "gave",
+    "PastSimple": "given"
   },
   {
     "BaseForm": "go",
-    "PastPrinciple": "went",
-    "Preterit": "gone"
+    "PastParticiple": "went",
+    "PastSimple": "gone"
   },
   {
     "BaseForm": "grind",
-    "PastPrinciple": "ground",
-    "Preterit": "ground"
+    "PastParticiple": "ground",
+    "PastSimple": "ground"
   },
   {
     "BaseForm": "grow",
-    "PastPrinciple": "grew",
-    "Preterit": "grown"
+    "PastParticiple": "grew",
+    "PastSimple": "grown"
   },
   {
     "BaseForm": "hang",
-    "PastPrinciple": "hung",
-    "Preterit": "hung"
+    "PastParticiple": "hung",
+    "PastSimple": "hung"
   },
   {
     "BaseForm": "have",
-    "PastPrinciple": "had",
-    "Preterit": "had"
+    "PastParticiple": "had",
+    "PastSimple": "had"
   },
   {
     "BaseForm": "hear",
-    "PastPrinciple": "heard",
-    "Preterit": "heard"
+    "PastParticiple": "heard",
+    "PastSimple": "heard"
   },
   {
     "BaseForm": "hide",
-    "PastPrinciple": "hid",
-    "Preterit": "hidden"
+    "PastParticiple": "hid",
+    "PastSimple": "hidden"
   },
   {
     "BaseForm": "hit",
-    "PastPrinciple": "hit",
-    "Preterit": "hit"
+    "PastParticiple": "hit",
+    "PastSimple": "hit"
   },
   {
     "BaseForm": "hold",
-    "PastPrinciple": "held",
-    "Preterit": "held"
+    "PastParticiple": "held",
+    "PastSimple": "held"
   },
   {
     "BaseForm": "hurt",
-    "PastPrinciple": "hurt",
-    "Preterit": "hurt"
+    "PastParticiple": "hurt",
+    "PastSimple": "hurt"
   },
   {
     "BaseForm": "keep",
-    "PastPrinciple": "kept",
-    "Preterit": "kept"
+    "PastParticiple": "kept",
+    "PastSimple": "kept"
   },
   {
     "BaseForm": "kneel",
-    "PastPrinciple": "knelt",
-    "Preterit": "knelt"
+    "PastParticiple": "knelt",
+    "PastSimple": "knelt"
   },
   {
     "BaseForm": "know",
-    "PastPrinciple": "knew",
-    "Preterit": "known"
+    "PastParticiple": "knew",
+    "PastSimple": "known"
   },
   {
     "BaseForm": "lay",
-    "PastPrinciple": "laid",
-    "Preterit": "laid"
+    "PastParticiple": "laid",
+    "PastSimple": "laid"
   },
   {
     "BaseForm": "lead",
-    "PastPrinciple": "led",
-    "Preterit": "led"
+    "PastParticiple": "led",
+    "PastSimple": "led"
   },
   {
     "BaseForm": "lean",
-    "PastPrinciple": "leant",
-    "Preterit": "leant"
+    "PastParticiple": "leant",
+    "PastSimple": "leant"
   },
   {
     "BaseForm": "leap",
-    "PastPrinciple": "leapt",
-    "Preterit": "leapt"
+    "PastParticiple": "leapt",
+    "PastSimple": "leapt"
   },
   {
     "BaseForm": "learn",
-    "PastPrinciple": "learnt",
-    "Preterit": "learnt"
+    "PastParticiple": "learnt",
+    "PastSimple": "learnt"
   },
   {
     "BaseForm": "leave",
-    "PastPrinciple": "left",
-    "Preterit": "left"
+    "PastParticiple": "left",
+    "PastSimple": "left"
   },
   {
     "BaseForm": "lend",
-    "PastPrinciple": "lent",
-    "Preterit": "lent"
+    "PastParticiple": "lent",
+    "PastSimple": "lent"
   },
   {
     "BaseForm": "let",
-    "PastPrinciple": "let",
-    "Preterit": "let"
+    "PastParticiple": "let",
+    "PastSimple": "let"
   },
   {
     "BaseForm": "lie",
-    "PastPrinciple": "lay",
-    "Preterit": "lain"
+    "PastParticiple": "lay",
+    "PastSimple": "lain"
   },
   {
     "BaseForm": "light",
-    "PastPrinciple": "lit",
-    "Preterit": "lit"
+    "PastParticiple": "lit",
+    "PastSimple": "lit"
   },
   {
     "BaseForm": "lose",
-    "PastPrinciple": "lost",
-    "Preterit": "lost"
+    "PastParticiple": "lost",
+    "PastSimple": "lost"
   },
   {
     "BaseForm": "make",
-    "PastPrinciple": "made",
-    "Preterit": "made"
+    "PastParticiple": "made",
+    "PastSimple": "made"
   },
   {
     "BaseForm": "mean",
-    "PastPrinciple": "meant",
-    "Preterit": "meant"
+    "PastParticiple": "meant",
+    "PastSimple": "meant"
   },
   {
     "BaseForm": "meet",
-    "PastPrinciple": "met",
-    "Preterit": "met"
+    "PastParticiple": "met",
+    "PastSimple": "met"
   },
   {
     "BaseForm": "mow",
-    "PastPrinciple": "mowed",
-    "Preterit": "mown"
+    "PastParticiple": "mowed",
+    "PastSimple": "mown"
   },
   {
     "BaseForm": "overcome",
-    "PastPrinciple": "overcame",
-    "Preterit": "overcome"
+    "PastParticiple": "overcame",
+    "PastSimple": "overcome"
   },
   {
     "BaseForm": "pay",
-    "PastPrinciple": "paid",
-    "Preterit": "paid"
+    "PastParticiple": "paid",
+    "PastSimple": "paid"
   },
   {
     "BaseForm": "put",
-    "PastPrinciple": "put",
-    "Preterit": "put"
+    "PastParticiple": "put",
+    "PastSimple": "put"
   },
   {
     "BaseForm": "quit",
-    "PastPrinciple": "quit",
-    "Preterit": "quit"
+    "PastParticiple": "quit",
+    "PastSimple": "quit"
   },
   {
     "BaseForm": "read",
-    "PastPrinciple": "read",
-    "Preterit": "read"
+    "PastParticiple": "read",
+    "PastSimple": "read"
   },
   {
     "BaseForm": "rid",
-    "PastPrinciple": "rid",
-    "Preterit": "rid"
+    "PastParticiple": "rid",
+    "PastSimple": "rid"
   },
   {
     "BaseForm": "ride",
-    "PastPrinciple": "rode",
-    "Preterit": "ridden"
+    "PastParticiple": "rode",
+    "PastSimple": "ridden"
   },
   {
     "BaseForm": "ring",
-    "PastPrinciple": "rang",
-    "Preterit": "rung"
+    "PastParticiple": "rang",
+    "PastSimple": "rung"
   },
   {
     "BaseForm": "rise",
-    "PastPrinciple": "rose",
-    "Preterit": "risen"
+    "PastParticiple": "rose",
+    "PastSimple": "risen"
   },
   {
     "BaseForm": "run",
-    "PastPrinciple": "ran",
-    "Preterit": "run"
+    "PastParticiple": "ran",
+    "PastSimple": "run"
   },
   {
     "BaseForm": "saw",
-    "PastPrinciple": "sawed",
-    "Preterit": "sawn"
+    "PastParticiple": "sawed",
+    "PastSimple": "sawn"
   },
   {
     "BaseForm": "say",
-    "PastPrinciple": "said",
-    "Preterit": "said"
+    "PastParticiple": "said",
+    "PastSimple": "said"
   },
   {
     "BaseForm": "see",
-    "PastPrinciple": "saw",
-    "Preterit": "seen"
+    "PastParticiple": "saw",
+    "PastSimple": "seen"
   },
   {
     "BaseForm": "seek",
-    "PastPrinciple": "sought",
-    "Preterit": "sought"
+    "PastParticiple": "sought",
+    "PastSimple": "sought"
   },
   {
     "BaseForm": "sell",
-    "PastPrinciple": "sold",
-    "Preterit": "sold"
+    "PastParticiple": "sold",
+    "PastSimple": "sold"
   },
   {
     "BaseForm": "send",
-    "PastPrinciple": "sent",
-    "Preterit": "sent"
+    "PastParticiple": "sent",
+    "PastSimple": "sent"
   },
   {
     "BaseForm": "set",
-    "PastPrinciple": "set",
-    "Preterit": "set"
+    "PastParticiple": "set",
+    "PastSimple": "set"
   },
   {
     "BaseForm": "sew",
-    "PastPrinciple": "sewed",
-    "Preterit": "sewn"
+    "PastParticiple": "sewed",
+    "PastSimple": "sewn"
   },
   {
     "BaseForm": "shake",
-    "PastPrinciple": "shook",
-    "Preterit": "shaken"
+    "PastParticiple": "shook",
+    "PastSimple": "shaken"
   },
   {
     "BaseForm": "shear",
-    "PastPrinciple": "sheared",
-    "Preterit": "shorn"
+    "PastParticiple": "sheared",
+    "PastSimple": "shorn"
   },
   {
     "BaseForm": "shed",
-    "PastPrinciple": "shed",
-    "Preterit": "shed"
+    "PastParticiple": "shed",
+    "PastSimple": "shed"
   },
   {
     "BaseForm": "shine",
-    "PastPrinciple": "shone",
-    "Preterit": "shone"
+    "PastParticiple": "shone",
+    "PastSimple": "shone"
   },
   {
     "BaseForm": "shoe",
-    "PastPrinciple": "shod",
-    "Preterit": "shod"
+    "PastParticiple": "shod",
+    "PastSimple": "shod"
   },
   {
     "BaseForm": "shoot",
-    "PastPrinciple": "shot",
-    "Preterit": "shot"
+    "PastParticiple": "shot",
+    "PastSimple": "shot"
   },
   {
     "BaseForm": "show",
-    "PastPrinciple": "showed",
-    "Preterit": "shown"
+    "PastParticiple": "showed",
+    "PastSimple": "shown"
   },
   {
     "BaseForm": "shrink",
-    "PastPrinciple": "shrank",
-    "Preterit": "shrunk"
+    "PastParticiple": "shrank",
+    "PastSimple": "shrunk"
   },
   {
     "BaseForm": "shut",
-    "PastPrinciple": "shut",
-    "Preterit": "shut"
+    "PastParticiple": "shut",
+    "PastSimple": "shut"
   },
   {
     "BaseForm": "sing",
-    "PastPrinciple": "sang",
-    "Preterit": "sung"
+    "PastParticiple": "sang",
+    "PastSimple": "sung"
   },
   {
     "BaseForm": "sink",
-    "PastPrinciple": "sank",
-    "Preterit": "sunk"
+    "PastParticiple": "sank",
+    "PastSimple": "sunk"
   },
   {
     "BaseForm": "sit",
-    "PastPrinciple": "sat",
-    "Preterit": "sat"
+    "PastParticiple": "sat",
+    "PastSimple": "sat"
   },
   {
     "BaseForm": "sleep",
-    "PastPrinciple": "slept",
-    "Preterit": "slept"
+    "PastParticiple": "slept",
+    "PastSimple": "slept"
   },
   {
     "BaseForm": "slide",
-    "PastPrinciple": "slid",
-    "Preterit": "slid"
+    "PastParticiple": "slid",
+    "PastSimple": "slid"
   },
   {
     "BaseForm": "sling",
-    "PastPrinciple": "slung",
-    "Preterit": "slung"
+    "PastParticiple": "slung",
+    "PastSimple": "slung"
   },
   {
     "BaseForm": "slink",
-    "PastPrinciple": "slunk",
-    "Preterit": "slunk"
+    "PastParticiple": "slunk",
+    "PastSimple": "slunk"
   },
   {
     "BaseForm": "slit",
-    "PastPrinciple": "slit",
-    "Preterit": "slit"
+    "PastParticiple": "slit",
+    "PastSimple": "slit"
   },
   {
     "BaseForm": "smell",
-    "PastPrinciple": "smelt",
-    "Preterit": "smelt"
+    "PastParticiple": "smelt",
+    "PastSimple": "smelt"
   },
   {
     "BaseForm": "sow",
-    "PastPrinciple": "sowed",
-    "Preterit": "sown"
+    "PastParticiple": "sowed",
+    "PastSimple": "sown"
   },
   {
     "BaseForm": "speak",
-    "PastPrinciple": "spoke",
-    "Preterit": "spoken"
+    "PastParticiple": "spoke",
+    "PastSimple": "spoken"
   },
   {
     "BaseForm": "speed",
-    "PastPrinciple": "sped",
-    "Preterit": "sped"
+    "PastParticiple": "sped",
+    "PastSimple": "sped"
   },
   {
     "BaseForm": "spell",
-    "PastPrinciple": "spelt",
-    "Preterit": "spelt"
+    "PastParticiple": "spelt",
+    "PastSimple": "spelt"
   },
   {
     "BaseForm": "spend",
-    "PastPrinciple": "spent",
-    "Preterit": "spent"
+    "PastParticiple": "spent",
+    "PastSimple": "spent"
   },
   {
     "BaseForm": "spill",
-    "PastPrinciple": "spilt",
-    "Preterit": "spilt"
+    "PastParticiple": "spilt",
+    "PastSimple": "spilt"
   },
   {
     "BaseForm": "spit",
-    "PastPrinciple": "spat",
-    "Preterit": "spat"
+    "PastParticiple": "spat",
+    "PastSimple": "spat"
   },
   {
     "BaseForm": "split",
-    "PastPrinciple": "split",
-    "Preterit": "split"
+    "PastParticiple": "split",
+    "PastSimple": "split"
   },
   {
     "BaseForm": "spoil",
-    "PastPrinciple": "spoilt",
-    "Preterit": "spoilt"
+    "PastParticiple": "spoilt",
+    "PastSimple": "spoilt"
   },
   {
     "BaseForm": "spread",
-    "PastPrinciple": "spread",
-    "Preterit": "spread"
+    "PastParticiple": "spread",
+    "PastSimple": "spread"
   },
   {
     "BaseForm": "spring",
-    "PastPrinciple": "sprang",
-    "Preterit": "sprung"
+    "PastParticiple": "sprang",
+    "PastSimple": "sprung"
   },
   {
     "BaseForm": "stand",
-    "PastPrinciple": "stood",
-    "Preterit": "stood"
+    "PastParticiple": "stood",
+    "PastSimple": "stood"
   },
   {
     "BaseForm": "steal",
-    "PastPrinciple": "stole",
-    "Preterit": "stolen"
+    "PastParticiple": "stole",
+    "PastSimple": "stolen"
   },
   {
     "BaseForm": "stick",
-    "PastPrinciple": "stuck",
-    "Preterit": "stuck"
+    "PastParticiple": "stuck",
+    "PastSimple": "stuck"
   },
   {
     "BaseForm": "sting",
-    "PastPrinciple": "stung",
-    "Preterit": "stung"
+    "PastParticiple": "stung",
+    "PastSimple": "stung"
   },
   {
     "BaseForm": "stink",
-    "PastPrinciple": "stank",
-    "Preterit": "stunk"
+    "PastParticiple": "stank",
+    "PastSimple": "stunk"
   },
   {
     "BaseForm": "stride",
-    "PastPrinciple": "strode",
-    "Preterit": "stridden"
+    "PastParticiple": "strode",
+    "PastSimple": "stridden"
   },
   {
     "BaseForm": "strike",
-    "PastPrinciple": "struck",
-    "Preterit": "struck"
+    "PastParticiple": "struck",
+    "PastSimple": "struck"
   },
   {
     "BaseForm": "string",
-    "PastPrinciple": "strung",
-    "Preterit": "strung"
+    "PastParticiple": "strung",
+    "PastSimple": "strung"
   },
   {
     "BaseForm": "strive",
-    "PastPrinciple": "strove",
-    "Preterit": "striven"
+    "PastParticiple": "strove",
+    "PastSimple": "striven"
   },
   {
     "BaseForm": "swear",
-    "PastPrinciple": "swore",
-    "Preterit": "sworn"
+    "PastParticiple": "swore",
+    "PastSimple": "sworn"
   },
   {
     "BaseForm": "sweep",
-    "PastPrinciple": "swept",
-    "Preterit": "swept"
+    "PastParticiple": "swept",
+    "PastSimple": "swept"
   },
   {
     "BaseForm": "swell",
-    "PastPrinciple": "swelled",
-    "Preterit": "swollen"
+    "PastParticiple": "swelled",
+    "PastSimple": "swollen"
   },
   {
     "BaseForm": "swim",
-    "PastPrinciple": "swam",
-    "Preterit": "swum"
+    "PastParticiple": "swam",
+    "PastSimple": "swum"
   },
   {
     "BaseForm": "swing",
-    "PastPrinciple": "swung",
-    "Preterit": "swung"
+    "PastParticiple": "swung",
+    "PastSimple": "swung"
   },
   {
     "BaseForm": "take",
-    "PastPrinciple": "took",
-    "Preterit": "taken"
+    "PastParticiple": "took",
+    "PastSimple": "taken"
   },
   {
     "BaseForm": "teach",
-    "PastPrinciple": "taught",
-    "Preterit": "taught"
+    "PastParticiple": "taught",
+    "PastSimple": "taught"
   },
   {
     "BaseForm": "tear",
-    "PastPrinciple": "tore",
-    "Preterit": "torn"
+    "PastParticiple": "tore",
+    "PastSimple": "torn"
   },
   {
     "BaseForm": "tell",
-    "PastPrinciple": "told",
-    "Preterit": "told"
+    "PastParticiple": "told",
+    "PastSimple": "told"
   },
   {
     "BaseForm": "think",
-    "PastPrinciple": "thought",
-    "Preterit": "thought"
+    "PastParticiple": "thought",
+    "PastSimple": "thought"
   },
   {
     "BaseForm": "throw",
-    "PastPrinciple": "threw",
-    "Preterit": "thrown"
+    "PastParticiple": "threw",
+    "PastSimple": "thrown"
   },
   {
     "BaseForm": "thrust",
-    "PastPrinciple": "thrust",
-    "Preterit": "thrust"
+    "PastParticiple": "thrust",
+    "PastSimple": "thrust"
   },
   {
     "BaseForm": "tread",
-    "PastPrinciple": "trod",
-    "Preterit": "trodden"
+    "PastParticiple": "trod",
+    "PastSimple": "trodden"
   },
   {
     "BaseForm": "undergo",
-    "PastPrinciple": "underwent",
-    "Preterit": "undergone"
+    "PastParticiple": "underwent",
+    "PastSimple": "undergone"
   },
   {
     "BaseForm": "understand",
-    "PastPrinciple": "understood",
-    "Preterit": "understood"
+    "PastParticiple": "understood",
+    "PastSimple": "understood"
   },
   {
     "BaseForm": "upset",
-    "PastPrinciple": "upset",
-    "Preterit": "upset"
+    "PastParticiple": "upset",
+    "PastSimple": "upset"
   },
   {
     "BaseForm": "wake",
-    "PastPrinciple": "woke",
-    "Preterit": "woken"
+    "PastParticiple": "woke",
+    "PastSimple": "woken"
   },
   {
     "BaseForm": "wear",
-    "PastPrinciple": "wore",
-    "Preterit": "worn"
+    "PastParticiple": "wore",
+    "PastSimple": "worn"
   },
   {
     "BaseForm": "weave",
-    "PastPrinciple": "wove",
-    "Preterit": "woven"
+    "PastParticiple": "wove",
+    "PastSimple": "woven"
   },
   {
     "BaseForm": "weep",
-    "PastPrinciple": "wept",
-    "Preterit": "wept"
+    "PastParticiple": "wept",
+    "PastSimple": "wept"
   },
   {
     "BaseForm": "win",
-    "PastPrinciple": "won",
-    "Preterit": "won"
+    "PastParticiple": "won",
+    "PastSimple": "won"
   },
   {
     "BaseForm": "wind",
-    "PastPrinciple": "wound",
-    "Preterit": "wound"
+    "PastParticiple": "wound",
+    "PastSimple": "wound"
   },
   {
     "BaseForm": "withdraw",
-    "PastPrinciple": "withdrew",
-    "Preterit": "withdrawn"
+    "PastParticiple": "withdrew",
+    "PastSimple": "withdrawn"
   },
   {
     "BaseForm": "wring",
-    "PastPrinciple": "wrung",
-    "Preterit": "wrung"
+    "PastParticiple": "wrung",
+    "PastSimple": "wrung"
   },
   {
     "BaseForm": "write",
-    "PastPrinciple": "wrote",
-    "Preterit": "written"
+    "PastParticiple": "wrote",
+    "PastSimple": "written"
   }
 ]
