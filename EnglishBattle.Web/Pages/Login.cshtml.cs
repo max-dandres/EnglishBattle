@@ -21,9 +21,9 @@ namespace EnglishBattle.Web.Pages.Shared
         [Display(Name = nameof(SharedResources.Password), ResourceType = typeof(SharedResources))]
         [Required(ErrorMessageResourceName = nameof(SharedResources.PasswordRequired), ErrorMessageResourceType = typeof(SharedResources))]
         public string Password { get; set; } = "";
-        //[BindProperty]
-        //[Display(Name = nameof(Login.IsAnonymous), ResourceType = typeof(Login))]
-        //public bool IsAnonymous { get; set; }
+        [BindProperty]
+        [Display(Name = nameof(Login.IsAnonymous), ResourceType = typeof(Login))]
+        public bool IsAnonymous { get; set; }
         public string Error { get; set; } = "";
 
         private readonly PlayerService _playerService;
@@ -40,9 +40,14 @@ namespace EnglishBattle.Web.Pages.Shared
 
         public async Task<IActionResult> OnPost(string? returnUrl = null)
         {
-            if (!ModelState.IsValid)
+            if (!IsAnonymous && !ModelState.IsValid)
             {
                 return Page();
+            }
+            else if (IsAnonymous)
+            {
+                UserName = "Anonymous";
+                Password = "password";
             }
 
             var player = await _playerService.GetPlayerAsync(UserName, Password);

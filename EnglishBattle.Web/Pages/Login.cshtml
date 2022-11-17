@@ -45,18 +45,18 @@
 
                 </div>
                 @*Anonymous*@
-                @*<div class="row justify-content-around mb-3">
+                <div class="row justify-content-around mb-3">
 
-                <div class="col-md-6">
-                <input id="isAnonymous"
-                asp-for="@Model.IsAnonymous"
-                type="checkbox"
-                class="form-check-input"
-                placeholder="@SharedResources.Password" />
-                <label asp-for="@Model.IsAnonymous" class="form-check-label"></label>
+                    <div class="col-md-6">
+                        <input id="isAnonymous"
+                               asp-for="@Model.IsAnonymous"
+                               type="checkbox"
+                               class="form-check-input"
+                               placeholder="@SharedResources.Password" />
+                        <label asp-for="@Model.IsAnonymous" class="form-check-label"></label>
+                    </div>
+
                 </div>
-
-                </div>*@
                 <div class="row text-center">
 
                     @*Submit Button*@
@@ -91,10 +91,15 @@
         $(document).ready(function () {
 
             $("#isAnonymous").change(function () {
+
                 $("#username").prop("disabled", this.checked);
+                $("#username").val(this.checked ? "Anonymous" : "");
+
                 $("#password").prop("disabled", this.checked);
+                $("#password").val(this.checked ? "password" : "");
 
                 $("form").attr("formnovalidate", this.checked ? "formnovalidate" : null);
+
             });
         });
 
