@@ -27,7 +27,7 @@
                 @*Score*@
                 <div class="row">
                     <div class="col">
-                        <h3>SCORE: <span id="game-score">0</span></h3>
+                        <h3>Score: <span id="score">0</span></h3>
                     </div>
                 </div>
                 @*BaseForm*@
@@ -48,7 +48,7 @@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="pastParticiple" runat="server" placeholder="@Game.PastParticiple" class="form-control" autocomplete="off" />
+                        <input ID="pastParticiple" runat="server" placeholder="@Game.PastParticiple" class="form-control" autocomplete="off" disabled/>
                     </div>
 
                 </div>
@@ -56,7 +56,7 @@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="pastSimple" runat="server" placeholder="@Game.PastSimple" class="form-control" autocomplete="off" />
+                        <input ID="pastSimple" runat="server" placeholder="@Game.PastSimple" class="form-control" autocomplete="off" disabled />
                     </div>
 
                 </div>
@@ -103,31 +103,18 @@
             $("#success_icon").hide();
             $("#failure_icon").hide();
 
-            var _gameId = parseInt($("#gameId").val());
-            var _userId = parseInt($("#userId").val());
+            const _gameId = parseInt($("#gameId").val());
 
-            var baseFormInput = $("#baseForm");
-            var pastSimpleInput = $("#pastSimple");
-            var pastParticipleInput = $("#pastParticiple");
-            var hintListDiv = $("#hints");
+            // References to game's html elements
+            const _baseFormInput = $("#baseForm");
+            const _pastSimpleInput = $("#pastSimple");
+            const _pastParticipleInput = $("#pastParticiple");
+            const _hintListDiv = $("#hints");
+            const _scoreSpan = $("#score");
 
-            var _verb = null;
-
-            function nextHint(hint) {
-                var hintToPrepend = `<div class="" style="opacity: 0.3;">${hint}</div>`;
-
-                $(hintToPrepend).hide().prependTo(hintListDiv).fadeIn();
-            }
-
-            function nextVerb(verb) {
-                baseFormInput.val(verb);
-                pastSimpleInput.val("").focus();
-                pastParticipleInput.val("");
-            }
-
-            function gameOver() {
-                console.log("timeout");
-            }
+            // Irregular verb currently displayed
+            var _currentVerb = null;
+            var _score = 0;
 
             /*
                 Play button click event
@@ -136,16 +123,18 @@
 
                 $(this).attr("disabled", true);
 
-                _game.NewGame(_timer.getTimeStamp());
-                _timer.start(gameOver);
+                enableInputs(true);
 
-                _verb = _game.GetNextVerb();
+                _game.NewGame(_timer.getTimeStamp());
+                _timer.start(timeOutHandler);
+
+                _currentVerb = _game.GetNextVerb();
                 var hints = _game.GetHints();
 
-                nextVerb(_verb.baseForm);
+                displayNextVerb(_currentVerb.baseForm);
 
                 for (let hint of hints) {
-                    nextHint(hint);
+                    displayNextHint(hint);
                 }
             });
 
@@ -153,25 +142,28 @@
                 Keypress "Enter" event
             */
             $(document).keypress(function () {
-                let pastSimpleVal = pastSimpleInput.val();
-                let pastParticipleVal = pastParticipleInput.val();
+                let pastSimpleVal = _pastSimpleInput.val();
+                let pastParticipleVal = _pastParticipleInput.val();
 
                 if (event.key == "Enter") {
-                    var isEmpty = pastSimpleVal != "" && pastParticipleVal != "";
+                    let isEmpty = pastSimpleVal != "" && pastParticipleVal != "";
 
                     if (_game.IsValidAnswer(pastSimpleVal, pastParticipleVal)) {
-                        baseFormInput.addClass("is-valid").removeClass("is-invalid");
+                        _scoreSpan.html(++_score);
+                        _timer.addSeconds(3);
+                        _baseFormInput.addClass("is-valid").removeClass("is-invalid");
                     }
                     else {
-                        baseFormInput.addClass("is-invalid").removeClass("is-valid");
+                        _timer.addSeconds(-1);
+                        _baseFormInput.addClass("is-invalid").removeClass("is-valid");
                     }
 
                     _game.PostAnswer(pastSimpleVal, pastParticipleVal, _timer.getTimeStamp());
 
-                    _verb = _game.GetNextVerb();
+                    _currentVerb = _game.GetNextVerb();
 
-                    nextVerb(_verb.baseForm);
-                    nextHint(_game.GetNextHint());
+                    displayNextVerb(_currentVerb.baseForm);
+                    displayNextHint(_game.GetNextHint());
                 }
             });
 
@@ -184,6 +176,28 @@
                 // Disable errors
                 //baseFormInput.delay(300).removeClass("is-invalid").removeClass("is-valid");
             });
+
+            function enableInputs(enable) {
+                _pastParticipleInput.attr("disabled", !enable);
+                _pastSimpleInput.attr("disabled", !enable);
+            }
+
+            function displayNextHint(hint) {
+                let hintToPrepend = `<div class="" style="opacity: 0.3;">${hint}</div>`;
+
+                $(hintToPrepend).hide().prependTo(_hintListDiv).fadeIn();
+            }
+
+            function displayNextVerb(verb) {
+                _baseFormInput.val(verb);
+                _pastSimpleInput.val("");
+                _pastParticipleInput.val("").focus();
+            }
+
+            function timeOutHandler() {
+                enableInputs(false);
+                console.log("timeout");
+            }
 
         });
 
