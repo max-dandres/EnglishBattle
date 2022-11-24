@@ -11,7 +11,7 @@ namespace EnglishBattle.DAL.Entities
         public int PlayerId { get; private set; }
         public Player Player { get; private set; } = null!;
         public DateTime CreatedAt { get; set; }
-        public DateTime? StartedAt { get; set; }
+        public DateTime? OverAt { get; set; }
         public List<GameAnswer> Answers { get; private set; } = new();
 
         public Game(int playerId)

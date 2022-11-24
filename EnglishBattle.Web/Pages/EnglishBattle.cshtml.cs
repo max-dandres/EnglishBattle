@@ -12,7 +12,7 @@ namespace EnglishBattle.Web.Pages
     {
         public List<IrregularVerbDto> IrregularVerbs { get; set; } = null!;
         public int UserID { get; set; }
-        public int GameID { get; set; }
+        //public int GameID { get; set; }
 
         private readonly GameService _gameService;
 
@@ -28,12 +28,16 @@ namespace EnglishBattle.Web.Pages
                 throw new Exception("Could not retrieve userID");
             }
 
-            GameID = await _gameService.CreateGameAsync(userId);
             UserID = userId;
 
-            IrregularVerbs = await _gameService.GetAllVerbsAsync(shuffle: true);
-
             return;
+        }
+
+        public async Task<IActionResult> OnGetIrregularVerbs()
+        {
+            var irregularVerbs = await _gameService.GetAllVerbsAsync(shuffle: true);
+
+            return new JsonResult(new { irregularVerbs });
         }
 
         public async Task<IActionResult> OnPostAnswer(AnswerDto answer)
@@ -43,16 +47,21 @@ namespace EnglishBattle.Web.Pages
                 return BadRequest("Answer cannot be empty");
             }
 
-            bool isCorrect = await _gameService.CheckAnswerAsync(answer.VerbId, answer.Preterit, answer.PastPrinciple);
-
-            await _gameService.AddAnswerAsync(answer);
+            bool isCorrect = await _gameService.AddAnswerAsync(answer);
 
             return new JsonResult(new { isCorrect });
         }
 
-        public async Task<IActionResult> OnPutStart(int gameId, DateTime startedAt)
+        public async Task<IActionResult> OnPostNewGame(int playerId)
         {
-            await _gameService.StartGameAsync(gameId, startedAt);
+            int gameId = await _gameService.NewGameAsync(playerId);
+
+            return new JsonResult(new { gameId });
+        }
+
+        public async Task<IActionResult> OnPostGameOver(int gameId, DateTime overAt)
+        {
+            await _gameService.GameOverAsync(gameId, overAt);
 
             return StatusCode(StatusCodes.Status202Accepted, new { statusCode = 202 });
         }

@@ -39,12 +39,23 @@ namespace EnglishBattle.BLL.Services
             return dtos;
         }
 
-        public async Task AddAnswerAsync(AnswerDto answerDto)
+        public async Task<bool> AddAnswerAsync(AnswerDto answerDto)
         {
-            var answer = new GameAnswer(answerDto.GameId, answerDto.VerbId, answerDto.Preterit, answerDto.PastPrinciple, answerDto.AnsweredAt);
+            bool isCorrect = await CheckAnswerAsync(answerDto.VerbId, answerDto.Preterit, answerDto.PastPrinciple);
+
+            var answer = new GameAnswer(
+                answerDto.GameId,
+                answerDto.VerbId,
+                answerDto.Preterit,
+                answerDto.PastPrinciple,
+                isCorrect,
+                answerDto.AnsweredAt
+            );
 
             _context.GameAnswers.Add(answer);
             await _context.SaveChangesAsync();
+
+            return isCorrect;
         }
 
         public async Task<bool> CheckAnswerAsync(int verbId, string preterit, string pastPrinciple)
@@ -78,7 +89,17 @@ namespace EnglishBattle.BLL.Services
             return newGame.Id;
         }
 
-        public async Task StartGameAsync(int gameId, DateTime timestamp)
+        public async Task<int> NewGameAsync(int userId)
+        {
+            var newGame = new Game(userId);
+
+            _context.Games.Add(newGame);
+            await _context.SaveChangesAsync();
+
+            return newGame.Id;
+        }
+
+        public async Task GameOverAsync(int gameId, DateTime overAt)
         {
             var game = _context.Games.FirstOrDefault(x => x.Id == gameId);
 
@@ -87,7 +108,7 @@ namespace EnglishBattle.BLL.Services
                 throw new Exception($"Game with id {gameId} not found");
             }
 
-            game.StartedAt = timestamp;
+            game.OverAt = overAt;
 
             await _context.SaveChangesAsync();
         }

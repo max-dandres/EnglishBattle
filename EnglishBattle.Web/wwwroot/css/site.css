@@ -32,6 +32,11 @@ body {
     width: 300px;
 }
 
+#timeBonus {
+    position: absolute;
+    font-weight: bold;
+}
+
 /* Following imported from old project */
 
 .panel-wrapper {
@@ -43,7 +48,8 @@ body {
     margin-bottom: 0.25em;
     overflow: hidden;
     max-height: 4.75em;
-    height: 4.75em;
+    /*height: 4.75em;*/
+    height: 0em;
     padding-left: 0.75em;
     text-align: left !important;
 }
@@ -65,14 +71,6 @@ body {
 .col-centered {
     margin: 0 auto;
     float: none;
-}
-
-.input-icons i {
-    position: absolute;
-}
-
-.input-icons {
-    width: 100%;
 }
 
 .icon {

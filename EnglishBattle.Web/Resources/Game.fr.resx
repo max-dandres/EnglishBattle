@@ -120,10 +120,22 @@
   <data name="BaseForm" xml:space="preserve">
     <value>Base verbale</value>
   </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>En cours</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
   <data name="PastParticiple" xml:space="preserve">
     <value>Participe passé</value>
   </data>
   <data name="PastSimple" xml:space="preserve">
     <value>Prétérit</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Prêt?</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Commencer</value>
   </data>
 </root>

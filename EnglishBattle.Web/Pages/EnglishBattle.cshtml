@@ -7,28 +7,32 @@
 @{
 }
 
-<input type="hidden" id="userId" asp-for="@Model.UserID" />
-<input type="hidden" id="gameId" asp-for="@Model.GameID" />
+@section Stylesheets {
+    <link rel="stylesheet" href="~/css/spinner.css" asp-append-version="true" />
+}
 
-<div class="row justify-content-center">
-    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-8 text-center">
-        <div class="card border-secondary">
+    <input type="hidden" id="userId" asp-for="@Model.UserID" />
+    @*<input type="hidden" id="gameId" asp-for="@Model.GameID" />*@
 
-            @*Timer*@
-            <div id="timer" class="card-header">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-8 text-center">
+            <div class="card border-secondary">
 
-                <div class="row align-items-center">
-                    <div class="col">
-                    </div>
+                @*Timer*@
+                <div id="timer" class="card-header">
 
-                    <div class="col" style="width: 140px;">
-                        @{
+                    <div class="row align-items-center">
+                        <div class="col">
+                        </div>
+
+                        <div class="col text-center" style="width: 164px;">
+                            @{
                             await Html.RenderPartialAsync("_TimerPartial");
                         }
                     </div>
 
                     <div class="col" style="text-align: left;">
-                        <span style="position: absolute;">+7</span>
+                        <span id="timeBonus"></span>
                     </div>
                 </div>
 
@@ -78,20 +82,29 @@
                 <div class="row">
                     <div class="col">
 
-                        <button id="playButton" class="btn btn-success" type="button">Chargement</button>
+                        <button id="playButton" class="btn btn-success" type="button">
+                            @*<div class="spinner">
+                            <div class="spinner-dot-1"></div>
+                            <div class="spinner-dot-2"></div>
+                            </div>
+                            &nbsp;*@
+                            <span>@Game.Start</span>
+                        </button>
+
+
 
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-4">
+                @*<div class="row justify-content-center">
+                <div class="col-4">
 
-                        <div class="form-check form-switch" style="width: 100px;">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Infinite</label>
-                        </div>
-
-                    </div>
+                <div class="form-check form-switch" style="width: 100px;">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Infinite</label>
                 </div>
+
+                </div>
+                </div>*@
             </div>
 
         </div>
@@ -108,18 +121,19 @@
         const _irregularVerbs = @Json.Serialize(Model.IrregularVerbs);
 
         const _timer = new Timer(60);
-        const _game = new EnglishBattle(@Model.GameID, _irregularVerbs);
+        const _game = new EnglishBattle(@Model.UserID);
+
+        const _timeBonus = 3;
+        const _timePenalty = -1;
 
         $(document).ready(function () {
-            //$("#success_icon").hide();
-            //$("#failure_icon").hide();
-
-            const _gameId = parseInt($("#gameId").val());
+            $("#timeBonus").hide();
 
             // References to game's html elements
             const _baseFormInput = $("#baseForm");
             const _pastSimpleInput = $("#pastSimple");
             const _pastParticipleInput = $("#pastParticiple");
+            const _playButton = $("#playButton");
             const _hintListDiv = $("#hints");
             const _scoreSpan = $("#score");
 
@@ -130,23 +144,41 @@
             /*
                 Play button click event
             */
-            $("#playButton").click(function () {
+            _playButton.click(function () {
 
-                $(this).attr("disabled", true);
+                _hintListDiv.animate({ "height": "4.75em" }, "slow");
 
-                enableInputs(true);
+                $.when(
 
-                _game.NewGame(_timer.getTimeStamp());
-                _timer.start(timeOutHandler);
+                    ajax_newGame(),
+                    ajax_getIrregularVerbs()
 
-                _currentVerb = _game.GetNextVerb();
-                var hints = _game.GetHints();
+                ).done(function () {
+                    enableInputs(true);
 
-                displayNextVerb(_currentVerb.baseForm);
+                    _playButton.attr("disabled", true);
+                    _playButton.html(
+                        `<div class='spinner'>
+                                        <div class='spinner-dot-1'></div>
+                                        <div class='spinner-dot-2'></div>
+                                    </div>
+                                    &nbsp;
+                                    <span>@Game.InProgess</span>`
+                    );
 
-                for (let hint of hints) {
-                    displayNextHint(hint);
-                }
+                    _timer.start(timeOutHandler);
+                    _game.inProgress = true;
+                    _currentVerb = _game.GetNextVerb();
+
+                    displayNextVerb(_currentVerb.baseForm);
+
+                    let hints = _game.GetHints();
+
+                    for (let hint of hints) {
+                        displayNextHint(hint);
+                    }
+
+                });
             });
 
             /*
@@ -156,20 +188,27 @@
                 let pastSimpleVal = _pastSimpleInput.val();
                 let pastParticipleVal = _pastParticipleInput.val();
 
-                if (event.key == "Enter") {
-                    let isEmpty = pastSimpleVal != "" && pastParticipleVal != "";
+                if (_game.inProgress && event.key == "Enter") {
 
                     if (_game.IsValidAnswer(pastSimpleVal, pastParticipleVal)) {
                         _scoreSpan.html(++_score);
-                        _timer.addSeconds(3);
-                        _baseFormInput.addClass("is-valid").removeClass("is-invalid");
+                        _timer.addSeconds(_timeBonus);
+                        displayTimePenalty(_timeBonus);
+
+                        _baseFormInput
+                            .addClass("is-valid")
+                            .removeClass("is-invalid");
                     }
                     else {
-                        _timer.addSeconds(-1);
-                        _baseFormInput.addClass("is-invalid").removeClass("is-valid");
+                        _timer.addSeconds(_timePenalty);
+                        displayTimePenalty(_timePenalty);
+
+                        _baseFormInput
+                            .addClass("is-invalid")
+                            .removeClass("is-valid");
                     }
 
-                    _game.PostAnswer(pastSimpleVal, pastParticipleVal, _timer.getTimeStamp());
+                    ajaw_postAnswer(pastSimpleVal, pastParticipleVal, _timer.getTimeStamp());
 
                     _currentVerb = _game.GetNextVerb();
 
@@ -178,15 +217,97 @@
                 }
             });
 
-            $("#pastSimple, #pastParticiple").focus(function () {
-                // Disable errors
-                //baseFormInput.delay(300).removeClass("is-invalid").removeClass("is-valid");
-            });
+            function ajax_newGame() {
+                return $.ajax({
+                    type: "POST",
+                    url: "/EnglishBattle?handler=NewGame",
+                    data: {
+                        playerId: $("#userId").val(),
+                        //startedAt: timestamp
+                    },
+                    dataType: "json",
+                    headers: {
+                        RequestVerificationToken:
+                            $('input:hidden[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (data) {
+                        console.log("start success");
 
-            $("#pastSimple, #pastParticiple").keypress(function () {
-                // Disable errors
-                //baseFormInput.delay(300).removeClass("is-invalid").removeClass("is-valid");
-            });
+                        _game.SetGameId(data.gameId);
+                    },
+                    error: function (err) {
+                        console.log("start error");
+                    }
+                });
+            }
+
+            function ajaw_postAnswer(preterit, pastPrinciple, timestamp) {
+                return $.ajax({
+                    type: "POST",
+                    url: "/EnglishBattle?handler=Answer",
+                    data: {
+                        answer: {
+                            verbId: _currentVerb.id,
+                            gameId: _game.gameId,
+                            preterit: preterit,
+                            pastPrinciple: pastPrinciple,
+                            answeredAt: timestamp
+                        }
+                    },
+                    dataType: "json",
+                    headers: {
+                        RequestVerificationToken:
+                            $('input:hidden[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (data) {
+                        console.log("posted answer successfully")
+                    },
+                    error: function (err) {
+                        console.log("error while posting answer");
+                    }
+                });
+            }
+
+            function ajax_gameOver(timestamp) {
+                return $.ajax({
+                    type: "POST",
+                    url: "/EnglishBattle?handler=GameOver",
+                    data: {
+                        playerId: _game.gameId,
+                        startedAt: timestamp
+                    },
+                    dataType: "json",
+                    headers: {
+                        RequestVerificationToken:
+                            $('input:hidden[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (data) {
+                        console.log("gameover success");
+                    },
+                    error: function (err) {
+                        console.log("gameover error");
+                    }
+                });
+            }
+
+            function ajax_getIrregularVerbs() {
+                return $.ajax({
+                    type: "GET",
+                    url: "/EnglishBattle?handler=IrregularVerbs",
+                    headers: {
+                        RequestVerificationToken:
+                            $('input:hidden[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (data) {
+                        console.log("get verbs success");
+
+                        _game.SetVerbs(data.irregularVerbs);
+                    },
+                    error: function (err) {
+                        console.log("get verbs error");
+                    }
+                });
+            }
 
             function enableInputs(enable) {
                 _pastParticipleInput.attr("disabled", !enable);
@@ -194,9 +315,35 @@
             }
 
             function displayNextHint(hint) {
-                let hintToPrepend = `<div class="" style="opacity: 0.3;">${hint}</div>`;
 
-                $(hintToPrepend).hide().prependTo(_hintListDiv).fadeIn();
+                let hintToPrepend = `<div style="opacity: 0.3;">${hint}</div>`;
+
+                $(hintToPrepend).hide().prependTo(_hintListDiv).show("slide", "", 500);
+
+                if (_hintListDiv.children().length > 3) {
+                    _hintListDiv.find("div:last").remove();
+                }
+            }
+
+            function displayTimePenalty(seconds) {
+                let color = (seconds > 0) ? "green" : "red";
+                let sign = (seconds > 0) ? "+" : "";
+
+                $("#seconds_3").attr("fill", (seconds > 0) ? "white" : color);
+
+                $("#timeBonus")
+                    .html(sign + seconds + "s")
+                    .css({ "color": color })
+                    .show()
+                    .animate({
+                        "font-size": "2em",
+                    }, "fast", function () {
+                        $(this).delay(400).animate({
+                            "font-size": "0em",
+                        }, "slow", function () {
+                            $("#seconds_3").attr("fill", "#fff");
+                        });
+                    });
             }
 
             function displayNextVerb(verb) {
@@ -206,8 +353,22 @@
             }
 
             function timeOutHandler() {
+                _game.inProgress = false;
+
+                _hintListDiv.animate({ "height": "0em" }, "slow");
+
+                _baseFormInput
+                    .removeClass("is-valid")
+                    .removeClass("is-invalid");
+
+                ajax_gameOver(_timer.getTimeStamp());
+
+                _playButton.attr("disabled", false);
+                _playButton.html("<span>@Game.Start</span>");
+
+                _hintListDiv.empty();
+
                 enableInputs(false);
-                console.log("timeout");
             }
 
         });

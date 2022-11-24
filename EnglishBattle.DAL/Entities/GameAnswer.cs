@@ -14,9 +14,10 @@ namespace EnglishBattle.DAL.Entities
         public IrregularVerb Verb { get; private set; } = null!;
         public string PastPrincipleInput { get; private set; }
         public string PreteritInput { get; private set; }
+        public bool IsCorrect { get; private set; }
         public DateTime AnsweredAt { get; private set; }
 
-        public GameAnswer(int gameId, int verbId, string pastPrincipleInput, string preteritInput, DateTime answeredAt)
+        public GameAnswer(int gameId, int verbId, string pastPrincipleInput, string preteritInput, bool isCorrect, DateTime answeredAt)
         {
             GameId = gameId;
             VerbId = verbId;
