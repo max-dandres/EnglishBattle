@@ -15,6 +15,7 @@ namespace EnglishBattle.DAL.Entities
         public string PastPrincipleInput { get; private set; }
         public string PreteritInput { get; private set; }
         public bool IsCorrect { get; private set; }
+        public int TimePenalty { get; private set; }
         public DateTime AnsweredAt { get; private set; }
 
         public GameAnswer(int gameId, int verbId, string pastPrincipleInput, string preteritInput, bool isCorrect, DateTime answeredAt)
@@ -24,6 +25,7 @@ namespace EnglishBattle.DAL.Entities
             PastPrincipleInput = pastPrincipleInput;
             PreteritInput = preteritInput;
             AnsweredAt = answeredAt;
+            TimePenalty = isCorrect ? 3 : -1;
         }
     }
 }

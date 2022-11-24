@@ -67,26 +67,16 @@ namespace EnglishBattle.BLL.Services
                 throw new Exception($"Verb with id {verbId} not found");
             }
 
-            if (string.Compare(verb.PastSimple, preterit, true) == 0)
+            if (string.Compare(verb.PastSimple, preterit, true) != 0)
             {
                 return false;
             }
-            else if (string.Compare(verb.PastParticiple, pastPrinciple, true) == 0)
+            else if (string.Compare(verb.PastParticiple, pastPrinciple, true) != 0)
             {
                 return false;
             }
 
             return true;
-        }
-
-        public async Task<int> CreateGameAsync(int userId)
-        {
-            var newGame = new Game(userId);
-
-            _context.Games.Add(newGame);
-            await _context.SaveChangesAsync();
-
-            return newGame.Id;
         }
 
         public async Task<int> NewGameAsync(int userId)
