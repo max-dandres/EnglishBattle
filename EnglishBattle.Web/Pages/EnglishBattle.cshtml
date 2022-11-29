@@ -189,10 +189,26 @@
                 let pastParticipleVal = _pastParticipleInput.val();
 
                 if (_game.inProgress && event.key == "Enter") {
+                    if (pastSimpleVal == "" || pastParticipleVal == "") {
+                        if (pastSimpleVal == "") {
+                            _pastSimpleInput.addClass("is-invalid");
+                            setTimeout(function () {
+                                _pastSimpleInput.removeClass("is-invalid")
+                            }, 1000);
+                        }
+                        if (pastParticipleVal == "") {
+                            _pastParticipleInput.addClass("is-invalid");
+                            setTimeout(function () {
+                                _pastParticipleInput.removeClass("is-invalid")
+                            }, 1000);
+                        }
 
-                    if (_game.IsValidAnswer(pastSimpleVal, pastParticipleVal)) {
+                        return;
+                    }
+                    else if (_game.IsValidAnswer(pastSimpleVal, pastParticipleVal)) {
                         _scoreSpan.html(++_score);
                         _timer.addSeconds(_timeBonus);
+
                         displayTimePenalty(_timeBonus);
 
                         _baseFormInput
@@ -201,6 +217,7 @@
                     }
                     else {
                         _timer.addSeconds(_timePenalty);
+
                         displayTimePenalty(_timePenalty);
 
                         _baseFormInput
@@ -208,7 +225,7 @@
                             .removeClass("is-valid");
                     }
 
-                    ajaw_postAnswer(pastSimpleVal, pastParticipleVal, _timer.getTimeStamp());
+                    ajax_postAnswer(pastSimpleVal, pastParticipleVal, _timer.getTimeStamp());
 
                     _currentVerb = _game.GetNextVerb();
 
@@ -241,7 +258,7 @@
                 });
             }
 
-            function ajaw_postAnswer(preterit, pastPrinciple, timestamp) {
+            function ajax_postAnswer(preterit, pastPrinciple, timestamp) {
                 return $.ajax({
                     type: "POST",
                     url: "/EnglishBattle?handler=Answer",
@@ -349,7 +366,8 @@
             function displayNextVerb(verb) {
                 _baseFormInput.val(verb);
                 _pastSimpleInput.val("");
-                _pastParticipleInput.val("").focus();
+                _pastParticipleInput.val("")
+                    .focus();
             }
 
             function timeOutHandler() {
