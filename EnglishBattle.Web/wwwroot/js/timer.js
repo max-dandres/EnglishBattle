@@ -6,6 +6,7 @@
 function Timer(seconds = 60) {
     _this = this;
     _this.timerInterval;
+    _this.extraTime = 0;
     _this.duration = seconds;
     _this.tick = 16;
     _this.timePenalty = 0;
@@ -117,9 +118,9 @@ Timer.prototype.updateTimer = function () {
 
     if (_this.miliseconds == null) _this.miliseconds = date.getTime();
 
-    var diff = (date.getTime() - _this.miliseconds) % (1000 * _this.duration);
+    var diff = (date.getTime() - _this.miliseconds) % (1000 * (_this.duration + _this.extraTime));
 
-    if (diff + (_this.tick * 2) >= _this.duration * 1000) {
+    if (diff + (_this.tick * 2) >= (_this.duration + _this.extraTime) * 1000) {
         _this.stop();
         $('#progress_3').attr('d', "0");
         $('#seconds_3').html("0");
@@ -129,8 +130,8 @@ Timer.prototype.updateTimer = function () {
         return;
     }
 
-    var degrees = 0.36 * diff / _this.duration;
-    var seconds = _this.duration - Math.floor(diff / 1000);
+    var degrees = 0.36 * diff / (_this.duration + _this.extraTime);
+    var seconds = (_this.duration + _this.extraTime) - Math.floor(diff / 1000);
 
     _this.update(degrees, seconds);
 }
@@ -143,6 +144,7 @@ Timer.prototype.start = function (endCallBack) {
 Timer.prototype.stop = function () {
     clearInterval(_this.timerInterval);
     _this.miliseconds = null;
+    _this.extraTime = 0;
 }
 
 Timer.prototype.refresh = function () {
@@ -157,13 +159,5 @@ Timer.prototype.reset = function () {
 }
 
 Timer.prototype.addSeconds = function (seconds) {
-    if (_this.duration + seconds <= 0) {
-        _this.stop();
-        $('#progress_3').attr('d', "0");
-        $('#seconds_3').html("0");
-
-        _this.endCallBack(_this.getTimeStamp());
-    }
-
-    _this.duration += seconds;
+    _this.extraTime += seconds;
 }
