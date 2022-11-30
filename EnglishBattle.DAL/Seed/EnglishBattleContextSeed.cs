@@ -1,4 +1,5 @@
 ﻿using EnglishBattle.DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using System.Text.Json;
 
@@ -10,6 +11,8 @@ namespace EnglishBattle.DAL.Seed
         {
             using (context)
             {
+                await context.Database.MigrateAsync();
+
                 if (!context.IrregularVerbs.Any())
                 {
                     string ressource = "EnglishBattle.DAL.Seed.Irregular_verbs.json";

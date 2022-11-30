@@ -9,7 +9,7 @@ namespace EnglishBattle.DAL
         {
             services.AddDbContext<EnglishBattleContext>(options =>
             {
-                options.UseInMemoryDatabase("EnglishBattle");
+                options.UseSqlite($"Data Source={EnglishBattleContext.GetLocalDbPath()}");
             });
 
             return services;

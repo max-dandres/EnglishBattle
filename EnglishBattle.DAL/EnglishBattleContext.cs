@@ -15,9 +15,24 @@ namespace EnglishBattle.DAL
 
         }
 
+        internal static string GetLocalDbPath()
+        {
+            var folder = Environment.SpecialFolder.LocalApplicationData;
+            var path = Environment.GetFolderPath(folder);
+            var dbPath = Path.Join(path, "englishBattle.sqlite");
+
+            return dbPath;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.EnableSensitiveDataLogging();
+
+            //var folder = Environment.SpecialFolder.LocalApplicationData;
+            //var path = Environment.GetFolderPath(folder);
+            //var dbPath = Path.Join(path, "englishBattle.db");
+
+            //options.UseSqlite($"Data Source={dbPath}");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
