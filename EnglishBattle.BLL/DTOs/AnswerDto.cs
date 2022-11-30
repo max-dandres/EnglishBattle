@@ -10,8 +10,8 @@ namespace EnglishBattle.BLL.DTOs
     {
         public int GameId { get; set; }
         public int VerbId { get; set; }
-        public string Preterit { get; set; } = null!;
-        public string PastPrinciple { get; set; } = null!;
+        public string PastParticiple { get; set; } = null!;
+        public string PastSimple { get; set; } = null!;
         public DateTime AnsweredAt { get; set; }
     }
 }

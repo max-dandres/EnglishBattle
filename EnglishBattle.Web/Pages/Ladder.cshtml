@@ -2,3 +2,33 @@
 @model EnglishBattle.Web.Pages.LadderModel
 @{
 }
+
+<div class="row">
+    <div class="col">
+
+        <table class=table>
+            <thead>
+                <tr>
+                    <th scope="col">Score</th>
+                    <th scope="col">Player</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var game in Model.Games)
+                {
+                    <tr>
+                        <td scope="row">@game.Score</td>
+                        <td>@game.PlayerName</td>
+                        <td>@game.Duration</td>
+                        <td>
+                            <a asp-area="" asp-page="/GameDetails" asp-route-id="@game.Id">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

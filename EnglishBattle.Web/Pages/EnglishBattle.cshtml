@@ -83,28 +83,13 @@
                     <div class="col">
 
                         <button id="playButton" class="btn btn-success" type="button">
-                            @*<div class="spinner">
-                            <div class="spinner-dot-1"></div>
-                            <div class="spinner-dot-2"></div>
-                            </div>
-                            &nbsp;*@
+
                             <span>@Game.Start</span>
+
                         </button>
-
-
 
                     </div>
                 </div>
-                @*<div class="row justify-content-center">
-                <div class="col-4">
-
-                <div class="form-check form-switch" style="width: 100px;">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Infinite</label>
-                </div>
-
-                </div>
-                </div>*@
             </div>
 
         </div>
@@ -159,11 +144,11 @@
                     _playButton.attr("disabled", true);
                     _playButton.html(
                         `<div class='spinner'>
-                                        <div class='spinner-dot-1'></div>
-                                        <div class='spinner-dot-2'></div>
-                                    </div>
-                                    &nbsp;
-                                    <span>@Game.InProgess</span>`
+                                                        <div class='spinner-dot-1'></div>
+                                                        <div class='spinner-dot-2'></div>
+                                                    </div>
+                                                    &nbsp;
+                                                    <span>@Game.InProgess</span>`
                     );
 
                     _timer.start(timeOutHandler);
@@ -249,6 +234,7 @@
                     },
                     success: function (data) {
                         console.log("start success");
+                        console.log("game id: " + data.gameId);
 
                         _game.SetGameId(data.gameId);
                     },
@@ -258,7 +244,7 @@
                 });
             }
 
-            function ajax_postAnswer(preterit, pastPrinciple, timestamp) {
+            function ajax_postAnswer(pastSimple, pastParticiple, timestamp) {
                 return $.ajax({
                     type: "POST",
                     url: "/EnglishBattle?handler=Answer",
@@ -266,8 +252,8 @@
                         answer: {
                             verbId: _currentVerb.id,
                             gameId: _game.gameId,
-                            preterit: preterit,
-                            pastPrinciple: pastPrinciple,
+                            pastSimple: pastSimple,
+                            pastParticiple: pastParticiple,
                             answeredAt: timestamp
                         }
                     },
@@ -290,7 +276,7 @@
                     type: "POST",
                     url: "/EnglishBattle?handler=GameOver",
                     data: {
-                        playerId: _game.gameId,
+                        gameId: _game.gameId,
                         startedAt: timestamp
                     },
                     dataType: "json",
@@ -303,6 +289,7 @@
                     },
                     error: function (err) {
                         console.log("gameover error");
+                        console.log(err);
                     }
                 });
             }

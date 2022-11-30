@@ -13,6 +13,8 @@ namespace EnglishBattle.DAL.Entities
         public int Seconds { get; private set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? OverAt { get; set; }
+        public int Duration { get; set; }
+        public int Score { get; set; }
         public List<GameAnswer> Answers { get; private set; } = new();
 
         public Game(int playerId)

@@ -12,20 +12,21 @@ namespace EnglishBattle.DAL.Entities
         public Game Game { get; private set; } = null!;
         public int VerbId { get; private set; }
         public IrregularVerb Verb { get; private set; } = null!;
-        public string PastPrincipleInput { get; private set; }
-        public string PreteritInput { get; private set; }
+        public string PastParticipleInput { get; private set; }
+        public string PastSimpleInput { get; private set; }
         public bool IsCorrect { get; private set; }
         public int TimePenalty { get; private set; }
         public DateTime AnsweredAt { get; private set; }
 
-        public GameAnswer(int gameId, int verbId, string pastPrincipleInput, string preteritInput, bool isCorrect, DateTime answeredAt)
+        public GameAnswer(int gameId, int verbId, string pastParticipleInput, string pastSimpleInput, bool isCorrect, DateTime answeredAt)
         {
             GameId = gameId;
             VerbId = verbId;
-            PastPrincipleInput = pastPrincipleInput;
-            PreteritInput = preteritInput;
+            PastParticipleInput = pastParticipleInput;
+            PastSimpleInput = pastSimpleInput;
             AnsweredAt = answeredAt;
             TimePenalty = isCorrect ? 3 : -1;
+            IsCorrect = isCorrect;
         }
     }
 }

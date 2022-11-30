@@ -2,11 +2,6 @@
 using EnglishBattle.DAL;
 using EnglishBattle.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EnglishBattle.BLL.Services
 {
@@ -17,6 +12,23 @@ namespace EnglishBattle.BLL.Services
         public GameService(EnglishBattleContext context)
         {
             _context = context;
+        }
+
+        public async Task<List<GameDto>> GetAllGamesAsync()
+        {
+            var dtos = new List<GameDto>();
+
+            var games = await _context.Games
+                .Include(x => x.Player)
+                .OrderBy(x => x.Score)
+                .ToListAsync();
+
+            foreach (var game in games)
+            {
+                dtos.Add(new GameDto(game.Id, game.Player.UserName, game.Score, game.Duration));
+            }
+
+            return dtos;
         }
 
         public async Task<List<IrregularVerbDto>> GetAllVerbsAsync(bool shuffle = false)
@@ -41,13 +53,13 @@ namespace EnglishBattle.BLL.Services
 
         public async Task<bool> AddAnswerAsync(AnswerDto answerDto)
         {
-            bool isCorrect = await CheckAnswerAsync(answerDto.VerbId, answerDto.Preterit, answerDto.PastPrinciple);
+            bool isCorrect = await CheckAnswerAsync(answerDto.VerbId, answerDto.PastParticiple, answerDto.PastSimple);
 
             var answer = new GameAnswer(
                 answerDto.GameId,
                 answerDto.VerbId,
-                answerDto.Preterit,
-                answerDto.PastPrinciple,
+                answerDto.PastParticiple,
+                answerDto.PastSimple,
                 isCorrect,
                 answerDto.AnsweredAt
             );
@@ -58,7 +70,7 @@ namespace EnglishBattle.BLL.Services
             return isCorrect;
         }
 
-        public async Task<bool> CheckAnswerAsync(int verbId, string preterit, string pastPrinciple)
+        public async Task<bool> CheckAnswerAsync(int verbId, string pastParticiple, string pastSimple)
         {
             var verb = await _context.IrregularVerbs.FirstOrDefaultAsync(x => x.Id == verbId);
 
@@ -67,11 +79,12 @@ namespace EnglishBattle.BLL.Services
                 throw new Exception($"Verb with id {verbId} not found");
             }
 
-            if (string.Compare(verb.PastSimple, preterit, true) != 0)
+            
+            if (string.Compare(verb.PastParticiple, pastParticiple, true) != 0)
             {
                 return false;
             }
-            else if (string.Compare(verb.PastParticiple, pastPrinciple, true) != 0)
+            else if (string.Compare(verb.PastSimple, pastSimple, true) != 0)
             {
                 return false;
             }
@@ -91,7 +104,7 @@ namespace EnglishBattle.BLL.Services
 
         public async Task GameOverAsync(int gameId, DateTime overAt)
         {
-            var game = _context.Games.FirstOrDefault(x => x.Id == gameId);
+            var game = _context.Games.Include(x => x.Answers).FirstOrDefault(x => x.Id == gameId);
 
             if (game == null)
             {
@@ -99,6 +112,8 @@ namespace EnglishBattle.BLL.Services
             }
 
             game.OverAt = overAt;
+            game.Duration = 60 + game.Answers.Sum(x => x.TimePenalty);
+            game.Score = game.Answers.Count(x => x.IsCorrect);
 
             await _context.SaveChangesAsync();
         }
