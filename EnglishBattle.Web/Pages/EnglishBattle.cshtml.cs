@@ -21,7 +21,7 @@ namespace EnglishBattle.Web.Pages
             _gameService = gameService;
         }
 
-        public async Task OnGet()
+        public void OnGet()
         {
             if (!int.TryParse(User.FindFirstValue("UserID"), out int userId))
             {

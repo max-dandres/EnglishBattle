@@ -3,9 +3,14 @@
     public class GameDto
     {
         public int Id { get; set; }
-        public string PlayerName { get; set; }
+        public string? PlayerName { get; set; }
         public int Score { get; set; }
         public int Duration { get; set; }
+
+        private GameDto()
+        {
+
+        }
 
         public GameDto(int id, string playerName, int score, int duration)
         {

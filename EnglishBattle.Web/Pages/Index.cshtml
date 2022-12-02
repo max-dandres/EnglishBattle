@@ -2,33 +2,38 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    string[] titles = new string[3] { "Eeasy", "Medium", "Hard" };
+    int index = 0;
 }
 
 <div class="container">
 
-    <div class="row">
+    <div class="row gx-2">
         @foreach (var group in Model.Verbs)
         {
-            <div class="col-md-4">
-                <table class="text-left">
-                    <thead>
-                        <tr>
-                            <th>Base</th>
-                            <th>Past Principle</th>
-                            <th>Preterit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var verb in group)
-                        {
+            <div class="col">
+                <h3>@titles[index++]</h3>
+                <div class="bg-white">
+                    <table class="table text-left">
+                        <thead>
                             <tr>
-                                <td>@verb.BaseForm</td>
-                                <td>@verb.PastParticiple</td>
-                                <td>@verb.PastSimple</td>
+                                <th scope="col">Base</th>
+                                <th scope="col">Past Participle</th>
+                                <th scope="col">Past Simple</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var verb in group)
+                            {
+                                <tr>
+                                    <td scope="row">@verb.BaseForm</td>
+                                    <td>@verb.PastParticiple</td>
+                                    <td>@verb.PastSimple</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         }
     </div>

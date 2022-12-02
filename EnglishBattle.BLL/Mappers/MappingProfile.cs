@@ -14,6 +14,9 @@ namespace EnglishBattle.BLL.Mappers
         public MappingProfile()
         {
             CreateMap<Player, PlayerDto>().ReverseMap();
+
+            CreateMap<Game, GameDto>()
+                .ForMember(x => x.PlayerName, opt => opt.MapFrom(x => x.Player.UserName));
         }
     }
 }

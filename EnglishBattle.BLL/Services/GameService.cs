@@ -1,4 +1,7 @@
-﻿using EnglishBattle.BLL.DTOs;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using EnglishBattle.BLL.Common;
+using EnglishBattle.BLL.DTOs;
 using EnglishBattle.DAL;
 using EnglishBattle.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -8,27 +11,27 @@ namespace EnglishBattle.BLL.Services
     public class GameService
     {
         private readonly EnglishBattleContext _context;
+        private readonly IConfigurationProvider _mappingConfig;
 
-        public GameService(EnglishBattleContext context)
+        public GameService(EnglishBattleContext context, IMapper mapper)
         {
             _context = context;
+            _mappingConfig = mapper.ConfigurationProvider;
         }
 
-        public async Task<List<GameDto>> GetAllGamesAsync()
+        public async Task<PaginatedList<GameDto>> GetAllGamesAsync(int pageIndex, int pageSize)
         {
             var dtos = new List<GameDto>();
 
-            var games = await _context.Games
-                .Include(x => x.Player)
-                .OrderBy(x => x.Score)
-                .ToListAsync();
+            var query = _context.Games
+                    .Include(x => x.Player);
 
-            foreach (var game in games)
-            {
-                dtos.Add(new GameDto(game.Id, game.Player.UserName, game.Score, game.Duration));
-            }
+            var games = await query
+                .ProjectTo<GameDto>(_mappingConfig)
+                .OrderByDescending(x => x.Score)
+                .ToPaginatedListAsync(pageIndex, pageSize);
 
-            return dtos;
+            return games;
         }
 
         public async Task<List<IrregularVerbDto>> GetAllVerbsAsync(bool shuffle = false)

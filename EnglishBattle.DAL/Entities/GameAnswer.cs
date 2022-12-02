@@ -25,7 +25,7 @@ namespace EnglishBattle.DAL.Entities
             PastParticipleInput = pastParticipleInput;
             PastSimpleInput = pastSimpleInput;
             AnsweredAt = answeredAt;
-            TimePenalty = isCorrect ? 3 : -1;
+            TimePenalty = isCorrect ? 3 : -3;
             IsCorrect = isCorrect;
         }
     }

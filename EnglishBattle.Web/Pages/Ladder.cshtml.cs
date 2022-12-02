@@ -17,9 +17,11 @@ namespace EnglishBattle.Web.Pages
             _gameService = gameService;
         }
 
-        public async Task OnGet()
+        public async Task OnGet(int? page, string? search)
         {
-            Games = await _gameService.GetAllGamesAsync();
+            int count = 25;
+
+            Games = await _gameService.GetAllGamesAsync(page ?? 0, count);
         }
     }
 }
