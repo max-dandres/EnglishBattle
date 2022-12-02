@@ -38,8 +38,9 @@
                     <nav>
                         @if (Model.Games.HasPreviousPage)
                         {
-                            <a asp-page="/Ladder"
-                           asp-route-page="@(Model.Games.PageIndex - 1)"
+                            <a asp-area=""
+                           asp-page="/Ladder"
+                           asp-route-index="@(Model.Games.PageIndex - 1)"
                            asp-route-search="@(Model.Search)"
                            asp-route-showMeOnly="@(Model.ShowMeOnly)"
                            asp-route-from="@Model.From"
@@ -52,8 +53,9 @@
                         </span>
                         @if (Model.Games.HasNextPage)
                         {
-                            <a asp-page="/Ladder"
-                           asp-route-page="@(Model.Games.PageIndex + 1)"
+                            <a asp-area=""
+                           asp-page="/Ladder"
+                           asp-route-index="@(Model.Games.PageIndex + 1)"
                            asp-route-search="@(Model.Search)"
                            asp-route-showMeOnly="@(Model.ShowMeOnly)"
                            asp-route-from="@Model.From"
@@ -94,8 +96,9 @@
                     <nav>
                         @if (Model.Games.HasPreviousPage)
                         {
-                            <a asp-page="/Ladder"
-                           asp-route-page="@(Model.Games.PageIndex - 1)"
+                            <a asp-area="" 
+                           asp-page="/Ladder"
+                           asp-route-index="@(Model.Games.PageIndex - 1)"
                            asp-route-search="@(Model.Search)"
                            asp-route-showMeOnly="@(Model.ShowMeOnly)"
                            asp-route-from="@Model.From"
@@ -108,8 +111,9 @@
                         </span>
                         @if (Model.Games.HasNextPage)
                         {
-                            <a asp-page="/Ladder"
-                           asp-route-page="@(Model.Games.PageIndex + 1)"
+                            <a asp-area="" 
+                           asp-page="/Ladder"
+                           asp-route-index="@(Model.Games.PageIndex + 1)"
                            asp-route-search="@(Model.Search)"
                            asp-route-showMeOnly="@(Model.ShowMeOnly)"
                            asp-route-from="@Model.From"
