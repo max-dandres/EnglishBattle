@@ -7,19 +7,69 @@
 
     <div class="col-3">
         <div class="bg-white">
-            <div class="input-group">
-                <input type="text" />
-            </div>
+            <form method="get">
+                <div class="input-group">
+                    <label>Player: </label>
+                    <input asp-for="@Model.Search" type="text" />
+                </div>
+                <div>
+                    <input asp-for="@Model.ShowMeOnly" type="checkbox" />
+                    <label> Show only me</label>
+                </div>
+                <div class="input-group">
+                    <label>From: </label>
+                    <input asp-for="@Model.From" type="date" />
+                </div>
+                <div class="input-group">
+                    <label>To: </label>
+                    <input asp-for="@Model.To" type="date" />
+                </div>
+                <div class="input-group">
+                    <button>Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 
     <div class="col-9">
         <div class="bg-white">
+            <div class="container">
+                <article class="row">
+                    <nav>
+                        @if (Model.Games.HasPreviousPage)
+                        {
+                            <a asp-page="/Ladder"
+                           asp-route-page="@(Model.Games.PageIndex - 1)"
+                           asp-route-search="@(Model.Search)"
+                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                           asp-route-from="@Model.From"
+                           asp-route-to="@Model.To">
+                                Previous
+                            </a>
+                        }
+                        <span>
+                            Showing @Model.Games.PageSize of @Model.Games.TotalCount foods - Page @(Model.Games.PageIndex + 1) - @Model.Games.TotalPages
+                        </span>
+                        @if (Model.Games.HasNextPage)
+                        {
+                            <a asp-page="/Ladder"
+                           asp-route-page="@(Model.Games.PageIndex + 1)"
+                           asp-route-search="@(Model.Search)"
+                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                           asp-route-from="@Model.From"
+                           asp-route-to="@Model.To">
+                                Next
+                            </a>
+                        }
+                    </nav>
+                </article>
+            </div>
             <table class=table>
                 <thead>
                     <tr>
                         <th scope="col">Score</th>
                         <th scope="col">Player</th>
+                        <th scope="col">Date</th>
                         <th scope="col">Duration</th>
                         <th scope="col">Details</th>
                     </tr>
@@ -30,6 +80,7 @@
                         <tr>
                             <td scope="row">@game.Score</td>
                             <td>@game.PlayerName</td>
+                            <td>@game.CreatedAt</td>
                             <td>@game.Duration</td>
                             <td>
                                 <a asp-area="" asp-page="/GameDetails" asp-route-id="@game.Id">Details</a>
@@ -38,6 +89,37 @@
                     }
                 </tbody>
             </table>
+            <div class="container">
+                <article class="row">
+                    <nav>
+                        @if (Model.Games.HasPreviousPage)
+                        {
+                            <a asp-page="/Ladder"
+                           asp-route-page="@(Model.Games.PageIndex - 1)"
+                           asp-route-search="@(Model.Search)"
+                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                           asp-route-from="@Model.From"
+                           asp-route-to="@Model.To">
+                                Previous
+                            </a>
+                        }
+                        <span>
+                            Showing @Model.Games.PageSize of @Model.Games.TotalCount foods - Page @(Model.Games.PageIndex + 1) - @Model.Games.TotalPages
+                        </span>
+                        @if (Model.Games.HasNextPage)
+                        {
+                            <a asp-page="/Ladder"
+                           asp-route-page="@(Model.Games.PageIndex + 1)"
+                           asp-route-search="@(Model.Search)"
+                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                           asp-route-from="@Model.From"
+                           asp-route-to="@Model.To">
+                                Next
+                            </a>
+                        }
+                    </nav>
+                </article>
+            </div>
         </div>
     </div>
 </div>

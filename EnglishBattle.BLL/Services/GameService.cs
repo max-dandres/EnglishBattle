@@ -19,14 +19,32 @@ namespace EnglishBattle.BLL.Services
             _mappingConfig = mapper.ConfigurationProvider;
         }
 
-        public async Task<PaginatedList<GameDto>> GetAllGamesAsync(int pageIndex, int pageSize)
+        public async Task<PaginatedList<GameDto>> GetAllGamesAsync(int pageIndex, int pageSize, int? playerId, string? search, DateTime? from, DateTime? to)
         {
             var dtos = new List<GameDto>();
 
-            var query = _context.Games
-                    .Include(x => x.Player);
+            var query = _context.Games.AsQueryable();
+
+            if (playerId is not null)
+            {
+                query = query.Where(x => x.PlayerId == playerId);
+            }
+            else if (!string.IsNullOrEmpty(search))
+            {
+                query = query.Where(x => x.Player.UserName.ToLower().Contains(search.ToLower()));
+            }
+
+            if (from is not null)
+            {
+                query = query.Where(x => x.CreatedAt >= from);
+            }
+            if (to is not null)
+            {
+                query = query.Where(x => x.CreatedAt <= to);
+            }
 
             var games = await query
+                .Include(x => x.Player)
                 .ProjectTo<GameDto>(_mappingConfig)
                 .OrderByDescending(x => x.Score)
                 .ToPaginatedListAsync(pageIndex, pageSize);

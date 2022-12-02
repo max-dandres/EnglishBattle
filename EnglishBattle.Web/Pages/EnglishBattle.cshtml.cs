@@ -42,7 +42,7 @@ namespace EnglishBattle.Web.Pages
 
         public async Task<IActionResult> OnPostAnswer(AnswerDto answer)
         {
-            if (string.IsNullOrEmpty(answer.PastParticiple) || string.IsNullOrEmpty(answer.PastSimple))
+            if (string.IsNullOrWhiteSpace(answer.PastParticiple) || string.IsNullOrWhiteSpace(answer.PastSimple))
             {
                 return BadRequest("Answer cannot be empty");
             }
