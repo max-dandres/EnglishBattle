@@ -10,7 +10,7 @@
             <form method="get">
                 <div>
                     <label>Search: </label>
-                    <input asp-for="@Model.Search" type="text" />
+                    <input id="search" asp-for="@Model.Search" type="text" />
                 </div>
                 <div>
                     <button>Submit</button>
@@ -44,7 +44,7 @@
                     Next
                 </a>
             }
-            <table class="table text-left">
+            <table id="verbsTable" class="table text-left">
                 <thead>
                     <tr>
                         <th scope="col">Base</th>
@@ -90,3 +90,38 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var searchVal = $("#search").val().trim();
+
+            if (searchVal != "") {
+                var open = "<span style='background-color: yellow;'>";
+                var close = "</span>";
+
+                $("#verbsTable td").each(function () {
+                    var verb = $(this).html();
+
+                    matchIndex = verb.indexOf(searchVal);
+
+                    if (matchIndex != -1) {
+
+
+                        let highlightedVerb = 
+                            verb.substring(0, matchIndex) + 
+                            open + 
+                            searchVal +
+                            close +
+                            verb.substring(matchIndex + searchVal.length, verb.length);
+
+                        $(this).html(highlightedVerb);
+                    }
+                });
+            }
+
+        });
+
+    </script>
+}
