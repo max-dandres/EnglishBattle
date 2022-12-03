@@ -10,8 +10,9 @@ namespace EnglishBattle.BLL
         {
             services.AddAutoMapper(typeof(MappingProfile));
 
-            services.AddTransient<GameService>();
+            services.AddTransient<VerbService>();
             services.AddTransient<PlayerService>();
+            services.AddTransient<GameService>();
 
             return services;
         }

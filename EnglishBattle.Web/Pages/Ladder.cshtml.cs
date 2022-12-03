@@ -21,6 +21,7 @@ namespace EnglishBattle.Web.Pages
         public DateTime? To { get; set; }
         [FromQuery(Name = "index")]
         public int PageIndex { get; set; }
+        public int Count { get; set; } = 5;
 
         public PaginatedList<GameDto> Games { get; private set; } = null!;
 
@@ -33,7 +34,6 @@ namespace EnglishBattle.Web.Pages
 
         public async Task OnGet()
         {
-            int count = 5;
             int? playerId = null;
 
             if (ShowMeOnly)
@@ -53,7 +53,7 @@ namespace EnglishBattle.Web.Pages
                 }
             }
 
-            Games = await _gameService.GetAllGamesAsync(PageIndex, count, playerId, Search, From, To);
+            Games = await _gameService.GetAllGamesAsync(PageIndex, Count, playerId, Search, From, To);
         }
     }
 }

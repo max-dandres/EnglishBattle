@@ -15,10 +15,12 @@ namespace EnglishBattle.Web.Pages
         //public int GameID { get; set; }
 
         private readonly GameService _gameService;
+        private readonly VerbService _verbService;
 
-        public EnglishBattleModel(GameService gameService)
+        public EnglishBattleModel(GameService gameService, VerbService verbService)
         {
             _gameService = gameService;
+            _verbService = verbService;
         }
 
         public void OnGet()
@@ -35,7 +37,7 @@ namespace EnglishBattle.Web.Pages
 
         public async Task<IActionResult> OnGetIrregularVerbs()
         {
-            var irregularVerbs = await _gameService.GetAllVerbsAsync(shuffle: true);
+            var irregularVerbs = await _verbService.GetAllVerbsAsync(shuffle: true);
 
             return new JsonResult(new { irregularVerbs });
         }

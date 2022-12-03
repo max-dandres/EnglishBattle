@@ -52,26 +52,6 @@ namespace EnglishBattle.BLL.Services
             return games;
         }
 
-        public async Task<List<IrregularVerbDto>> GetAllVerbsAsync(bool shuffle = false)
-        {
-            var dtos = new List<IrregularVerbDto>();
-            var verbs = await _context.IrregularVerbs.ToListAsync();
-
-            foreach (var verb in verbs)
-            {
-                dtos.Add(new IrregularVerbDto(verb.Id, verb.BaseForm, verb.PastParticiple, verb.PastSimple));
-            }
-
-            if (shuffle)
-            {
-                var random = new Random();
-
-                return dtos.OrderBy(x => random.Next()).ToList();
-            }
-
-            return dtos;
-        }
-
         public async Task<bool> AddAnswerAsync(AnswerDto answerDto)
         {
             bool isCorrect = await CheckAnswerAsync(answerDto.VerbId, answerDto.PastParticiple, answerDto.PastSimple);

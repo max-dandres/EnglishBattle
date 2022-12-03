@@ -1,0 +1,92 @@
+﻿@page
+@model EnglishBattle.Web.Pages.IrregularVerbsModel
+@{
+}
+
+<div class="row gx-2">
+
+    <div class="col-3">
+        <div class="bg-white">
+            <form method="get">
+                <div>
+                    <label>Search: </label>
+                    <input asp-for="@Model.Search" type="text" />
+                </div>
+                <div>
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="bg-white">
+            @if (Model.Verbs.HasPreviousPage)
+            {
+                <a asp-area=""
+               asp-page="/IrregularVerbs"
+               asp-route-index="@(Model.Verbs.PageIndex - 1)"
+               asp-route-search="@(Model.Search)"
+               asp-route-orderByDesc="@(Model.OrderByDesc)">
+                    Previous
+                </a>
+            }
+            <span>
+                Showing @Model.Verbs.PageSize of @Model.Verbs.TotalCount foods - Page @(Model.Verbs.PageIndex + 1) - @Model.Verbs.TotalPages
+            </span>
+            @if (Model.Verbs.HasNextPage)
+            {
+                <a asp-area=""
+               asp-page="/IrregularVerbs"
+               asp-route-index="@(Model.Verbs.PageIndex + 1)"
+               asp-route-search="@(Model.Search)"
+               asp-route-search="@(Model.Search)"
+               asp-route-orderByDesc="@(Model.OrderByDesc)">
+                    Next
+                </a>
+            }
+            <table class="table text-left">
+                <thead>
+                    <tr>
+                        <th scope="col">Base</th>
+                        <th scope="col">Past Participle</th>
+                        <th scope="col">Past Simple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var verb in Model.Verbs)
+                    {
+                        <tr>
+                            <td scope="row">@verb.BaseForm</td>
+                            <td>@verb.PastParticiple</td>
+                            <td>@verb.PastSimple</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @if (Model.Verbs.HasPreviousPage)
+            {
+                <a asp-area=""
+               asp-page="/IrregularVerbs"
+               asp-route-index="@(Model.Verbs.PageIndex - 1)"
+               asp-route-search="@(Model.Search)"
+               asp-route-orderByDesc="@(Model.OrderByDesc)">
+                    Previous
+                </a>
+            }
+            <span>
+                Showing @Model.Verbs.PageSize of @Model.Verbs.TotalCount foods - Page @(Model.Verbs.PageIndex + 1) - @Model.Verbs.TotalPages
+            </span>
+            @if (Model.Verbs.HasNextPage)
+            {
+                <a asp-area=""
+               asp-page="/IrregularVerbs"
+               asp-route-index="@(Model.Verbs.PageIndex + 1)"
+               asp-route-search="@(Model.Search)"
+               asp-route-search="@(Model.Search)"
+               asp-route-orderByDesc="@(Model.OrderByDesc)">
+                    Next
+                </a>
+            }
+        </div>
+    </div>
+</div>

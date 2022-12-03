@@ -12,18 +12,18 @@ namespace EnglishBattle.Web.Pages
     {
         public List<IEnumerable<IrregularVerbDto>> Verbs { get; private set; } = new();
 
-        private readonly GameService _gameService;
+        private readonly VerbService _verbService;
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(GameService gameService, ILogger<IndexModel> logger)
+        public IndexModel(VerbService verbService, ILogger<IndexModel> logger)
         {
-            _gameService = gameService;
+            _verbService = verbService;
             _logger = logger;
         }
 
         public async void OnGet()
         {
-            var verbs = await _gameService.GetAllVerbsAsync();
+            var verbs = await _verbService.GetAllVerbsAsync();
 
             List<IrregularVerbDto> easyVerbs = new();
             List<IrregularVerbDto> mediumVerbs = new();
