@@ -6,7 +6,7 @@
 <div class="row gx-2">
 
     <div class="col-3">
-        <div class="bg-white">
+        <div class="bg-white p-4">
             <form method="get">
                 <div>
                     <label>Search: </label>
@@ -19,73 +19,132 @@
         </div>
     </div>
     <div class="col-9">
-        <div class="bg-white">
-            @if (Model.Verbs.HasPreviousPage)
+        <div class="bg-white p-5">
+            @if (Model.Verbs.Count != 0)
             {
-                <a asp-area=""
-               asp-page="/IrregularVerbs"
-               asp-route-index="@(Model.Verbs.PageIndex - 1)"
-               asp-route-search="@(Model.Search)"
-               asp-route-orderByDesc="@(Model.OrderByDesc)">
-                    Previous
-                </a>
-            }
-            <span>
-                Showing @Model.Verbs.PageSize of @Model.Verbs.TotalCount foods - Page @(Model.Verbs.PageIndex + 1) - @Model.Verbs.TotalPages
-            </span>
-            @if (Model.Verbs.HasNextPage)
-            {
-                <a asp-area=""
-               asp-page="/IrregularVerbs"
-               asp-route-index="@(Model.Verbs.PageIndex + 1)"
-               asp-route-search="@(Model.Search)"
-               asp-route-search="@(Model.Search)"
-               asp-route-orderByDesc="@(Model.OrderByDesc)">
-                    Next
-                </a>
-            }
-            <table id="verbsTable" class="table text-left">
-                <thead>
-                    <tr>
-                        <th scope="col">Base</th>
-                        <th scope="col">Past Participle</th>
-                        <th scope="col">Past Simple</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var verb in Model.Verbs)
-                    {
+                <div class="container">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+
+                            <li class="page-item @(Model.Verbs.HasPreviousPage ? "" : "disabled")">
+                                <a asp-area=""
+                               asp-page="/IrregularVerbs"
+                               asp-route-index="@(Model.Verbs.PageIndex - 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-orderByDesc="@(Model.OrderByDesc)"
+                               class="page-link" tabindex="-1" aria-disabled="true">
+                                    Previous
+                                </a>
+                            </li>
+
+                            @for (int i = 0; i < Model.Verbs.TotalPages; i++)
+                            {
+                                <li class="page-item @(Model.Verbs.PageIndex == (i) ? "active" : "")">
+                                    <a class="page-link"
+                               asp-area=""
+                               asp-page="/IrregularVerbs"
+                               asp-route-index="@(i)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-orderByDesc="@(Model.OrderByDesc)">
+                                        @(
+                                            i + 1
+                                            )
+                                    </a>
+                                </li>
+                            }
+
+                            <li class="page-item @(Model.Verbs.HasNextPage ? "" : "disabled")">
+                                <a asp-area=""
+                               asp-page="/IrregularVerbs"
+                               asp-route-index="@(Model.Verbs.PageIndex + 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-orderByDesc="@(Model.OrderByDesc)"
+                               class="page-link">
+                                    Next
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <span>
+                    @(
+                        (Model.Verbs.PageSize * Model.Verbs.PageIndex) + Model.Verbs.Count
+                        ) of @Model.Verbs.TotalCount foods
+                </span>
+
+                <table id="verbsTable" class="table text-left" style="table-layout: fixed;">
+                    <thead>
                         <tr>
-                            <td scope="row">@verb.BaseForm</td>
-                            <td>@verb.PastParticiple</td>
-                            <td>@verb.PastSimple</td>
+                            <th scope="col">Base</th>
+                            <th scope="col">Past Participle</th>
+                            <th scope="col">Past Simple</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-            @if (Model.Verbs.HasPreviousPage)
-            {
-                <a asp-area=""
-               asp-page="/IrregularVerbs"
-               asp-route-index="@(Model.Verbs.PageIndex - 1)"
-               asp-route-search="@(Model.Search)"
-               asp-route-orderByDesc="@(Model.OrderByDesc)">
-                    Previous
-                </a>
+                    </thead>
+                    <tbody>
+                        @foreach (var verb in Model.Verbs)
+                        {
+                            <tr>
+                                <td scope="row">@verb.BaseForm</td>
+                                <td>@verb.PastParticiple</td>
+                                <td>@verb.PastSimple</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <div class="container">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+
+                            <li class="page-item @(Model.Verbs.HasPreviousPage ? "" : "disabled")">
+                                <a asp-area=""
+                               asp-page="/IrregularVerbs"
+                               asp-route-index="@(Model.Verbs.PageIndex - 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-orderByDesc="@(Model.OrderByDesc)"
+                               class="page-link" tabindex="-1" aria-disabled="true">
+                                    Previous
+                                </a>
+                            </li>
+
+                            @for (int i = 0; i < Model.Verbs.TotalPages; i++)
+                            {
+                                <li class="page-item @(Model.Verbs.PageIndex == (i) ? "active" : "")">
+                                    <a class="page-link"
+                               asp-area=""
+                               asp-page="/IrregularVerbs"
+                               asp-route-index="@(i)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-orderByDesc="@(Model.OrderByDesc)">
+                                        @(
+                                            i + 1
+                                            )
+                                    </a>
+                                </li>
+                            }
+
+                            <li class="page-item @(Model.Verbs.HasNextPage ? "" : "disabled")">
+                                <a asp-area=""
+                               asp-page="/IrregularVerbs"
+                               asp-route-index="@(Model.Verbs.PageIndex + 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-orderByDesc="@(Model.OrderByDesc)"
+                               class="page-link">
+                                    Next
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
             }
-            <span>
-                Showing @Model.Verbs.PageSize of @Model.Verbs.TotalCount foods - Page @(Model.Verbs.PageIndex + 1) - @Model.Verbs.TotalPages
-            </span>
-            @if (Model.Verbs.HasNextPage)
+            else
             {
-                <a asp-area=""
-               asp-page="/IrregularVerbs"
-               asp-route-index="@(Model.Verbs.PageIndex + 1)"
-               asp-route-search="@(Model.Search)"
-               asp-route-search="@(Model.Search)"
-               asp-route-orderByDesc="@(Model.OrderByDesc)">
-                    Next
-                </a>
+                <p>No results</p>
             }
         </div>
     </div>
@@ -109,9 +168,9 @@
                     if (matchIndex != -1) {
 
 
-                        let highlightedVerb = 
-                            verb.substring(0, matchIndex) + 
-                            open + 
+                        let highlightedVerb =
+                            verb.substring(0, matchIndex) +
+                            open +
                             searchVal +
                             close +
                             verb.substring(matchIndex + searchVal.length, verb.length);

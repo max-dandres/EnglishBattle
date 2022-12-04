@@ -6,7 +6,7 @@
 <div class="row gx-2">
 
     <div class="col-3">
-        <div class="bg-white">
+        <div class="bg-white p-4">
             <form method="get">
                 <div class="input-group">
                     <label>Player: </label>
@@ -32,98 +32,144 @@
     </div>
 
     <div class="col-9">
-        <div class="bg-white">
-            <div class="container">
-                <article class="row">
-                    <nav>
-                        @if (Model.Games.HasPreviousPage)
-                        {
-                            <a asp-area=""
-                           asp-page="/Ladder"
-                           asp-route-index="@(Model.Games.PageIndex - 1)"
-                           asp-route-search="@(Model.Search)"
-                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
-                           asp-route-from="@Model.From"
-                           asp-route-to="@Model.To">
-                                Previous
-                            </a>
-                        }
-                        <span>
-                            Showing @Model.Games.PageSize of @Model.Games.TotalCount foods - Page @(Model.Games.PageIndex + 1) - @Model.Games.TotalPages
-                        </span>
-                        @if (Model.Games.HasNextPage)
-                        {
-                            <a asp-area=""
-                           asp-page="/Ladder"
-                           asp-route-index="@(Model.Games.PageIndex + 1)"
-                           asp-route-search="@(Model.Search)"
-                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
-                           asp-route-from="@Model.From"
-                           asp-route-to="@Model.To">
-                                Next
-                            </a>
-                        }
+        <div class="bg-white p-4">
+
+            @if (Model.Games.Count != 0)
+            {
+                <div class="container">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+
+                            <li class="page-item @(Model.Games.HasPreviousPage ? "" : "disabled")">
+                                <a asp-area=""
+                               asp-page="/Ladder"
+                               asp-route-index="@(Model.Games.PageIndex - 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                               asp-route-from="@Model.From"
+                               asp-route-to="@Model.To"
+                               class="page-link" tabindex="-1" aria-disabled="true">
+                                    Previous
+                                </a>
+                            </li>
+
+                            @for (int i = 0; i < Model.Games.TotalPages; i++)
+                            {
+                                <li class="page-item @(Model.Games.PageIndex == (i) ? "active" : "")">
+                                    <a class="page-link"
+                               asp-area=""
+                               asp-page="/Ladder"
+                               asp-route-index="@(i)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                               asp-route-from="@Model.From"
+                               asp-route-to="@Model.To">
+                                        @(
+                                        i + 1
+                                        )
+                                    </a>
+                                </li>
+                            }
+
+                            <li class="page-item @(Model.Games.HasNextPage ? "" : "disabled")">
+                                <a asp-area=""
+                               asp-page="/Ladder"
+                               asp-route-index="@(Model.Games.PageIndex + 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                               asp-route-from="@Model.From"
+                               asp-route-to="@Model.To"
+                               class="page-link">
+                                    Next
+                                </a>
+                            </li>
+
+                        </ul>
                     </nav>
-                </article>
-            </div>
-            <table class=table>
-                <thead>
-                    <tr>
-                        <th scope="col">Score</th>
-                        <th scope="col">Player</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var game in Model.Games)
-                    {
+                </div>
+
+                <table class=table>
+                    <thead>
                         <tr>
-                            <td scope="row">@game.Score</td>
-                            <td>@game.PlayerName</td>
-                            <td>@game.CreatedAt</td>
-                            <td>@game.Duration</td>
-                            <td>
-                                <a asp-area="" asp-page="/GameDetails" asp-route-id="@game.Id">Details</a>
-                            </td>
+                            <th scope="col">Score</th>
+                            <th scope="col">Player</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">Details</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-            <div class="container">
-                <article class="row">
-                    <nav>
-                        @if (Model.Games.HasPreviousPage)
+                    </thead>
+                    <tbody>
+                        @foreach (var game in Model.Games)
                         {
-                            <a asp-area="" 
-                           asp-page="/Ladder"
-                           asp-route-index="@(Model.Games.PageIndex - 1)"
-                           asp-route-search="@(Model.Search)"
-                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
-                           asp-route-from="@Model.From"
-                           asp-route-to="@Model.To">
-                                Previous
-                            </a>
+                            <tr>
+                                <td scope="row">@game.Score</td>
+                                <td>@game.PlayerName</td>
+                                <td>@game.CreatedAt</td>
+                                <td>@game.Duration</td>
+                                <td>
+                                    <a asp-area="" asp-page="/GameDetails" asp-route-id="@game.Id">Details</a>
+                                </td>
+                            </tr>
                         }
-                        <span>
-                            Showing @Model.Games.PageSize of @Model.Games.TotalCount foods - Page @(Model.Games.PageIndex + 1) - @Model.Games.TotalPages
-                        </span>
-                        @if (Model.Games.HasNextPage)
-                        {
-                            <a asp-area="" 
-                           asp-page="/Ladder"
-                           asp-route-index="@(Model.Games.PageIndex + 1)"
-                           asp-route-search="@(Model.Search)"
-                           asp-route-showMeOnly="@(Model.ShowMeOnly)"
-                           asp-route-from="@Model.From"
-                           asp-route-to="@Model.To">
+                    </tbody>
+                </table>
+
+                <div class="container">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+
+                            <li class="page-item @(Model.Games.HasPreviousPage ? "" : "disabled")">
+                                <a asp-area=""
+                               asp-page="/Ladder"
+                               asp-route-index="@(Model.Games.PageIndex - 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                               asp-route-from="@Model.From"
+                               asp-route-to="@Model.To"
+                               class="page-link" tabindex="-1" aria-disabled="true">
+                                    Previous
+                                </a>
+                            </li>
+
+                            @for (int i = 0; i < Model.Games.TotalPages; i++)
+                            {
+                                <li class="page-item @(Model.Games.PageIndex == (i) ? "active" : "")">
+                                    <a class="page-link"
+                               asp-area=""
+                               asp-page="/Ladder"
+                               asp-route-index="@(i)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                               asp-route-from="@Model.From"
+                               asp-route-to="@Model.To">
+                                        @(
+                                        i + 1
+                                        )
+                                    </a>
+                                </li>
+                            }
+
+                        <li class="page-item @(Model.Games.HasNextPage ? "" : "disabled")">
+                            <a asp-area=""
+                               asp-page="/Ladder"
+                               asp-route-index="@(Model.Games.PageIndex + 1)"
+                               asp-route-search="@(Model.Search)"
+                               asp-route-showMeOnly="@(Model.ShowMeOnly)"
+                               asp-route-from="@Model.From"
+                               asp-route-to="@Model.To"
+                               class="page-link">
                                 Next
                             </a>
-                        }
-                    </nav>
-                </article>
+                        </li>
+                    </ul>
+                </nav>
             </div>
+            }
+            else
+            {
+                <p>No results</p>
+            }
+
         </div>
     </div>
 </div>
