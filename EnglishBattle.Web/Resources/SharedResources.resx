@@ -189,6 +189,9 @@
   <data name="VerbPastSimple" xml:space="preserve">
     <value>Past simple</value>
   </data>
+  <data name="VerbTranslation" xml:space="preserve">
+    <value>Translation</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
   </data>

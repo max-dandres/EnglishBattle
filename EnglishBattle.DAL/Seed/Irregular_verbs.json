@@ -2,806 +2,967 @@
   {
     "BaseForm": "abide",
     "PastParticiple": "abode",
-    "PastSimple": "abode"
+    "PastSimple": "abode",
+    "Translation": "se conformer"
   },
   {
     "BaseForm": "arise",
     "PastParticiple": "arose",
-    "PastSimple": "arisen"
+    "PastSimple": "arisen",
+    "Translation": "surgir"
   },
   {
     "BaseForm": "awake",
     "PastParticiple": "awoke",
-    "PastSimple": "awoken"
+    "PastSimple": "awoken",
+    "Translation": "réveiller"
   },
   {
     "BaseForm": "bear",
     "PastParticiple": "bore",
-    "PastSimple": "borne"
+    "PastSimple": "borne",
+    "Translation": "supporter"
   },
   {
     "BaseForm": "beat",
     "PastParticiple": "beat",
-    "PastSimple": "beaten"
+    "PastSimple": "beaten",
+    "Translation": "battre"
   },
   {
     "BaseForm": "become",
     "PastParticiple": "became",
-    "PastSimple": "become"
+    "PastSimple": "become",
+    "Translation": "devenir"
   },
   {
     "BaseForm": "begin",
     "PastParticiple": "began",
-    "PastSimple": "begun"
+    "PastSimple": "begun",
+    "Translation": "commencer"
   },
   {
     "BaseForm": "bend",
     "PastParticiple": "bent",
-    "PastSimple": "bent"
+    "PastSimple": "bent",
+    "Translation": "tordre"
   },
   {
     "BaseForm": "bet",
     "PastParticiple": "bet",
-    "PastSimple": "bet"
+    "PastSimple": "bet",
+    "Translation": "parier"
   },
   {
     "BaseForm": "bid",
     "PastParticiple": "bid",
-    "PastSimple": "bid"
+    "PastSimple": "bid",
+    "Translation": "offrir"
   },
   {
     "BaseForm": "bind",
     "PastParticiple": "bound",
-    "PastSimple": "bound"
+    "PastSimple": "bound",
+    "Translation": "lier"
   },
   {
     "BaseForm": "bite",
     "PastParticiple": "bit",
-    "PastSimple": "bitten"
+    "PastSimple": "bitten",
+    "Translation": "mordre"
   },
   {
     "BaseForm": "bleed",
     "PastParticiple": "bled",
-    "PastSimple": "bled"
+    "PastSimple": "bled",
+    "Translation": "saigner"
   },
   {
     "BaseForm": "blow",
     "PastParticiple": "blew",
-    "PastSimple": "blown"
+    "PastSimple": "blown",
+    "Translation": "exploser"
   },
   {
     "BaseForm": "break",
     "PastParticiple": "broke",
-    "PastSimple": "broken"
+    "PastSimple": "broken",
+    "Translation": "casser/briser"
   },
   {
     "BaseForm": "breed",
     "PastParticiple": "bred",
-    "PastSimple": "bred"
+    "PastSimple": "bred",
+    "Translation": "élever"
   },
   {
     "BaseForm": "bring",
     "PastParticiple": "brought",
-    "PastSimple": "brought"
+    "PastSimple": "brought",
+    "Translation": "ramener"
   },
   {
     "BaseForm": "build",
     "PastParticiple": "built",
-    "PastSimple": "built"
+    "PastSimple": "built",
+    "Translation": "construire"
   },
   {
     "BaseForm": "burn",
     "PastParticiple": "burnt",
-    "PastSimple": "burnt"
+    "PastSimple": "burnt",
+    "Translation": "bûler"
   },
   {
     "BaseForm": "burst",
     "PastParticiple": "burst",
-    "PastSimple": "burst"
+    "PastSimple": "burst",
+    "Translation": "éclater"
   },
   {
     "BaseForm": "buy",
     "PastParticiple": "bought",
-    "PastSimple": "bought"
+    "PastSimple": "bought",
+    "Translation": "acheter"
   },
   {
     "BaseForm": "cast",
     "PastParticiple": "cast",
-    "PastSimple": "cast"
+    "PastSimple": "cast",
+    "Translation": "jeter/lancer"
   },
   {
     "BaseForm": "catch",
     "PastParticiple": "caught",
-    "PastSimple": "caught"
+    "PastSimple": "caught",
+    "Translation": "attraper"
   },
   {
     "BaseForm": "choose",
     "PastParticiple": "chose",
-    "PastSimple": "chosen"
+    "PastSimple": "chosen",
+    "Translation": "choisir"
   },
   {
     "BaseForm": "cling",
     "PastParticiple": "clung",
-    "PastSimple": "clung"
+    "PastSimple": "clung",
+    "Translation": "aggriper"
   },
   {
     "BaseForm": "come",
     "PastParticiple": "came",
-    "PastSimple": "come"
+    "PastSimple": "come",
+    "Translation": "venir"
   },
   {
     "BaseForm": "cost",
     "PastParticiple": "cost",
-    "PastSimple": "cost"
+    "PastSimple": "cost",
+    "Translation": "coûter"
   },
   {
     "BaseForm": "creep",
     "PastParticiple": "crept",
-    "PastSimple": "crept"
+    "PastSimple": "crept",
+    "Translation": "ramper"
   },
   {
     "BaseForm": "cut",
     "PastParticiple": "cut",
-    "PastSimple": "cut"
+    "PastSimple": "cut",
+    "Translation": "couper"
   },
   {
     "BaseForm": "deal",
     "PastParticiple": "dealt",
-    "PastSimple": "dealt"
+    "PastSimple": "dealt",
+    "Translation": "traiter"
   },
   {
     "BaseForm": "dig",
     "PastParticiple": "dug",
-    "PastSimple": "dug"
+    "PastSimple": "dug",
+    "Translation": "creuser"
   },
   {
     "BaseForm": "do",
     "PastParticiple": "did",
-    "PastSimple": "done"
+    "PastSimple": "done",
+    "Translation": "faire"
   },
   {
     "BaseForm": "draw",
     "PastParticiple": "drew",
-    "PastSimple": "drawn"
+    "PastSimple": "drawn",
+    "Translation": "dessiner"
   },
   {
     "BaseForm": "dream",
     "PastParticiple": "dreamt",
-    "PastSimple": "dreamt"
+    "PastSimple": "dreamt",
+    "Translation": "rêver"
   },
   {
     "BaseForm": "drink",
     "PastParticiple": "drank",
-    "PastSimple": "drunk"
+    "PastSimple": "drunk",
+    "Translation": "boire"
   },
   {
     "BaseForm": "drive",
     "PastParticiple": "drove",
-    "PastSimple": "driven"
+    "PastSimple": "driven",
+    "Translation": "conduire"
   },
   {
     "BaseForm": "dwell",
     "PastParticiple": "dwelt",
-    "PastSimple": "dwelt"
+    "PastSimple": "dwelt",
+    "Translation": "demeurer"
   },
   {
     "BaseForm": "eat",
     "PastParticiple": "ate",
-    "PastSimple": "eaten"
+    "PastSimple": "eaten",
+    "Translation": "manger"
   },
   {
     "BaseForm": "fall",
     "PastParticiple": "fell",
-    "PastSimple": "fallen"
+    "PastSimple": "fallen",
+    "Translation": "tomber"
   },
   {
     "BaseForm": "feed",
     "PastParticiple": "fed",
-    "PastSimple": "fed"
+    "PastSimple": "fed",
+    "Translation": "nourrir"
   },
   {
     "BaseForm": "feel",
     "PastParticiple": "felt",
-    "PastSimple": "felt"
+    "PastSimple": "felt",
+    "Translation": "sentir"
   },
   {
     "BaseForm": "fight",
     "PastParticiple": "fought",
-    "PastSimple": "fought"
+    "PastSimple": "fought",
+    "Translation": "combattre"
   },
   {
     "BaseForm": "find",
     "PastParticiple": "found",
-    "PastSimple": "found"
+    "PastSimple": "found",
+    "Translation": "trouver"
   },
   {
     "BaseForm": "flee",
     "PastParticiple": "fled",
-    "PastSimple": "fled"
+    "PastSimple": "fled",
+    "Translation": "fuir"
   },
   {
     "BaseForm": "fling",
     "PastParticiple": "flung",
-    "PastSimple": "flung"
+    "PastSimple": "flung",
+    "Translation": "jeter"
   },
   {
     "BaseForm": "fly",
     "PastParticiple": "flew",
-    "PastSimple": "flown"
+    "PastSimple": "flown",
+    "Translation": "voler"
   },
   {
     "BaseForm": "forbid",
     "PastParticiple": "forbade",
-    "PastSimple": "forbidden"
+    "PastSimple": "forbidden",
+    "Translation": "interdire"
   },
   {
     "BaseForm": "forget",
     "PastParticiple": "forgot",
-    "PastSimple": "forgotten"
+    "PastSimple": "forgotten",
+    "Translation": "oublier"
   },
   {
     "BaseForm": "forgive",
     "PastParticiple": "forgave",
-    "PastSimple": "forgiven"
+    "PastSimple": "forgiven",
+    "Translation": "pardonner"
   },
   {
     "BaseForm": "freeze",
     "PastParticiple": "froze",
-    "PastSimple": "frozen"
+    "PastSimple": "frozen",
+    "Translation": "geler"
   },
   {
     "BaseForm": "get",
     "PastParticiple": "got",
-    "PastSimple": "got"
+    "PastSimple": "got",
+    "Translation": "obtenir"
   },
   {
     "BaseForm": "give",
     "PastParticiple": "gave",
-    "PastSimple": "given"
+    "PastSimple": "given",
+    "Translation": "donner"
   },
   {
     "BaseForm": "go",
     "PastParticiple": "went",
-    "PastSimple": "gone"
+    "PastSimple": "gone",
+    "Translation": "aller"
   },
   {
     "BaseForm": "grind",
     "PastParticiple": "ground",
-    "PastSimple": "ground"
+    "PastSimple": "ground",
+    "Translation": "moudre"
   },
   {
     "BaseForm": "grow",
     "PastParticiple": "grew",
-    "PastSimple": "grown"
+    "PastSimple": "grown",
+    "Translation": "grandir"
   },
   {
     "BaseForm": "hang",
     "PastParticiple": "hung",
-    "PastSimple": "hung"
+    "PastSimple": "hung",
+    "Translation": "accrocher"
   },
   {
     "BaseForm": "have",
     "PastParticiple": "had",
-    "PastSimple": "had"
+    "PastSimple": "had",
+    "Translation": "avoir"
   },
   {
     "BaseForm": "hear",
     "PastParticiple": "heard",
-    "PastSimple": "heard"
+    "PastSimple": "heard",
+    "Translation": "entendre"
   },
   {
     "BaseForm": "hide",
     "PastParticiple": "hid",
-    "PastSimple": "hidden"
+    "PastSimple": "hidden",
+    "Translation": "cacher"
   },
   {
     "BaseForm": "hit",
     "PastParticiple": "hit",
-    "PastSimple": "hit"
+    "PastSimple": "hit",
+    "Translation": "frapper"
   },
   {
     "BaseForm": "hold",
     "PastParticiple": "held",
-    "PastSimple": "held"
+    "PastSimple": "held",
+    "Translation": "tenir"
   },
   {
     "BaseForm": "hurt",
     "PastParticiple": "hurt",
-    "PastSimple": "hurt"
+    "PastSimple": "hurt",
+    "Translation": "blesser"
   },
   {
     "BaseForm": "keep",
     "PastParticiple": "kept",
-    "PastSimple": "kept"
+    "PastSimple": "kept",
+    "Translation": "garder"
   },
   {
     "BaseForm": "kneel",
     "PastParticiple": "knelt",
-    "PastSimple": "knelt"
+    "PastSimple": "knelt",
+    "Translation": "s'agenouiller"
   },
   {
     "BaseForm": "know",
     "PastParticiple": "knew",
-    "PastSimple": "known"
+    "PastSimple": "known",
+    "Translation": "savoir"
   },
   {
     "BaseForm": "lay",
     "PastParticiple": "laid",
-    "PastSimple": "laid"
+    "PastSimple": "laid",
+    "Translation": "poser"
   },
   {
     "BaseForm": "lead",
     "PastParticiple": "led",
-    "PastSimple": "led"
+    "PastSimple": "led",
+    "Translation": "diriger"
   },
   {
     "BaseForm": "lean",
     "PastParticiple": "leant",
-    "PastSimple": "leant"
+    "PastSimple": "leant",
+    "Translation": "se pencher"
   },
   {
     "BaseForm": "leap",
     "PastParticiple": "leapt",
-    "PastSimple": "leapt"
+    "PastSimple": "leapt",
+    "Translation": "sauter"
   },
   {
     "BaseForm": "learn",
     "PastParticiple": "learnt",
-    "PastSimple": "learnt"
+    "PastSimple": "learnt",
+    "Translation": "apprendre"
   },
   {
     "BaseForm": "leave",
     "PastParticiple": "left",
-    "PastSimple": "left"
+    "PastSimple": "left",
+    "Translation": "partir"
   },
   {
     "BaseForm": "lend",
     "PastParticiple": "lent",
-    "PastSimple": "lent"
+    "PastSimple": "lent",
+    "Translation": "prêter"
   },
   {
     "BaseForm": "let",
     "PastParticiple": "let",
-    "PastSimple": "let"
+    "PastSimple": "let",
+    "Translation": "laisser"
   },
   {
     "BaseForm": "lie",
     "PastParticiple": "lay",
-    "PastSimple": "lain"
+    "PastSimple": "lain",
+    "Translation": "coucher"
   },
   {
     "BaseForm": "light",
     "PastParticiple": "lit",
-    "PastSimple": "lit"
+    "PastSimple": "lit",
+    "Translation": "allumer"
   },
   {
     "BaseForm": "lose",
     "PastParticiple": "lost",
-    "PastSimple": "lost"
+    "PastSimple": "lost",
+    "Translation": "perdre"
   },
   {
     "BaseForm": "make",
     "PastParticiple": "made",
-    "PastSimple": "made"
+    "PastSimple": "made",
+    "Translation": "faire"
   },
   {
     "BaseForm": "mean",
     "PastParticiple": "meant",
-    "PastSimple": "meant"
+    "PastSimple": "meant",
+    "Translation": "signifier"
   },
   {
     "BaseForm": "meet",
     "PastParticiple": "met",
-    "PastSimple": "met"
+    "PastSimple": "met",
+    "Translation": "rencontrer"
   },
   {
     "BaseForm": "mow",
     "PastParticiple": "mowed",
-    "PastSimple": "mown"
+    "PastSimple": "mown",
+    "Translation": "tondre"
   },
   {
     "BaseForm": "overcome",
     "PastParticiple": "overcame",
-    "PastSimple": "overcome"
+    "PastSimple": "overcome",
+    "Translation": "surpasser"
   },
   {
     "BaseForm": "pay",
     "PastParticiple": "paid",
-    "PastSimple": "paid"
+    "PastSimple": "paid",
+    "Translation": "payer"
   },
   {
     "BaseForm": "put",
     "PastParticiple": "put",
-    "PastSimple": "put"
+    "PastSimple": "put",
+    "Translation": "mettre"
   },
   {
     "BaseForm": "quit",
     "PastParticiple": "quit",
-    "PastSimple": "quit"
+    "PastSimple": "quit",
+    "Translation": "auitter"
   },
   {
     "BaseForm": "read",
     "PastParticiple": "read",
-    "PastSimple": "read"
+    "PastSimple": "read",
+    "Translation": "lire"
   },
   {
     "BaseForm": "rid",
     "PastParticiple": "rid",
-    "PastSimple": "rid"
+    "PastSimple": "rid",
+    "Translation": "débarasser"
   },
   {
     "BaseForm": "ride",
     "PastParticiple": "rode",
-    "PastSimple": "ridden"
+    "PastSimple": "ridden",
+    "Translation": "monter"
   },
   {
     "BaseForm": "ring",
     "PastParticiple": "rang",
-    "PastSimple": "rung"
+    "PastSimple": "rung",
+    "Translation": "sonner"
   },
   {
     "BaseForm": "rise",
     "PastParticiple": "rose",
-    "PastSimple": "risen"
+    "PastSimple": "risen",
+    "Translation": "monter"
   },
   {
     "BaseForm": "run",
     "PastParticiple": "ran",
-    "PastSimple": "run"
+    "PastSimple": "run",
+    "Translation": "courir"
   },
   {
     "BaseForm": "saw",
     "PastParticiple": "sawed",
-    "PastSimple": "sawn"
+    "PastSimple": "sawn",
+    "Translation": "scier"
   },
   {
     "BaseForm": "say",
     "PastParticiple": "said",
-    "PastSimple": "said"
+    "PastSimple": "said",
+    "Translation": "dire"
   },
   {
     "BaseForm": "see",
     "PastParticiple": "saw",
-    "PastSimple": "seen"
+    "PastSimple": "seen",
+    "Translation": "voir"
   },
   {
     "BaseForm": "seek",
     "PastParticiple": "sought",
-    "PastSimple": "sought"
+    "PastSimple": "sought",
+    "Translation": "chercher"
   },
   {
     "BaseForm": "sell",
     "PastParticiple": "sold",
-    "PastSimple": "sold"
+    "PastSimple": "sold",
+    "Translation": "vendre"
   },
   {
     "BaseForm": "send",
     "PastParticiple": "sent",
-    "PastSimple": "sent"
+    "PastSimple": "sent",
+    "Translation": "envoyer"
   },
   {
     "BaseForm": "set",
     "PastParticiple": "set",
-    "PastSimple": "set"
+    "PastSimple": "set",
+    "Translation": "fixer"
   },
   {
     "BaseForm": "sew",
     "PastParticiple": "sewed",
-    "PastSimple": "sewn"
+    "PastSimple": "sewn",
+    "Translation": "coudre"
   },
   {
     "BaseForm": "shake",
     "PastParticiple": "shook",
-    "PastSimple": "shaken"
+    "PastSimple": "shaken",
+    "Translation": "secouer"
   },
   {
     "BaseForm": "shear",
     "PastParticiple": "sheared",
-    "PastSimple": "shorn"
+    "PastSimple": "shorn",
+    "Translation": "tondre"
   },
   {
     "BaseForm": "shed",
     "PastParticiple": "shed",
-    "PastSimple": "shed"
+    "PastSimple": "shed",
+    "Translation": "perdre"
   },
   {
     "BaseForm": "shine",
     "PastParticiple": "shone",
-    "PastSimple": "shone"
+    "PastSimple": "shone",
+    "Translation": "briller"
   },
   {
     "BaseForm": "shoe",
     "PastParticiple": "shod",
-    "PastSimple": "shod"
+    "PastSimple": "shod",
+    "Translation": "chausser"
   },
   {
     "BaseForm": "shoot",
     "PastParticiple": "shot",
-    "PastSimple": "shot"
+    "PastSimple": "shot",
+    "Translation": "tirer"
   },
   {
     "BaseForm": "show",
     "PastParticiple": "showed",
-    "PastSimple": "shown"
+    "PastSimple": "shown",
+    "Translation": "montrer"
   },
   {
     "BaseForm": "shrink",
     "PastParticiple": "shrank",
-    "PastSimple": "shrunk"
+    "PastSimple": "shrunk",
+    "Translation": "rétrécir"
   },
   {
     "BaseForm": "shut",
     "PastParticiple": "shut",
-    "PastSimple": "shut"
+    "PastSimple": "shut",
+    "Translation": "fermer"
   },
   {
     "BaseForm": "sing",
     "PastParticiple": "sang",
-    "PastSimple": "sung"
+    "PastSimple": "sung",
+    "Translation": "chanter"
   },
   {
     "BaseForm": "sink",
     "PastParticiple": "sank",
-    "PastSimple": "sunk"
+    "PastSimple": "sunk",
+    "Translation": "couler"
   },
   {
     "BaseForm": "sit",
     "PastParticiple": "sat",
-    "PastSimple": "sat"
+    "PastSimple": "sat",
+    "Translation": "s'asseoir"
   },
   {
     "BaseForm": "sleep",
     "PastParticiple": "slept",
-    "PastSimple": "slept"
+    "PastSimple": "slept",
+    "Translation": "dormir"
   },
   {
     "BaseForm": "slide",
     "PastParticiple": "slid",
-    "PastSimple": "slid"
+    "PastSimple": "slid",
+    "Translation": "glisser"
   },
   {
     "BaseForm": "sling",
     "PastParticiple": "slung",
-    "PastSimple": "slung"
+    "PastSimple": "slung",
+    "Translation": "lancer"
   },
   {
     "BaseForm": "slink",
     "PastParticiple": "slunk",
-    "PastSimple": "slunk"
+    "PastSimple": "slunk",
+    "Translation": "se faufiler"
   },
   {
     "BaseForm": "slit",
     "PastParticiple": "slit",
-    "PastSimple": "slit"
+    "PastSimple": "slit",
+    "Translation": "fendre"
   },
   {
     "BaseForm": "smell",
     "PastParticiple": "smelt",
-    "PastSimple": "smelt"
+    "PastSimple": "smelt",
+    "Translation": "sentir"
   },
   {
     "BaseForm": "sow",
     "PastParticiple": "sowed",
-    "PastSimple": "sown"
+    "PastSimple": "sown",
+    "Translation": "semer"
   },
   {
     "BaseForm": "speak",
     "PastParticiple": "spoke",
-    "PastSimple": "spoken"
+    "PastSimple": "spoken",
+    "Translation": "parler"
   },
   {
     "BaseForm": "speed",
     "PastParticiple": "sped",
-    "PastSimple": "sped"
+    "PastSimple": "sped",
+    "Translation": "accélérer"
   },
   {
     "BaseForm": "spell",
     "PastParticiple": "spelt",
-    "PastSimple": "spelt"
+    "PastSimple": "spelt",
+    "Translation": "épeler"
   },
   {
     "BaseForm": "spend",
     "PastParticiple": "spent",
-    "PastSimple": "spent"
+    "PastSimple": "spent",
+    "Translation": "dépenser"
   },
   {
     "BaseForm": "spill",
     "PastParticiple": "spilt",
-    "PastSimple": "spilt"
+    "PastSimple": "spilt",
+    "Translation": "renverser"
   },
   {
     "BaseForm": "spit",
     "PastParticiple": "spat",
-    "PastSimple": "spat"
+    "PastSimple": "spat",
+    "Translation": "cracher"
   },
   {
     "BaseForm": "split",
     "PastParticiple": "split",
-    "PastSimple": "split"
+    "PastSimple": "split",
+    "Translation": "diviser"
   },
   {
     "BaseForm": "spoil",
     "PastParticiple": "spoilt",
-    "PastSimple": "spoilt"
+    "PastSimple": "spoilt",
+    "Translation": "gâcher"
   },
   {
     "BaseForm": "spread",
     "PastParticiple": "spread",
-    "PastSimple": "spread"
+    "PastSimple": "spread",
+    "Translation": "étaler"
   },
   {
     "BaseForm": "spring",
     "PastParticiple": "sprang",
-    "PastSimple": "sprung"
+    "PastSimple": "sprung",
+    "Translation": "surgir/jaillir"
   },
   {
     "BaseForm": "stand",
     "PastParticiple": "stood",
-    "PastSimple": "stood"
+    "PastSimple": "stood",
+    "Translation": "se tenir debout"
   },
   {
     "BaseForm": "steal",
     "PastParticiple": "stole",
-    "PastSimple": "stolen"
+    "PastSimple": "stolen",
+    "Translation": "voler"
   },
   {
     "BaseForm": "stick",
     "PastParticiple": "stuck",
-    "PastSimple": "stuck"
+    "PastSimple": "stuck",
+    "Translation": "coller"
   },
   {
     "BaseForm": "sting",
     "PastParticiple": "stung",
-    "PastSimple": "stung"
+    "PastSimple": "stung",
+    "Translation": "piquer"
   },
   {
     "BaseForm": "stink",
     "PastParticiple": "stank",
-    "PastSimple": "stunk"
+    "PastSimple": "stunk",
+    "Translation": "puer"
   },
   {
     "BaseForm": "stride",
     "PastParticiple": "strode",
-    "PastSimple": "stridden"
+    "PastSimple": "stridden",
+    "Translation": "arpenter"
   },
   {
     "BaseForm": "strike",
     "PastParticiple": "struck",
-    "PastSimple": "struck"
+    "PastSimple": "struck",
+    "Translation": "frapper"
   },
   {
     "BaseForm": "string",
     "PastParticiple": "strung",
-    "PastSimple": "strung"
+    "PastSimple": "strung",
+    "Translation": "enfiler"
   },
   {
     "BaseForm": "strive",
     "PastParticiple": "strove",
-    "PastSimple": "striven"
+    "PastSimple": "striven",
+    "Translation": "s'efforcer"
   },
   {
     "BaseForm": "swear",
     "PastParticiple": "swore",
-    "PastSimple": "sworn"
+    "PastSimple": "sworn",
+    "Translation": "jurer"
   },
   {
     "BaseForm": "sweep",
     "PastParticiple": "swept",
-    "PastSimple": "swept"
+    "PastSimple": "swept",
+    "Translation": "balayer"
   },
   {
     "BaseForm": "swell",
     "PastParticiple": "swelled",
-    "PastSimple": "swollen"
+    "PastSimple": "swollen",
+    "Translation": "gonfler/enfler"
   },
   {
     "BaseForm": "swim",
     "PastParticiple": "swam",
-    "PastSimple": "swum"
+    "PastSimple": "swum",
+    "Translation": "nager"
   },
   {
     "BaseForm": "swing",
     "PastParticiple": "swung",
-    "PastSimple": "swung"
+    "PastSimple": "swung",
+    "Translation": "se balancer"
   },
   {
     "BaseForm": "take",
     "PastParticiple": "took",
-    "PastSimple": "taken"
+    "PastSimple": "taken",
+    "Translation": "prendre"
   },
   {
     "BaseForm": "teach",
     "PastParticiple": "taught",
-    "PastSimple": "taught"
+    "PastSimple": "taught",
+    "Translation": "enseigner"
   },
   {
     "BaseForm": "tear",
     "PastParticiple": "tore",
-    "PastSimple": "torn"
+    "PastSimple": "torn",
+    "Translation": "tordre"
   },
   {
     "BaseForm": "tell",
     "PastParticiple": "told",
-    "PastSimple": "told"
+    "PastSimple": "told",
+    "Translation": "dire/raconter"
   },
   {
     "BaseForm": "think",
     "PastParticiple": "thought",
-    "PastSimple": "thought"
+    "PastSimple": "thought",
+    "Translation": "penser"
   },
   {
     "BaseForm": "throw",
     "PastParticiple": "threw",
-    "PastSimple": "thrown"
+    "PastSimple": "thrown",
+    "Translation": "jeter"
   },
   {
     "BaseForm": "thrust",
     "PastParticiple": "thrust",
-    "PastSimple": "thrust"
+    "PastSimple": "thrust",
+    "Translation": "enfoncer"
   },
   {
     "BaseForm": "tread",
     "PastParticiple": "trod",
-    "PastSimple": "trodden"
+    "PastSimple": "trodden",
+    "Translation": "enfiler"
   },
   {
     "BaseForm": "undergo",
     "PastParticiple": "underwent",
-    "PastSimple": "undergone"
+    "PastSimple": "undergone",
+    "Translation": "subir"
   },
   {
     "BaseForm": "understand",
     "PastParticiple": "understood",
-    "PastSimple": "understood"
+    "PastSimple": "understood",
+    "Translation": "comprendre"
   },
   {
     "BaseForm": "upset",
     "PastParticiple": "upset",
-    "PastSimple": "upset"
+    "PastSimple": "upset",
+    "Translation": "déranger"
   },
   {
     "BaseForm": "wake",
     "PastParticiple": "woke",
-    "PastSimple": "woken"
+    "PastSimple": "woken",
+    "Translation": "reveiller"
   },
   {
     "BaseForm": "wear",
     "PastParticiple": "wore",
-    "PastSimple": "worn"
+    "PastSimple": "worn",
+    "Translation": "porter"
   },
   {
     "BaseForm": "weave",
     "PastParticiple": "wove",
-    "PastSimple": "woven"
+    "PastSimple": "woven",
+    "Translation": "tisser"
   },
   {
     "BaseForm": "weep",
     "PastParticiple": "wept",
-    "PastSimple": "wept"
+    "PastSimple": "wept",
+    "Translation": "pleurer"
   },
   {
     "BaseForm": "win",
     "PastParticiple": "won",
-    "PastSimple": "won"
+    "PastSimple": "won",
+    "Translation": "gagner"
   },
   {
     "BaseForm": "wind",
     "PastParticiple": "wound",
-    "PastSimple": "wound"
+    "PastSimple": "wound",
+    "Translation": "enrouler/remonter"
   },
   {
     "BaseForm": "withdraw",
     "PastParticiple": "withdrew",
-    "PastSimple": "withdrawn"
+    "PastSimple": "withdrawn",
+    "Translation": "retirer"
   },
   {
     "BaseForm": "wring",
     "PastParticiple": "wrung",
-    "PastSimple": "wrung"
+    "PastSimple": "wrung",
+    "Translation": "tordre"
   },
   {
     "BaseForm": "write",
     "PastParticiple": "wrote",
-    "PastSimple": "written"
+    "PastSimple": "written",
+    "Translation":  "écrire"
   }
 ]

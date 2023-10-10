@@ -12,12 +12,14 @@ namespace EnglishBattle.DAL.Entities
         public string BaseForm { get; private set; }
         public string PastParticiple { get; private set; }
         public string PastSimple { get; private set; }
+        public string Translation { get; private set; }
 
-        public IrregularVerb(string baseForm, string pastParticiple, string pastSimple)
+        public IrregularVerb(string baseForm, string pastParticiple, string pastSimple, string translation)
         {
             BaseForm = baseForm;
             PastParticiple = pastParticiple;
             PastSimple = pastSimple;
+            Translation = translation;
         }
     }
 }

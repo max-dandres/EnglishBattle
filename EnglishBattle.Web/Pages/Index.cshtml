@@ -4,38 +4,54 @@
 @{
     ViewData["Title"] = SharedResources.Home;
     string[] titles = new string[3] { Game.Easy, Game.Medium, Game.Hard };
+    bool includeTraduction = Model.Culture != "en";
     int index = 0;
 }
 
 <div class="container">
 
     <div class="row gx-2">
-        @foreach (var group in Model.Verbs)
+        @if (Model.Verbs.Count != 0)
         {
-            <div class="col">
-                <h3>@titles[index++]</h3>
-                <div class="bg-white">
-                    <table class="table text-left">
-                        <thead>
-                            <tr>
-                                <th scope="col">@SharedResources.VerbBase</th>
-                                <th scope="col">@SharedResources.VerbPastParticiple</th>
-                                <th scope="col">@SharedResources.VerbPastSimple</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var verb in group)
-                            {
+            @foreach (var group in Model.Verbs)
+            {
+                <div class="col">
+                    <h3>@titles[index++]</h3>
+                    <div class="bg-white">
+                        <table class="table text-left">
+                            <thead>
                                 <tr>
-                                    <td scope="row">@verb.BaseForm</td>
-                                    <td>@verb.PastParticiple</td>
-                                    <td>@verb.PastSimple</td>
+                                    <th scope="col">@SharedResources.VerbBase</th>
+                                    <th scope="col">@SharedResources.VerbPastParticiple</th>
+                                    <th scope="col">@SharedResources.VerbPastSimple</th>
+                                    @if (includeTraduction)
+                                    {
+                                        <th scope="col">@SharedResources.VerbTranslation</th>
+                                    }
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach (var verb in group)
+                                {
+                                    <tr>
+                                        <td scope="row">@verb.BaseForm</td>
+                                        <td>@verb.PastParticiple</td>
+                                        <td>@verb.PastSimple</td>
+                                        @if (includeTraduction)
+                                        {
+                                            <td>@verb.Translation</td>
+                                        }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            }
+        }
+        else
+        {
+            <p>@SharedResources.NoResults</p>
         }
     </div>
 </div>

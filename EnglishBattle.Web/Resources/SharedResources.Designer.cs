@@ -277,6 +277,15 @@ namespace EnglishBattle.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Translation.
+        /// </summary>
+        public static string VerbTranslation {
+            get {
+                return ResourceManager.GetString("VerbTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string Welcome {

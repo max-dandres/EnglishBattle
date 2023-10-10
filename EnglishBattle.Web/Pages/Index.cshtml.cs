@@ -11,6 +11,7 @@ namespace EnglishBattle.Web.Pages
     public class IndexModel : PageModel
     {
         public List<IEnumerable<IrregularVerbDto>> Verbs { get; private set; } = new();
+        public string Culture { get; set; } = "en";
 
         private readonly VerbService _verbService;
         private readonly ILogger<IndexModel> _logger;
@@ -23,6 +24,9 @@ namespace EnglishBattle.Web.Pages
 
         public async void OnGet()
         {
+            var rqf = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+            Culture = rqf?.RequestCulture.Culture.Name ?? "en";
+
             var verbs = await _verbService.GetAllVerbsAsync();
 
             List<IrregularVerbDto> easyVerbs = new();

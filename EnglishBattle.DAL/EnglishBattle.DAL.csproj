@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Seed\Irregular_verbs.json" />
+    <EmbeddedResource Include="Seed\Irregular_verbs.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
