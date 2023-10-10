@@ -9,24 +9,24 @@
     <div class="col-3">
         <div class="bg-white p-4">
             <form method="get">
-                <div class="input-group">
-                    <label>@SharedResources.Player </label>
-                    <input asp-for="@Model.Search" type="text" />
-                </div>
                 <div>
-                    <input asp-for="@Model.ShowMeOnly" type="checkbox" />
-                    <label>@SharedResources.OnlyMe</label>
+                    <label class="form-label">@SharedResources.Player </label>
+                    <input class="form-control" asp-for="@Model.Search" type="text" />
                 </div>
-                <div class="input-group">
-                    <label>@SharedResources.From</label>
-                    <input asp-for="@Model.From" type="date" />
+                <div class="mb-3">
+                    <input class="form-check-input" asp-for="@Model.ShowMeOnly" type="checkbox" />
+                    <label class="form-check-label">@SharedResources.OnlyMe</label>
                 </div>
-                <div class="input-group">
-                    <label>@SharedResources.To</label>
-                    <input asp-for="@Model.To" type="date" />
+                <div class="mb-3">
+                    <label class="form-label">@SharedResources.From</label>
+                    <input class="form-control" asp-for="@Model.From" type="date" />
                 </div>
-                <div class="input-group">
-                    <button>@SharedResources.Submit</button>
+                <div class="mb-3">
+                    <label class="form-label">@SharedResources.To</label>
+                    <input class="form-control" asp-for="@Model.To" type="date" />
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary">@SharedResources.Submit</button>
                 </div>
             </form>
         </div>
