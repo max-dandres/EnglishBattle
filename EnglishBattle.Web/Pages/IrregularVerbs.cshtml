@@ -1,4 +1,5 @@
 ﻿@page
+@using EnglishBattle.Web.Resources
 @model EnglishBattle.Web.Pages.IrregularVerbsModel
 @{
 }
@@ -9,11 +10,11 @@
         <div class="bg-white p-4">
             <form method="get">
                 <div>
-                    <label>Search: </label>
+                    <label>@SharedResources.Search: </label>
                     <input id="search" asp-for="@Model.Search" type="text" />
                 </div>
                 <div>
-                    <button>Submit</button>
+                    <button>@SharedResources.Submit</button>
                 </div>
             </form>
         </div>
@@ -33,7 +34,7 @@
                                asp-route-search="@(Model.Search)"
                                asp-route-orderByDesc="@(Model.OrderByDesc)"
                                class="page-link" tabindex="-1" aria-disabled="true">
-                                    Previous
+                                    @Game.Previous
                                 </a>
                             </li>
 
@@ -61,7 +62,7 @@
                                asp-route-search="@(Model.Search)"
                                asp-route-orderByDesc="@(Model.OrderByDesc)"
                                class="page-link">
-                                    Next
+                                    @Game.Next
                                 </a>
                             </li>
 
@@ -72,15 +73,15 @@
                 <span>
                     @(
                         (Model.Verbs.PageSize * Model.Verbs.PageIndex) + Model.Verbs.Count
-                        ) of @Model.Verbs.TotalCount foods
+                        ) @SharedResources.PaginationOf @Model.Verbs.TotalCount @SharedResources.PaginationVerbs
                 </span>
 
                 <table id="verbsTable" class="table text-left" style="table-layout: fixed;">
                     <thead>
                         <tr>
-                            <th scope="col">Base</th>
-                            <th scope="col">Past Participle</th>
-                            <th scope="col">Past Simple</th>
+                            <th scope="col">@SharedResources.VerbBase</th>
+                            <th scope="col">@SharedResources.VerbPastParticiple</th>
+                            <th scope="col">@SharedResources.VerbPastSimple</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -106,7 +107,7 @@
                                asp-route-search="@(Model.Search)"
                                asp-route-orderByDesc="@(Model.OrderByDesc)"
                                class="page-link" tabindex="-1" aria-disabled="true">
-                                    Previous
+                                    @Game.Previous
                                 </a>
                             </li>
 
@@ -134,7 +135,7 @@
                                asp-route-search="@(Model.Search)"
                                asp-route-orderByDesc="@(Model.OrderByDesc)"
                                class="page-link">
-                                    Next
+                                    @Game.Next
                                 </a>
                             </li>
 

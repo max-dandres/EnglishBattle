@@ -61,20 +61,38 @@ namespace EnglishBattle.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Base form.
+        ///   Looks up a localized string similar to Easy.
         /// </summary>
-        public static string BaseForm {
+        public static string Easy {
             get {
-                return ResourceManager.GetString("BaseForm", resourceCulture);
+                return ResourceManager.GetString("Easy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hard.
+        /// </summary>
+        public static string Hard {
+            get {
+                return ResourceManager.GetString("Hard", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to In progress.
         /// </summary>
-        public static string InProgess {
+        public static string InProgress {
             get {
-                return ResourceManager.GetString("InProgess", resourceCulture);
+                return ResourceManager.GetString("InProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        public static string Medium {
+            get {
+                return ResourceManager.GetString("Medium", resourceCulture);
             }
         }
         
@@ -88,20 +106,11 @@ namespace EnglishBattle.Web.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Past participle.
+        ///   Looks up a localized string similar to Previous.
         /// </summary>
-        public static string PastParticiple {
+        public static string Previous {
             get {
-                return ResourceManager.GetString("PastParticiple", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Past simple.
-        /// </summary>
-        public static string PastSimple {
-            get {
-                return ResourceManager.GetString("PastSimple", resourceCulture);
+                return ResourceManager.GetString("Previous", resourceCulture);
             }
         }
         

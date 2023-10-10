@@ -1,8 +1,9 @@
 ﻿@page
+@using EnglishBattle.Web.Resources
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
-    string[] titles = new string[3] { "Eeasy", "Medium", "Hard" };
+    ViewData["Title"] = SharedResources.Home;
+    string[] titles = new string[3] { Game.Easy, Game.Medium, Game.Hard };
     int index = 0;
 }
 
@@ -17,9 +18,9 @@
                     <table class="table text-left">
                         <thead>
                             <tr>
-                                <th scope="col">Base</th>
-                                <th scope="col">Past Participle</th>
-                                <th scope="col">Past Simple</th>
+                                <th scope="col">@SharedResources.VerbBase</th>
+                                <th scope="col">@SharedResources.VerbPastParticiple</th>
+                                <th scope="col">@SharedResources.VerbPastSimple</th>
                             </tr>
                         </thead>
                         <tbody>

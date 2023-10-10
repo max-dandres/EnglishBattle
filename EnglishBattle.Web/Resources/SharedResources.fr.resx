@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="From" xml:space="preserve">
+    <value>Debut</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="IrregularVerbs" xml:space="preserve">
+    <value>Verbes irréguliers</value>
+  </data>
+  <data name="Ladder" xml:space="preserve">
+    <value>Classement</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Langue</value>
   </data>
@@ -126,17 +138,56 @@
   <data name="Logout" xml:space="preserve">
     <value>Déconnexion</value>
   </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Pas de résultats</value>
+  </data>
+  <data name="OnlyMe" xml:space="preserve">
+    <value>Moi uniquement</value>
+  </data>
+  <data name="PaginationOf" xml:space="preserve">
+    <value>sur</value>
+  </data>
+  <data name="PaginationVerbs" xml:space="preserve">
+    <value>verbes</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Mot de passe</value>
   </data>
   <data name="PasswordRequired" xml:space="preserve">
     <value>Mot de passe requis</value>
   </data>
+  <data name="Play" xml:space="preserve">
+    <value>Jouer</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Joueur</value>
+  </data>
+  <data name="Privacy" xml:space="preserve">
+    <value>Confidentialité</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Recherche</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Envoyer</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Fin</value>
+  </data>
   <data name="Username" xml:space="preserve">
     <value>Nom d'utilisateur</value>
   </data>
   <data name="UsernameRequired" xml:space="preserve">
     <value>Nom d'utilisateur requis</value>
+  </data>
+  <data name="VerbBase" xml:space="preserve">
+    <value>Base verbale</value>
+  </data>
+  <data name="VerbPastParticiple" xml:space="preserve">
+    <value>Participe passé</value>
+  </data>
+  <data name="VerbPastSimple" xml:space="preserve">
+    <value>Prétérit</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Bienvenue</value>

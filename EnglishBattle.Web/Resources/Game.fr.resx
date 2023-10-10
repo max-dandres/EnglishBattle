@@ -117,20 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BaseForm" xml:space="preserve">
-    <value>Base verbale</value>
+  <data name="Easy" xml:space="preserve">
+    <value>Facile</value>
+  </data>
+  <data name="Hard" xml:space="preserve">
+    <value>Difficile</value>
   </data>
   <data name="InProgress" xml:space="preserve">
     <value>En cours</value>
   </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
   <data name="Next" xml:space="preserve">
     <value>Suivant</value>
   </data>
-  <data name="PastParticiple" xml:space="preserve">
-    <value>Participe passé</value>
-  </data>
-  <data name="PastSimple" xml:space="preserve">
-    <value>Prétérit</value>
+  <data name="Previous" xml:space="preserve">
+    <value>Précédent</value>
   </data>
   <data name="Ready" xml:space="preserve">
     <value>Prêt?</value>

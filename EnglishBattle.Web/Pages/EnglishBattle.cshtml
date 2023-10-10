@@ -42,7 +42,7 @@
                 @*Score*@
                 <div class="row">
                     <div class="col">
-                        <h3>Score: <span id="score">0</span></h3>
+                        <h3>Score <span id="score">0</span></h3>
                     </div>
                 </div>
                 @*BaseForm*@
@@ -54,7 +54,7 @@
                         <div class="input-icons">
                             @*<i id="success_icon" class="fas fa-check icon success"></i>
                             <i id="failure_icon" class="fas fa-times icon error"></i>*@
-                            <input ID="baseForm" runat="server" placeholder="@Game.BaseForm" class="form-control" disabled />
+                            <input ID="baseForm" runat="server" placeholder="@SharedResources.VerbBase" class="form-control" disabled />
                         </div>
 
                     </div>
@@ -63,7 +63,7 @@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="pastParticiple" runat="server" placeholder="@Game.PastParticiple" class="form-control" autocomplete="off" disabled />
+                        <input ID="pastParticiple" runat="server" placeholder="@SharedResources.VerbPastParticiple" class="form-control" autocomplete="off" disabled />
                     </div>
 
                 </div>
@@ -71,7 +71,7 @@
                 <div class="row">
 
                     <div class="col pb-2">
-                        <input ID="pastSimple" runat="server" placeholder="@Game.PastSimple" class="form-control" autocomplete="off" disabled />
+                        <input ID="pastSimple" runat="server" placeholder="@SharedResources.VerbPastSimple" class="form-control" autocomplete="off" disabled />
                     </div>
 
                 </div>
@@ -148,7 +148,7 @@
                                                         <div class='spinner-dot-2'></div>
                                                     </div>
                                                     &nbsp;
-                                                    <span>@Game.InProgess</span>`
+                                                    <span>@Game.InProgress</span>`
                     );
 
                     _timer.start(timeOutHandler);
